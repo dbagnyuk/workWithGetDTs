@@ -1,0 +1,1557 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:wsap="http://schemas.xmlsoap.org/ws/2004/08/addressing/policy" xmlns:wsa10="http://www.w3.org/2005/08/addressing" xmlns:tns="http://schemas.sitels.ru/SCA" xmlns:msc="http://schemas.microsoft.com/ws/2005/12/wsdl/contract" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:wsx="http://schemas.xmlsoap.org/ws/2004/09/mex" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:wsam="http://www.w3.org/2007/05/addressing/metadata" xmlns:wsa="http://schemas.xmlsoap.org/ws/2004/08/addressing" xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" xmlns:xsd="http://www.w3.org/2001/XMLSchema" targetNamespace="http://schemas.sitels.ru/SCA" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <xsd:schema targetNamespace="http://schemas.sitels.ru/SCA/Imports">
+      <xsd:import schemaLocation="http://msk-dev-foris:8106/SCA?xsd=xsd0" namespace="http://schemas.sitels.ru/SCA" />
+      <xsd:import schemaLocation="http://msk-dev-foris:8106/SCA?xsd=xsd1" namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
+      <xsd:import schemaLocation="http://msk-dev-foris:8106/SCA?xsd=xsd2" namespace="http://schemas.datacontract.org/2004/07/NVision.See.Package.Wcf.Sca" />
+      <xsd:import schemaLocation="http://msk-dev-foris:8106/SCA?xsd=xsd3" namespace="http://schemas.datacontract.org/2004/07/NVision.See.Package.Sca" />
+      <xsd:import schemaLocation="http://msk-dev-foris:8106/SCA?xsd=xsd4" namespace="http://schemas.datacontract.org/2004/07/NVision.See.DataTypes.Parlay" />
+      <xsd:import schemaLocation="http://msk-dev-foris:8106/SCA?xsd=xsd5" namespace="http://schemas.microsoft.com/2003/10/Serialization/Arrays" />
+      <xsd:import schemaLocation="http://msk-dev-foris:8106/SCA?xsd=xsd6" namespace="http://schemas.datacontract.org/2004/07/NVision.See.DataTypes.Service.Irf" />
+      <xsd:import schemaLocation="http://msk-dev-foris:8106/SCA?xsd=xsd7" namespace="http://schemas.datacontract.org/2004/07/System" />
+    </xsd:schema>
+  </wsdl:types>
+  <wsdl:message name="ISca_CreateNotifMessage_InputMessage">
+    <wsdl:part name="parameters" element="tns:CreateNotifMessage" />
+  </wsdl:message>
+  <wsdl:message name="ISca_CreateNotifMessage_OutputMessage">
+    <wsdl:part name="parameters" element="tns:CreateNotifMessageResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISca_DeleteNotifMessage_InputMessage">
+    <wsdl:part name="parameters" element="tns:DeleteNotifMessage" />
+  </wsdl:message>
+  <wsdl:message name="ISca_DeleteNotifMessage_OutputMessage">
+    <wsdl:part name="parameters" element="tns:DeleteNotifMessageResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISca_UpdateNotifMessage_InputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateNotifMessage" />
+  </wsdl:message>
+  <wsdl:message name="ISca_UpdateNotifMessage_OutputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateNotifMessageResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISca_CreateNotifRulePattern_InputMessage">
+    <wsdl:part name="parameters" element="tns:CreateNotifRulePattern" />
+  </wsdl:message>
+  <wsdl:message name="ISca_CreateNotifRulePattern_OutputMessage">
+    <wsdl:part name="parameters" element="tns:CreateNotifRulePatternResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISca_DeleteNotifRulePattern_InputMessage">
+    <wsdl:part name="parameters" element="tns:DeleteNotifRulePattern" />
+  </wsdl:message>
+  <wsdl:message name="ISca_DeleteNotifRulePattern_OutputMessage">
+    <wsdl:part name="parameters" element="tns:DeleteNotifRulePatternResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISca_UpdateNotifRulePattern_InputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateNotifRulePattern" />
+  </wsdl:message>
+  <wsdl:message name="ISca_UpdateNotifRulePattern_OutputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateNotifRulePatternResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISca_CreateBlackListTd_InputMessage">
+    <wsdl:part name="parameters" element="tns:CreateBlackListTd" />
+  </wsdl:message>
+  <wsdl:message name="ISca_CreateBlackListTd_OutputMessage">
+    <wsdl:part name="parameters" element="tns:CreateBlackListTdResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISca_DeleteBlackListTd_InputMessage">
+    <wsdl:part name="parameters" element="tns:DeleteBlackListTd" />
+  </wsdl:message>
+  <wsdl:message name="ISca_DeleteBlackListTd_OutputMessage">
+    <wsdl:part name="parameters" element="tns:DeleteBlackListTdResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISca_CreateNotifDeliveryRule_InputMessage">
+    <wsdl:part name="parameters" element="tns:CreateNotifDeliveryRule" />
+  </wsdl:message>
+  <wsdl:message name="ISca_CreateNotifDeliveryRule_OutputMessage">
+    <wsdl:part name="parameters" element="tns:CreateNotifDeliveryRuleResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISca_UpdateNotifDeliveryRule_InputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateNotifDeliveryRule" />
+  </wsdl:message>
+  <wsdl:message name="ISca_UpdateNotifDeliveryRule_OutputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateNotifDeliveryRuleResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISca_DeleteNotifDeliveryRule_InputMessage">
+    <wsdl:part name="parameters" element="tns:DeleteNotifDeliveryRule" />
+  </wsdl:message>
+  <wsdl:message name="ISca_DeleteNotifDeliveryRule_OutputMessage">
+    <wsdl:part name="parameters" element="tns:DeleteNotifDeliveryRuleResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISca_CreateNotifAnnouncement_InputMessage">
+    <wsdl:part name="parameters" element="tns:CreateNotifAnnouncement" />
+  </wsdl:message>
+  <wsdl:message name="ISca_CreateNotifAnnouncement_OutputMessage">
+    <wsdl:part name="parameters" element="tns:CreateNotifAnnouncementResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISca_UpdateNotifAnnouncement_InputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateNotifAnnouncement" />
+  </wsdl:message>
+  <wsdl:message name="ISca_UpdateNotifAnnouncement_OutputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateNotifAnnouncementResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISca_DeleteNotifAnnouncement_InputMessage">
+    <wsdl:part name="parameters" element="tns:DeleteNotifAnnouncement" />
+  </wsdl:message>
+  <wsdl:message name="ISca_DeleteNotifAnnouncement_OutputMessage">
+    <wsdl:part name="parameters" element="tns:DeleteNotifAnnouncementResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISca_CreateNotifTurnOffRule_InputMessage">
+    <wsdl:part name="parameters" element="tns:CreateNotifTurnOffRule" />
+  </wsdl:message>
+  <wsdl:message name="ISca_CreateNotifTurnOffRule_OutputMessage">
+    <wsdl:part name="parameters" element="tns:CreateNotifTurnOffRuleResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISca_UpdateNotifTurnOffRule_InputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateNotifTurnOffRule" />
+  </wsdl:message>
+  <wsdl:message name="ISca_UpdateNotifTurnOffRule_OutputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateNotifTurnOffRuleResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISca_DeleteNotifTurnOffRule_InputMessage">
+    <wsdl:part name="parameters" element="tns:DeleteNotifTurnOffRule" />
+  </wsdl:message>
+  <wsdl:message name="ISca_DeleteNotifTurnOffRule_OutputMessage">
+    <wsdl:part name="parameters" element="tns:DeleteNotifTurnOffRuleResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISca_UpdateNotifConfig_InputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateNotifConfig" />
+  </wsdl:message>
+  <wsdl:message name="ISca_UpdateNotifConfig_OutputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateNotifConfigResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISca_RecalculateBalanceProfile_InputMessage">
+    <wsdl:part name="parameters" element="tns:RecalculateBalanceProfile" />
+  </wsdl:message>
+  <wsdl:message name="ISca_RecalculateBalanceProfile_OutputMessage">
+    <wsdl:part name="parameters" element="tns:RecalculateBalanceProfileResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISca_NotifRdCounterThresholds_InputMessage">
+    <wsdl:part name="parameters" element="tns:NotifRdCounterThresholds" />
+  </wsdl:message>
+  <wsdl:message name="ISca_NotifRdCounterThresholds_OutputMessage">
+    <wsdl:part name="parameters" element="tns:NotifRdCounterThresholdsResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISca_CreateServiceNumberParams_InputMessage">
+    <wsdl:part name="parameters" element="tns:CreateServiceNumberParams" />
+  </wsdl:message>
+  <wsdl:message name="ISca_CreateServiceNumberParams_OutputMessage">
+    <wsdl:part name="parameters" element="tns:CreateServiceNumberParamsResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISca_UpdateServiceNumberParams_InputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateServiceNumberParams" />
+  </wsdl:message>
+  <wsdl:message name="ISca_UpdateServiceNumberParams_OutputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateServiceNumberParamsResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISca_DeleteServiceNumberParams_InputMessage">
+    <wsdl:part name="parameters" element="tns:DeleteServiceNumberParams" />
+  </wsdl:message>
+  <wsdl:message name="ISca_DeleteServiceNumberParams_OutputMessage">
+    <wsdl:part name="parameters" element="tns:DeleteServiceNumberParamsResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISca_GetServiceNumbersParams_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetServiceNumbersParams" />
+  </wsdl:message>
+  <wsdl:message name="ISca_GetServiceNumbersParams_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetServiceNumbersParamsResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISca_GetSyncBalanceTemplateDetail_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetSyncBalanceTemplateDetail" />
+  </wsdl:message>
+  <wsdl:message name="ISca_GetSyncBalanceTemplateDetail_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetSyncBalanceTemplateDetailResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISca_DeleteSyncBalanceTemplateDetail_InputMessage">
+    <wsdl:part name="parameters" element="tns:DeleteSyncBalanceTemplateDetail" />
+  </wsdl:message>
+  <wsdl:message name="ISca_DeleteSyncBalanceTemplateDetail_OutputMessage">
+    <wsdl:part name="parameters" element="tns:DeleteSyncBalanceTemplateDetailResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISca_DeleteBsReservations_InputMessage">
+    <wsdl:part name="parameters" element="tns:DeleteBsReservations" />
+  </wsdl:message>
+  <wsdl:message name="ISca_DeleteBsReservations_OutputMessage">
+    <wsdl:part name="parameters" element="tns:DeleteBsReservationsResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISca_GetFaCodes_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetFaCodes" />
+  </wsdl:message>
+  <wsdl:message name="ISca_GetFaCodes_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetFaCodesResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISca_GetNotifications_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetNotifications" />
+  </wsdl:message>
+  <wsdl:message name="ISca_GetNotifications_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetNotificationsResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISca_GetTDAttributes_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetTDAttributes" />
+  </wsdl:message>
+  <wsdl:message name="ISca_GetTDAttributes_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetTDAttributesResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISca_GetActivityActions_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetActivityActions" />
+  </wsdl:message>
+  <wsdl:message name="ISca_GetActivityActions_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetActivityActionsResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISca_GetFATimeIntervals_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetFATimeIntervals" />
+  </wsdl:message>
+  <wsdl:message name="ISca_GetFATimeIntervals_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetFATimeIntervalsResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISca_GetVlrs_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetVlrs" />
+  </wsdl:message>
+  <wsdl:message name="ISca_GetVlrs_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetVlrsResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISca_CreateVlr_InputMessage">
+    <wsdl:part name="parameters" element="tns:CreateVlr" />
+  </wsdl:message>
+  <wsdl:message name="ISca_CreateVlr_OutputMessage">
+    <wsdl:part name="parameters" element="tns:CreateVlrResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISca_UpdateVlr_InputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateVlr" />
+  </wsdl:message>
+  <wsdl:message name="ISca_UpdateVlr_OutputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateVlrResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISca_DeleteVlr_InputMessage">
+    <wsdl:part name="parameters" element="tns:DeleteVlr" />
+  </wsdl:message>
+  <wsdl:message name="ISca_DeleteVlr_OutputMessage">
+    <wsdl:part name="parameters" element="tns:DeleteVlrResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISca_TestNotifText_InputMessage">
+    <wsdl:part name="parameters" element="tns:TestNotifText" />
+  </wsdl:message>
+  <wsdl:message name="ISca_TestNotifText_OutputMessage">
+    <wsdl:part name="parameters" element="tns:TestNotifTextResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISca_GetActivityGroups_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetActivityGroups" />
+  </wsdl:message>
+  <wsdl:message name="ISca_GetActivityGroups_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetActivityGroupsResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISca_CreateActivityGroup_InputMessage">
+    <wsdl:part name="parameters" element="tns:CreateActivityGroup" />
+  </wsdl:message>
+  <wsdl:message name="ISca_CreateActivityGroup_OutputMessage">
+    <wsdl:part name="parameters" element="tns:CreateActivityGroupResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISca_UpdateActivityGroup_InputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateActivityGroup" />
+  </wsdl:message>
+  <wsdl:message name="ISca_UpdateActivityGroup_OutputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateActivityGroupResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISca_DeleteActivityGroup_InputMessage">
+    <wsdl:part name="parameters" element="tns:DeleteActivityGroup" />
+  </wsdl:message>
+  <wsdl:message name="ISca_DeleteActivityGroup_OutputMessage">
+    <wsdl:part name="parameters" element="tns:DeleteActivityGroupResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISca_GetWhiteListTd_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetWhiteListTd" />
+  </wsdl:message>
+  <wsdl:message name="ISca_GetWhiteListTd_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetWhiteListTdResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISca_CreateWhiteListTd_InputMessage">
+    <wsdl:part name="parameters" element="tns:CreateWhiteListTd" />
+  </wsdl:message>
+  <wsdl:message name="ISca_CreateWhiteListTd_OutputMessage">
+    <wsdl:part name="parameters" element="tns:CreateWhiteListTdResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISca_DeleteWhiteListTd_InputMessage">
+    <wsdl:part name="parameters" element="tns:DeleteWhiteListTd" />
+  </wsdl:message>
+  <wsdl:message name="ISca_DeleteWhiteListTd_OutputMessage">
+    <wsdl:part name="parameters" element="tns:DeleteWhiteListTdResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISca_GetGprsStartData_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetGprsStartData" />
+  </wsdl:message>
+  <wsdl:message name="ISca_GetGprsStartData_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetGprsStartDataResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISca_GetBlackListTd_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetBlackListTd" />
+  </wsdl:message>
+  <wsdl:message name="ISca_GetBlackListTd_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetBlackListTdResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISca_GetCmrRecalcFactors_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetCmrRecalcFactors" />
+  </wsdl:message>
+  <wsdl:message name="ISca_GetCmrRecalcFactors_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetCmrRecalcFactorsResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISca_GetNotifDeliveryRules_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetNotifDeliveryRules" />
+  </wsdl:message>
+  <wsdl:message name="ISca_GetNotifDeliveryRules_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetNotifDeliveryRulesResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISca_GetNotifRulePatterns_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetNotifRulePatterns" />
+  </wsdl:message>
+  <wsdl:message name="ISca_GetNotifRulePatterns_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetNotifRulePatternsResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISca_GetNotifConfig_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetNotifConfig" />
+  </wsdl:message>
+  <wsdl:message name="ISca_GetNotifConfig_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetNotifConfigResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISca_CreateServiceNumber_InputMessage">
+    <wsdl:part name="parameters" element="tns:CreateServiceNumber" />
+  </wsdl:message>
+  <wsdl:message name="ISca_CreateServiceNumber_OutputMessage">
+    <wsdl:part name="parameters" element="tns:CreateServiceNumberResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISca_UpdateServiceNumber_InputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateServiceNumber" />
+  </wsdl:message>
+  <wsdl:message name="ISca_UpdateServiceNumber_OutputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateServiceNumberResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISca_DeleteServiceNumber_InputMessage">
+    <wsdl:part name="parameters" element="tns:DeleteServiceNumber" />
+  </wsdl:message>
+  <wsdl:message name="ISca_DeleteServiceNumber_OutputMessage">
+    <wsdl:part name="parameters" element="tns:DeleteServiceNumberResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISca_CopyNotifTemplate_InputMessage">
+    <wsdl:part name="parameters" element="tns:CopyNotifTemplate" />
+  </wsdl:message>
+  <wsdl:message name="ISca_CopyNotifTemplate_OutputMessage">
+    <wsdl:part name="parameters" element="tns:CopyNotifTemplateResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISca_GetNotifParamOperators_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetNotifParamOperators" />
+  </wsdl:message>
+  <wsdl:message name="ISca_GetNotifParamOperators_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetNotifParamOperatorsResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISca_GetNotifAnnouncements_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetNotifAnnouncements" />
+  </wsdl:message>
+  <wsdl:message name="ISca_GetNotifAnnouncements_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetNotifAnnouncementsResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISca_GetNotificationCauses_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetNotificationCauses" />
+  </wsdl:message>
+  <wsdl:message name="ISca_GetNotificationCauses_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetNotificationCausesResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISca_CreateNotificationCause_InputMessage">
+    <wsdl:part name="parameters" element="tns:CreateNotificationCause" />
+  </wsdl:message>
+  <wsdl:message name="ISca_CreateNotificationCause_OutputMessage">
+    <wsdl:part name="parameters" element="tns:CreateNotificationCauseResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISca_DeleteNotificationCause_InputMessage">
+    <wsdl:part name="parameters" element="tns:DeleteNotificationCause" />
+  </wsdl:message>
+  <wsdl:message name="ISca_DeleteNotificationCause_OutputMessage">
+    <wsdl:part name="parameters" element="tns:DeleteNotificationCauseResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISca_CreateNotifMessagePattern_InputMessage">
+    <wsdl:part name="parameters" element="tns:CreateNotifMessagePattern" />
+  </wsdl:message>
+  <wsdl:message name="ISca_CreateNotifMessagePattern_OutputMessage">
+    <wsdl:part name="parameters" element="tns:CreateNotifMessagePatternResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISca_UpdateNotifMessagePattern_InputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateNotifMessagePattern" />
+  </wsdl:message>
+  <wsdl:message name="ISca_UpdateNotifMessagePattern_OutputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateNotifMessagePatternResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISca_DeleteNotifMessagePattern_InputMessage">
+    <wsdl:part name="parameters" element="tns:DeleteNotifMessagePattern" />
+  </wsdl:message>
+  <wsdl:message name="ISca_DeleteNotifMessagePattern_OutputMessage">
+    <wsdl:part name="parameters" element="tns:DeleteNotifMessagePatternResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISca_GetNotifMessagePatterns_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetNotifMessagePatterns" />
+  </wsdl:message>
+  <wsdl:message name="ISca_GetNotifMessagePatterns_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetNotifMessagePatternsResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISca_CreateFaCode_InputMessage">
+    <wsdl:part name="parameters" element="tns:CreateFaCode" />
+  </wsdl:message>
+  <wsdl:message name="ISca_CreateFaCode_OutputMessage">
+    <wsdl:part name="parameters" element="tns:CreateFaCodeResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISca_DeleteFaCode_InputMessage">
+    <wsdl:part name="parameters" element="tns:DeleteFaCode" />
+  </wsdl:message>
+  <wsdl:message name="ISca_DeleteFaCode_OutputMessage">
+    <wsdl:part name="parameters" element="tns:DeleteFaCodeResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISca_GetNotifRdCounterCodesForTP_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetNotifRdCounterCodesForTP" />
+  </wsdl:message>
+  <wsdl:message name="ISca_GetNotifRdCounterCodesForTP_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetNotifRdCounterCodesForTPResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISca_RefreshUserThresholdsData_InputMessage">
+    <wsdl:part name="parameters" element="tns:RefreshUserThresholdsData" />
+  </wsdl:message>
+  <wsdl:message name="ISca_RefreshUserThresholdsData_OutputMessage">
+    <wsdl:part name="parameters" element="tns:RefreshUserThresholdsDataResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISca_UpdateGprsStartData_InputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateGprsStartData" />
+  </wsdl:message>
+  <wsdl:message name="ISca_UpdateGprsStartData_OutputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateGprsStartDataResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISca_GetNotifRdCounterThresholds_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetNotifRdCounterThresholds" />
+  </wsdl:message>
+  <wsdl:message name="ISca_GetNotifRdCounterThresholds_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetNotifRdCounterThresholdsResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISca_GetNotifTurnOffRules_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetNotifTurnOffRules" />
+  </wsdl:message>
+  <wsdl:message name="ISca_GetNotifTurnOffRules_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetNotifTurnOffRulesResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISca_CreateFATimeInterval_InputMessage">
+    <wsdl:part name="parameters" element="tns:CreateFATimeInterval" />
+  </wsdl:message>
+  <wsdl:message name="ISca_CreateFATimeInterval_OutputMessage">
+    <wsdl:part name="parameters" element="tns:CreateFATimeIntervalResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISca_DeleteFATimeInterval_InputMessage">
+    <wsdl:part name="parameters" element="tns:DeleteFATimeInterval" />
+  </wsdl:message>
+  <wsdl:message name="ISca_DeleteFATimeInterval_OutputMessage">
+    <wsdl:part name="parameters" element="tns:DeleteFATimeIntervalResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISca_GetNotifRuleConditions_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetNotifRuleConditions" />
+  </wsdl:message>
+  <wsdl:message name="ISca_GetNotifRuleConditions_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetNotifRuleConditionsResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISca_CreateNotifRuleConditions_InputMessage">
+    <wsdl:part name="parameters" element="tns:CreateNotifRuleConditions" />
+  </wsdl:message>
+  <wsdl:message name="ISca_CreateNotifRuleConditions_OutputMessage">
+    <wsdl:part name="parameters" element="tns:CreateNotifRuleConditionsResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISca_SyncBalanceTemplate_InputMessage">
+    <wsdl:part name="parameters" element="tns:SyncBalanceTemplate" />
+  </wsdl:message>
+  <wsdl:message name="ISca_SyncBalanceTemplate_OutputMessage">
+    <wsdl:part name="parameters" element="tns:SyncBalanceTemplateResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISca_DeleteReservation_InputMessage">
+    <wsdl:part name="parameters" element="tns:DeleteReservation" />
+  </wsdl:message>
+  <wsdl:message name="ISca_DeleteReservation_OutputMessage">
+    <wsdl:part name="parameters" element="tns:DeleteReservationResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISca_GetBlackList_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetBlackList" />
+  </wsdl:message>
+  <wsdl:message name="ISca_GetBlackList_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetBlackListResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISca_CreateActivityAction_InputMessage">
+    <wsdl:part name="parameters" element="tns:CreateActivityAction" />
+  </wsdl:message>
+  <wsdl:message name="ISca_CreateActivityAction_OutputMessage">
+    <wsdl:part name="parameters" element="tns:CreateActivityActionResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISca_UpdateActivityAction_InputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateActivityAction" />
+  </wsdl:message>
+  <wsdl:message name="ISca_UpdateActivityAction_OutputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateActivityActionResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISca_DeleteActivityAction_InputMessage">
+    <wsdl:part name="parameters" element="tns:DeleteActivityAction" />
+  </wsdl:message>
+  <wsdl:message name="ISca_DeleteActivityAction_OutputMessage">
+    <wsdl:part name="parameters" element="tns:DeleteActivityActionResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISca_CreateNotification_InputMessage">
+    <wsdl:part name="parameters" element="tns:CreateNotification" />
+  </wsdl:message>
+  <wsdl:message name="ISca_CreateNotification_OutputMessage">
+    <wsdl:part name="parameters" element="tns:CreateNotificationResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISca_UpdateNotification_InputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateNotification" />
+  </wsdl:message>
+  <wsdl:message name="ISca_UpdateNotification_OutputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateNotificationResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISca_DeleteNotification_InputMessage">
+    <wsdl:part name="parameters" element="tns:DeleteNotification" />
+  </wsdl:message>
+  <wsdl:message name="ISca_DeleteNotification_OutputMessage">
+    <wsdl:part name="parameters" element="tns:DeleteNotificationResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISca_CreateProvider_InputMessage">
+    <wsdl:part name="parameters" element="tns:CreateProvider" />
+  </wsdl:message>
+  <wsdl:message name="ISca_CreateProvider_OutputMessage">
+    <wsdl:part name="parameters" element="tns:CreateProviderResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISca_UpdateProvider_InputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateProvider" />
+  </wsdl:message>
+  <wsdl:message name="ISca_UpdateProvider_OutputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateProviderResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISca_DeleteProvider_InputMessage">
+    <wsdl:part name="parameters" element="tns:DeleteProvider" />
+  </wsdl:message>
+  <wsdl:message name="ISca_DeleteProvider_OutputMessage">
+    <wsdl:part name="parameters" element="tns:DeleteProviderResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISca_CreateProviderGroup_InputMessage">
+    <wsdl:part name="parameters" element="tns:CreateProviderGroup" />
+  </wsdl:message>
+  <wsdl:message name="ISca_CreateProviderGroup_OutputMessage">
+    <wsdl:part name="parameters" element="tns:CreateProviderGroupResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISca_DeleteProviderGroup_InputMessage">
+    <wsdl:part name="parameters" element="tns:DeleteProviderGroup" />
+  </wsdl:message>
+  <wsdl:message name="ISca_DeleteProviderGroup_OutputMessage">
+    <wsdl:part name="parameters" element="tns:DeleteProviderGroupResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISca_CreateBlackList_InputMessage">
+    <wsdl:part name="parameters" element="tns:CreateBlackList" />
+  </wsdl:message>
+  <wsdl:message name="ISca_CreateBlackList_OutputMessage">
+    <wsdl:part name="parameters" element="tns:CreateBlackListResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISca_DeleteBlackList_InputMessage">
+    <wsdl:part name="parameters" element="tns:DeleteBlackList" />
+  </wsdl:message>
+  <wsdl:message name="ISca_DeleteBlackList_OutputMessage">
+    <wsdl:part name="parameters" element="tns:DeleteBlackListResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISca_GetPAs_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetPAs" />
+  </wsdl:message>
+  <wsdl:message name="ISca_GetPAs_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetPAsResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISca_GetTDs_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetTDs" />
+  </wsdl:message>
+  <wsdl:message name="ISca_GetTDs_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetTDsResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISca_GetCugs_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetCugs" />
+  </wsdl:message>
+  <wsdl:message name="ISca_GetCugs_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetCugsResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISca_GetFFNumbers_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetFFNumbers" />
+  </wsdl:message>
+  <wsdl:message name="ISca_GetFFNumbers_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetFFNumbersResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISca_GetTariffPlans_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetTariffPlans" />
+  </wsdl:message>
+  <wsdl:message name="ISca_GetTariffPlans_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetTariffPlansResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISca_GetServices_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetServices" />
+  </wsdl:message>
+  <wsdl:message name="ISca_GetServices_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetServicesResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISca_CreateTD_InputMessage">
+    <wsdl:part name="parameters" element="tns:CreateTD" />
+  </wsdl:message>
+  <wsdl:message name="ISca_CreateTD_OutputMessage">
+    <wsdl:part name="parameters" element="tns:CreateTDResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISca_UpdateTD_InputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateTD" />
+  </wsdl:message>
+  <wsdl:message name="ISca_UpdateTD_OutputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateTDResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISca_DeleteTD_InputMessage">
+    <wsdl:part name="parameters" element="tns:DeleteTD" />
+  </wsdl:message>
+  <wsdl:message name="ISca_DeleteTD_OutputMessage">
+    <wsdl:part name="parameters" element="tns:DeleteTDResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISca_CreatePA_InputMessage">
+    <wsdl:part name="parameters" element="tns:CreatePA" />
+  </wsdl:message>
+  <wsdl:message name="ISca_CreatePA_OutputMessage">
+    <wsdl:part name="parameters" element="tns:CreatePAResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISca_UpdatePA_InputMessage">
+    <wsdl:part name="parameters" element="tns:UpdatePA" />
+  </wsdl:message>
+  <wsdl:message name="ISca_UpdatePA_OutputMessage">
+    <wsdl:part name="parameters" element="tns:UpdatePAResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISca_DeletePA_InputMessage">
+    <wsdl:part name="parameters" element="tns:DeletePA" />
+  </wsdl:message>
+  <wsdl:message name="ISca_DeletePA_OutputMessage">
+    <wsdl:part name="parameters" element="tns:DeletePAResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISca_CreateCug_InputMessage">
+    <wsdl:part name="parameters" element="tns:CreateCug" />
+  </wsdl:message>
+  <wsdl:message name="ISca_CreateCug_OutputMessage">
+    <wsdl:part name="parameters" element="tns:CreateCugResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISca_UpdateCug_InputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateCug" />
+  </wsdl:message>
+  <wsdl:message name="ISca_UpdateCug_OutputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateCugResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISca_DeleteCug_InputMessage">
+    <wsdl:part name="parameters" element="tns:DeleteCug" />
+  </wsdl:message>
+  <wsdl:message name="ISca_DeleteCug_OutputMessage">
+    <wsdl:part name="parameters" element="tns:DeleteCugResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISca_CreateFFNumber_InputMessage">
+    <wsdl:part name="parameters" element="tns:CreateFFNumber" />
+  </wsdl:message>
+  <wsdl:message name="ISca_CreateFFNumber_OutputMessage">
+    <wsdl:part name="parameters" element="tns:CreateFFNumberResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISca_UpdateFFNumber_InputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateFFNumber" />
+  </wsdl:message>
+  <wsdl:message name="ISca_UpdateFFNumber_OutputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateFFNumberResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISca_DeleteFFNumber_InputMessage">
+    <wsdl:part name="parameters" element="tns:DeleteFFNumber" />
+  </wsdl:message>
+  <wsdl:message name="ISca_DeleteFFNumber_OutputMessage">
+    <wsdl:part name="parameters" element="tns:DeleteFFNumberResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISca_CreateTariffPlan_InputMessage">
+    <wsdl:part name="parameters" element="tns:CreateTariffPlan" />
+  </wsdl:message>
+  <wsdl:message name="ISca_CreateTariffPlan_OutputMessage">
+    <wsdl:part name="parameters" element="tns:CreateTariffPlanResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISca_UpdateTariffPlan_InputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateTariffPlan" />
+  </wsdl:message>
+  <wsdl:message name="ISca_UpdateTariffPlan_OutputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateTariffPlanResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISca_DeleteTariffPlan_InputMessage">
+    <wsdl:part name="parameters" element="tns:DeleteTariffPlan" />
+  </wsdl:message>
+  <wsdl:message name="ISca_DeleteTariffPlan_OutputMessage">
+    <wsdl:part name="parameters" element="tns:DeleteTariffPlanResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISca_CreateService_InputMessage">
+    <wsdl:part name="parameters" element="tns:CreateService" />
+  </wsdl:message>
+  <wsdl:message name="ISca_CreateService_OutputMessage">
+    <wsdl:part name="parameters" element="tns:CreateServiceResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISca_UpdateService_InputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateService" />
+  </wsdl:message>
+  <wsdl:message name="ISca_UpdateService_OutputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateServiceResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISca_DeleteService_InputMessage">
+    <wsdl:part name="parameters" element="tns:DeleteService" />
+  </wsdl:message>
+  <wsdl:message name="ISca_DeleteService_OutputMessage">
+    <wsdl:part name="parameters" element="tns:DeleteServiceResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISca_CreateBalance_InputMessage">
+    <wsdl:part name="parameters" element="tns:CreateBalance" />
+  </wsdl:message>
+  <wsdl:message name="ISca_CreateBalance_OutputMessage">
+    <wsdl:part name="parameters" element="tns:CreateBalanceResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISca_DeleteBalance_InputMessage">
+    <wsdl:part name="parameters" element="tns:DeleteBalance" />
+  </wsdl:message>
+  <wsdl:message name="ISca_DeleteBalance_OutputMessage">
+    <wsdl:part name="parameters" element="tns:DeleteBalanceResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISca_UpdateBalance_InputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateBalance" />
+  </wsdl:message>
+  <wsdl:message name="ISca_UpdateBalance_OutputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateBalanceResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISca_GetBalancesAndReservations_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetBalancesAndReservations" />
+  </wsdl:message>
+  <wsdl:message name="ISca_GetBalancesAndReservations_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetBalancesAndReservationsResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISca_GetCcReservations_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetCcReservations" />
+  </wsdl:message>
+  <wsdl:message name="ISca_GetCcReservations_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetCcReservationsResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISca_GetTimeShift_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetTimeShift" />
+  </wsdl:message>
+  <wsdl:message name="ISca_GetTimeShift_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetTimeShiftResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISca_CreateTdsCugs_InputMessage">
+    <wsdl:part name="parameters" element="tns:CreateTdsCugs" />
+  </wsdl:message>
+  <wsdl:message name="ISca_CreateTdsCugs_OutputMessage">
+    <wsdl:part name="parameters" element="tns:CreateTdsCugsResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISca_UpdateTdsCugs_InputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateTdsCugs" />
+  </wsdl:message>
+  <wsdl:message name="ISca_UpdateTdsCugs_OutputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateTdsCugsResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISca_DeleteTdsCugs_InputMessage">
+    <wsdl:part name="parameters" element="tns:DeleteTdsCugs" />
+  </wsdl:message>
+  <wsdl:message name="ISca_DeleteTdsCugs_OutputMessage">
+    <wsdl:part name="parameters" element="tns:DeleteTdsCugsResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISca_GetTdsCugs_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetTdsCugs" />
+  </wsdl:message>
+  <wsdl:message name="ISca_GetTdsCugs_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetTdsCugsResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISca_GetLanguages_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetLanguages" />
+  </wsdl:message>
+  <wsdl:message name="ISca_GetLanguages_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetLanguagesResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISca_GetPAAdminBlocks_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetPAAdminBlocks" />
+  </wsdl:message>
+  <wsdl:message name="ISca_GetPAAdminBlocks_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetPAAdminBlocksResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISca_GetDiaSySession_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetDiaSySession" />
+  </wsdl:message>
+  <wsdl:message name="ISca_GetDiaSySession_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetDiaSySessionResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISca_RevalidateDiaSySession_InputMessage">
+    <wsdl:part name="parameters" element="tns:RevalidateDiaSySession" />
+  </wsdl:message>
+  <wsdl:message name="ISca_RevalidateDiaSySession_OutputMessage">
+    <wsdl:part name="parameters" element="tns:RevalidateDiaSySessionResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISca_ShutdownDiaSySession_InputMessage">
+    <wsdl:part name="parameters" element="tns:ShutdownDiaSySession" />
+  </wsdl:message>
+  <wsdl:message name="ISca_ShutdownDiaSySession_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ShutdownDiaSySessionResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISca_GetProviders_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetProviders" />
+  </wsdl:message>
+  <wsdl:message name="ISca_GetProviders_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetProvidersResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISca_GetProviderGroups_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetProviderGroups" />
+  </wsdl:message>
+  <wsdl:message name="ISca_GetProviderGroups_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetProviderGroupsResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISca_GetWhiteList_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetWhiteList" />
+  </wsdl:message>
+  <wsdl:message name="ISca_GetWhiteList_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetWhiteListResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISca_CreateWhiteList_InputMessage">
+    <wsdl:part name="parameters" element="tns:CreateWhiteList" />
+  </wsdl:message>
+  <wsdl:message name="ISca_CreateWhiteList_OutputMessage">
+    <wsdl:part name="parameters" element="tns:CreateWhiteListResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISca_DeleteWhiteList_InputMessage">
+    <wsdl:part name="parameters" element="tns:DeleteWhiteList" />
+  </wsdl:message>
+  <wsdl:message name="ISca_DeleteWhiteList_OutputMessage">
+    <wsdl:part name="parameters" element="tns:DeleteWhiteListResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISca_GetPAWithBalanceAndTDs_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetPAWithBalanceAndTDs" />
+  </wsdl:message>
+  <wsdl:message name="ISca_GetPAWithBalanceAndTDs_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetPAWithBalanceAndTDsResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISca_GetShortNumbers_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetShortNumbers" />
+  </wsdl:message>
+  <wsdl:message name="ISca_GetShortNumbers_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetShortNumbersResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISca_CreateShortNumber_InputMessage">
+    <wsdl:part name="parameters" element="tns:CreateShortNumber" />
+  </wsdl:message>
+  <wsdl:message name="ISca_CreateShortNumber_OutputMessage">
+    <wsdl:part name="parameters" element="tns:CreateShortNumberResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISca_UpdateShortNumber_InputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateShortNumber" />
+  </wsdl:message>
+  <wsdl:message name="ISca_UpdateShortNumber_OutputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateShortNumberResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISca_DeleteShortNumber_InputMessage">
+    <wsdl:part name="parameters" element="tns:DeleteShortNumber" />
+  </wsdl:message>
+  <wsdl:message name="ISca_DeleteShortNumber_OutputMessage">
+    <wsdl:part name="parameters" element="tns:DeleteShortNumberResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISca_GetServiceNumbers_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetServiceNumbers" />
+  </wsdl:message>
+  <wsdl:message name="ISca_GetServiceNumbers_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetServiceNumbersResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISca_CreateTdService_InputMessage">
+    <wsdl:part name="parameters" element="tns:CreateTdService" />
+  </wsdl:message>
+  <wsdl:message name="ISca_CreateTdService_OutputMessage">
+    <wsdl:part name="parameters" element="tns:CreateTdServiceResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISca_DeleteTdService_InputMessage">
+    <wsdl:part name="parameters" element="tns:DeleteTdService" />
+  </wsdl:message>
+  <wsdl:message name="ISca_DeleteTdService_OutputMessage">
+    <wsdl:part name="parameters" element="tns:DeleteTdServiceResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISca_GetRdTariffPlans_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetRdTariffPlans" />
+  </wsdl:message>
+  <wsdl:message name="ISca_GetRdTariffPlans_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetRdTariffPlansResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISca_GetBalanceTemplates_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetBalanceTemplates" />
+  </wsdl:message>
+  <wsdl:message name="ISca_GetBalanceTemplates_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetBalanceTemplatesResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISca_GetBalanceTemplatesList_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetBalanceTemplatesList" />
+  </wsdl:message>
+  <wsdl:message name="ISca_GetBalanceTemplatesList_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetBalanceTemplatesListResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISca_GetPAAttributes_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetPAAttributes" />
+  </wsdl:message>
+  <wsdl:message name="ISca_GetPAAttributes_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetPAAttributesResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISca_CreatePaService_InputMessage">
+    <wsdl:part name="parameters" element="tns:CreatePaService" />
+  </wsdl:message>
+  <wsdl:message name="ISca_CreatePaService_OutputMessage">
+    <wsdl:part name="parameters" element="tns:CreatePaServiceResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISca_DeletePaService_InputMessage">
+    <wsdl:part name="parameters" element="tns:DeletePaService" />
+  </wsdl:message>
+  <wsdl:message name="ISca_DeletePaService_OutputMessage">
+    <wsdl:part name="parameters" element="tns:DeletePaServiceResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISca_GetActivities_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetActivities" />
+  </wsdl:message>
+  <wsdl:message name="ISca_GetActivities_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetActivitiesResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISca_CreateActivity_InputMessage">
+    <wsdl:part name="parameters" element="tns:CreateActivity" />
+  </wsdl:message>
+  <wsdl:message name="ISca_CreateActivity_OutputMessage">
+    <wsdl:part name="parameters" element="tns:CreateActivityResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISca_UpdateActivity_InputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateActivity" />
+  </wsdl:message>
+  <wsdl:message name="ISca_UpdateActivity_OutputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateActivityResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISca_DeleteActivity_InputMessage">
+    <wsdl:part name="parameters" element="tns:DeleteActivity" />
+  </wsdl:message>
+  <wsdl:message name="ISca_DeleteActivity_OutputMessage">
+    <wsdl:part name="parameters" element="tns:DeleteActivityResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISca_GetNotifMessages_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetNotifMessages" />
+  </wsdl:message>
+  <wsdl:message name="ISca_GetNotifMessages_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetNotifMessagesResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISca_GetBsReservations_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetBsReservations" />
+  </wsdl:message>
+  <wsdl:message name="ISca_GetBsReservations_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetBsReservationsResponse" />
+  </wsdl:message>
+  <wsdl:portType name="ISca">
+    <wsdl:operation name="CreateNotifMessage">
+      <wsdl:input wsaw:Action="http://schemas.sitels.ru/SCA/ISca/CreateNotifMessage" message="tns:ISca_CreateNotifMessage_InputMessage" />
+      <wsdl:output wsaw:Action="http://schemas.sitels.ru/SCA/ISca/CreateNotifMessageResponse" message="tns:ISca_CreateNotifMessage_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="DeleteNotifMessage">
+      <wsdl:input wsaw:Action="http://schemas.sitels.ru/SCA/ISca/DeleteNotifMessage" message="tns:ISca_DeleteNotifMessage_InputMessage" />
+      <wsdl:output wsaw:Action="http://schemas.sitels.ru/SCA/ISca/DeleteNotifMessageResponse" message="tns:ISca_DeleteNotifMessage_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdateNotifMessage">
+      <wsdl:input wsaw:Action="http://schemas.sitels.ru/SCA/ISca/UpdateNotifMessage" message="tns:ISca_UpdateNotifMessage_InputMessage" />
+      <wsdl:output wsaw:Action="http://schemas.sitels.ru/SCA/ISca/UpdateNotifMessageResponse" message="tns:ISca_UpdateNotifMessage_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="CreateNotifRulePattern">
+      <wsdl:input wsaw:Action="http://schemas.sitels.ru/SCA/ISca/CreateNotifRulePattern" message="tns:ISca_CreateNotifRulePattern_InputMessage" />
+      <wsdl:output wsaw:Action="http://schemas.sitels.ru/SCA/ISca/CreateNotifRulePatternResponse" message="tns:ISca_CreateNotifRulePattern_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="DeleteNotifRulePattern">
+      <wsdl:input wsaw:Action="http://schemas.sitels.ru/SCA/ISca/DeleteNotifRulePattern" message="tns:ISca_DeleteNotifRulePattern_InputMessage" />
+      <wsdl:output wsaw:Action="http://schemas.sitels.ru/SCA/ISca/DeleteNotifRulePatternResponse" message="tns:ISca_DeleteNotifRulePattern_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdateNotifRulePattern">
+      <wsdl:input wsaw:Action="http://schemas.sitels.ru/SCA/ISca/UpdateNotifRulePattern" message="tns:ISca_UpdateNotifRulePattern_InputMessage" />
+      <wsdl:output wsaw:Action="http://schemas.sitels.ru/SCA/ISca/UpdateNotifRulePatternResponse" message="tns:ISca_UpdateNotifRulePattern_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="CreateBlackListTd">
+      <wsdl:input wsaw:Action="http://schemas.sitels.ru/SCA/ISca/CreateBlackListTd" message="tns:ISca_CreateBlackListTd_InputMessage" />
+      <wsdl:output wsaw:Action="http://schemas.sitels.ru/SCA/ISca/CreateBlackListTdResponse" message="tns:ISca_CreateBlackListTd_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="DeleteBlackListTd">
+      <wsdl:input wsaw:Action="http://schemas.sitels.ru/SCA/ISca/DeleteBlackListTd" message="tns:ISca_DeleteBlackListTd_InputMessage" />
+      <wsdl:output wsaw:Action="http://schemas.sitels.ru/SCA/ISca/DeleteBlackListTdResponse" message="tns:ISca_DeleteBlackListTd_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="CreateNotifDeliveryRule">
+      <wsdl:input wsaw:Action="http://schemas.sitels.ru/SCA/ISca/CreateNotifDeliveryRule" message="tns:ISca_CreateNotifDeliveryRule_InputMessage" />
+      <wsdl:output wsaw:Action="http://schemas.sitels.ru/SCA/ISca/CreateNotifDeliveryRuleResponse" message="tns:ISca_CreateNotifDeliveryRule_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdateNotifDeliveryRule">
+      <wsdl:input wsaw:Action="http://schemas.sitels.ru/SCA/ISca/UpdateNotifDeliveryRule" message="tns:ISca_UpdateNotifDeliveryRule_InputMessage" />
+      <wsdl:output wsaw:Action="http://schemas.sitels.ru/SCA/ISca/UpdateNotifDeliveryRuleResponse" message="tns:ISca_UpdateNotifDeliveryRule_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="DeleteNotifDeliveryRule">
+      <wsdl:input wsaw:Action="http://schemas.sitels.ru/SCA/ISca/DeleteNotifDeliveryRule" message="tns:ISca_DeleteNotifDeliveryRule_InputMessage" />
+      <wsdl:output wsaw:Action="http://schemas.sitels.ru/SCA/ISca/DeleteNotifDeliveryRuleResponse" message="tns:ISca_DeleteNotifDeliveryRule_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="CreateNotifAnnouncement">
+      <wsdl:input wsaw:Action="http://schemas.sitels.ru/SCA/ISca/CreateNotifAnnouncement" message="tns:ISca_CreateNotifAnnouncement_InputMessage" />
+      <wsdl:output wsaw:Action="http://schemas.sitels.ru/SCA/ISca/CreateNotifAnnouncementResponse" message="tns:ISca_CreateNotifAnnouncement_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdateNotifAnnouncement">
+      <wsdl:input wsaw:Action="http://schemas.sitels.ru/SCA/ISca/UpdateNotifAnnouncement" message="tns:ISca_UpdateNotifAnnouncement_InputMessage" />
+      <wsdl:output wsaw:Action="http://schemas.sitels.ru/SCA/ISca/UpdateNotifAnnouncementResponse" message="tns:ISca_UpdateNotifAnnouncement_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="DeleteNotifAnnouncement">
+      <wsdl:input wsaw:Action="http://schemas.sitels.ru/SCA/ISca/DeleteNotifAnnouncement" message="tns:ISca_DeleteNotifAnnouncement_InputMessage" />
+      <wsdl:output wsaw:Action="http://schemas.sitels.ru/SCA/ISca/DeleteNotifAnnouncementResponse" message="tns:ISca_DeleteNotifAnnouncement_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="CreateNotifTurnOffRule">
+      <wsdl:input wsaw:Action="http://schemas.sitels.ru/SCA/ISca/CreateNotifTurnOffRule" message="tns:ISca_CreateNotifTurnOffRule_InputMessage" />
+      <wsdl:output wsaw:Action="http://schemas.sitels.ru/SCA/ISca/CreateNotifTurnOffRuleResponse" message="tns:ISca_CreateNotifTurnOffRule_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdateNotifTurnOffRule">
+      <wsdl:input wsaw:Action="http://schemas.sitels.ru/SCA/ISca/UpdateNotifTurnOffRule" message="tns:ISca_UpdateNotifTurnOffRule_InputMessage" />
+      <wsdl:output wsaw:Action="http://schemas.sitels.ru/SCA/ISca/UpdateNotifTurnOffRuleResponse" message="tns:ISca_UpdateNotifTurnOffRule_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="DeleteNotifTurnOffRule">
+      <wsdl:input wsaw:Action="http://schemas.sitels.ru/SCA/ISca/DeleteNotifTurnOffRule" message="tns:ISca_DeleteNotifTurnOffRule_InputMessage" />
+      <wsdl:output wsaw:Action="http://schemas.sitels.ru/SCA/ISca/DeleteNotifTurnOffRuleResponse" message="tns:ISca_DeleteNotifTurnOffRule_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdateNotifConfig">
+      <wsdl:input wsaw:Action="http://schemas.sitels.ru/SCA/ISca/UpdateNotifConfig" message="tns:ISca_UpdateNotifConfig_InputMessage" />
+      <wsdl:output wsaw:Action="http://schemas.sitels.ru/SCA/ISca/UpdateNotifConfigResponse" message="tns:ISca_UpdateNotifConfig_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="RecalculateBalanceProfile">
+      <wsdl:input wsaw:Action="http://schemas.sitels.ru/SCA/ISca/RecalculateBalanceProfile" message="tns:ISca_RecalculateBalanceProfile_InputMessage" />
+      <wsdl:output wsaw:Action="http://schemas.sitels.ru/SCA/ISca/RecalculateBalanceProfileResponse" message="tns:ISca_RecalculateBalanceProfile_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="NotifRdCounterThresholds">
+      <wsdl:input wsaw:Action="http://schemas.sitels.ru/SCA/ISca/NotifRdCounterThresholds" message="tns:ISca_NotifRdCounterThresholds_InputMessage" />
+      <wsdl:output wsaw:Action="http://schemas.sitels.ru/SCA/ISca/NotifRdCounterThresholdsResponse" message="tns:ISca_NotifRdCounterThresholds_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="CreateServiceNumberParams">
+      <wsdl:input wsaw:Action="http://schemas.sitels.ru/SCA/ISca/CreateServiceNumberParams" message="tns:ISca_CreateServiceNumberParams_InputMessage" />
+      <wsdl:output wsaw:Action="http://schemas.sitels.ru/SCA/ISca/CreateServiceNumberParamsResponse" message="tns:ISca_CreateServiceNumberParams_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdateServiceNumberParams">
+      <wsdl:input wsaw:Action="http://schemas.sitels.ru/SCA/ISca/UpdateServiceNumberParams" message="tns:ISca_UpdateServiceNumberParams_InputMessage" />
+      <wsdl:output wsaw:Action="http://schemas.sitels.ru/SCA/ISca/UpdateServiceNumberParamsResponse" message="tns:ISca_UpdateServiceNumberParams_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="DeleteServiceNumberParams">
+      <wsdl:input wsaw:Action="http://schemas.sitels.ru/SCA/ISca/DeleteServiceNumberParams" message="tns:ISca_DeleteServiceNumberParams_InputMessage" />
+      <wsdl:output wsaw:Action="http://schemas.sitels.ru/SCA/ISca/DeleteServiceNumberParamsResponse" message="tns:ISca_DeleteServiceNumberParams_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetServiceNumbersParams">
+      <wsdl:input wsaw:Action="http://schemas.sitels.ru/SCA/ISca/GetServiceNumbersParams" message="tns:ISca_GetServiceNumbersParams_InputMessage" />
+      <wsdl:output wsaw:Action="http://schemas.sitels.ru/SCA/ISca/GetServiceNumbersParamsResponse" message="tns:ISca_GetServiceNumbersParams_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetSyncBalanceTemplateDetail">
+      <wsdl:input wsaw:Action="http://schemas.sitels.ru/SCA/ISca/GetSyncBalanceTemplateDetail" message="tns:ISca_GetSyncBalanceTemplateDetail_InputMessage" />
+      <wsdl:output wsaw:Action="http://schemas.sitels.ru/SCA/ISca/GetSyncBalanceTemplateDetailResponse" message="tns:ISca_GetSyncBalanceTemplateDetail_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="DeleteSyncBalanceTemplateDetail">
+      <wsdl:input wsaw:Action="http://schemas.sitels.ru/SCA/ISca/DeleteSyncBalanceTemplateDetail" message="tns:ISca_DeleteSyncBalanceTemplateDetail_InputMessage" />
+      <wsdl:output wsaw:Action="http://schemas.sitels.ru/SCA/ISca/DeleteSyncBalanceTemplateDetailResponse" message="tns:ISca_DeleteSyncBalanceTemplateDetail_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="DeleteBsReservations">
+      <wsdl:input wsaw:Action="http://schemas.sitels.ru/SCA/ISca/DeleteBsReservations" message="tns:ISca_DeleteBsReservations_InputMessage" />
+      <wsdl:output wsaw:Action="http://schemas.sitels.ru/SCA/ISca/DeleteBsReservationsResponse" message="tns:ISca_DeleteBsReservations_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetFaCodes">
+      <wsdl:input wsaw:Action="http://schemas.sitels.ru/SCA/ISca/GetFaCodes" message="tns:ISca_GetFaCodes_InputMessage" />
+      <wsdl:output wsaw:Action="http://schemas.sitels.ru/SCA/ISca/GetFaCodesResponse" message="tns:ISca_GetFaCodes_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetNotifications">
+      <wsdl:input wsaw:Action="http://schemas.sitels.ru/SCA/ISca/GetNotifications" message="tns:ISca_GetNotifications_InputMessage" />
+      <wsdl:output wsaw:Action="http://schemas.sitels.ru/SCA/ISca/GetNotificationsResponse" message="tns:ISca_GetNotifications_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetTDAttributes">
+      <wsdl:input wsaw:Action="http://schemas.sitels.ru/SCA/ISca/GetTDAttributes" message="tns:ISca_GetTDAttributes_InputMessage" />
+      <wsdl:output wsaw:Action="http://schemas.sitels.ru/SCA/ISca/GetTDAttributesResponse" message="tns:ISca_GetTDAttributes_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetActivityActions">
+      <wsdl:input wsaw:Action="http://schemas.sitels.ru/SCA/ISca/GetActivityActions" message="tns:ISca_GetActivityActions_InputMessage" />
+      <wsdl:output wsaw:Action="http://schemas.sitels.ru/SCA/ISca/GetActivityActionsResponse" message="tns:ISca_GetActivityActions_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetFATimeIntervals">
+      <wsdl:input wsaw:Action="http://schemas.sitels.ru/SCA/ISca/GetFATimeIntervals" message="tns:ISca_GetFATimeIntervals_InputMessage" />
+      <wsdl:output wsaw:Action="http://schemas.sitels.ru/SCA/ISca/GetFATimeIntervalsResponse" message="tns:ISca_GetFATimeIntervals_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetVlrs">
+      <wsdl:input wsaw:Action="http://schemas.sitels.ru/SCA/ISca/GetVlrs" message="tns:ISca_GetVlrs_InputMessage" />
+      <wsdl:output wsaw:Action="http://schemas.sitels.ru/SCA/ISca/GetVlrsResponse" message="tns:ISca_GetVlrs_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="CreateVlr">
+      <wsdl:input wsaw:Action="http://schemas.sitels.ru/SCA/ISca/CreateVlr" message="tns:ISca_CreateVlr_InputMessage" />
+      <wsdl:output wsaw:Action="http://schemas.sitels.ru/SCA/ISca/CreateVlrResponse" message="tns:ISca_CreateVlr_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdateVlr">
+      <wsdl:input wsaw:Action="http://schemas.sitels.ru/SCA/ISca/UpdateVlr" message="tns:ISca_UpdateVlr_InputMessage" />
+      <wsdl:output wsaw:Action="http://schemas.sitels.ru/SCA/ISca/UpdateVlrResponse" message="tns:ISca_UpdateVlr_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="DeleteVlr">
+      <wsdl:input wsaw:Action="http://schemas.sitels.ru/SCA/ISca/DeleteVlr" message="tns:ISca_DeleteVlr_InputMessage" />
+      <wsdl:output wsaw:Action="http://schemas.sitels.ru/SCA/ISca/DeleteVlrResponse" message="tns:ISca_DeleteVlr_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="TestNotifText">
+      <wsdl:input wsaw:Action="http://schemas.sitels.ru/SCA/ISca/TestNotifText" message="tns:ISca_TestNotifText_InputMessage" />
+      <wsdl:output wsaw:Action="http://schemas.sitels.ru/SCA/ISca/TestNotifTextResponse" message="tns:ISca_TestNotifText_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetActivityGroups">
+      <wsdl:input wsaw:Action="http://schemas.sitels.ru/SCA/ISca/GetActivityGroups" message="tns:ISca_GetActivityGroups_InputMessage" />
+      <wsdl:output wsaw:Action="http://schemas.sitels.ru/SCA/ISca/GetActivityGroupsResponse" message="tns:ISca_GetActivityGroups_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="CreateActivityGroup">
+      <wsdl:input wsaw:Action="http://schemas.sitels.ru/SCA/ISca/CreateActivityGroup" message="tns:ISca_CreateActivityGroup_InputMessage" />
+      <wsdl:output wsaw:Action="http://schemas.sitels.ru/SCA/ISca/CreateActivityGroupResponse" message="tns:ISca_CreateActivityGroup_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdateActivityGroup">
+      <wsdl:input wsaw:Action="http://schemas.sitels.ru/SCA/ISca/UpdateActivityGroup" message="tns:ISca_UpdateActivityGroup_InputMessage" />
+      <wsdl:output wsaw:Action="http://schemas.sitels.ru/SCA/ISca/UpdateActivityGroupResponse" message="tns:ISca_UpdateActivityGroup_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="DeleteActivityGroup">
+      <wsdl:input wsaw:Action="http://schemas.sitels.ru/SCA/ISca/DeleteActivityGroup" message="tns:ISca_DeleteActivityGroup_InputMessage" />
+      <wsdl:output wsaw:Action="http://schemas.sitels.ru/SCA/ISca/DeleteActivityGroupResponse" message="tns:ISca_DeleteActivityGroup_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetWhiteListTd">
+      <wsdl:input wsaw:Action="http://schemas.sitels.ru/SCA/ISca/GetWhiteListTd" message="tns:ISca_GetWhiteListTd_InputMessage" />
+      <wsdl:output wsaw:Action="http://schemas.sitels.ru/SCA/ISca/GetWhiteListTdResponse" message="tns:ISca_GetWhiteListTd_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="CreateWhiteListTd">
+      <wsdl:input wsaw:Action="http://schemas.sitels.ru/SCA/ISca/CreateWhiteListTd" message="tns:ISca_CreateWhiteListTd_InputMessage" />
+      <wsdl:output wsaw:Action="http://schemas.sitels.ru/SCA/ISca/CreateWhiteListTdResponse" message="tns:ISca_CreateWhiteListTd_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="DeleteWhiteListTd">
+      <wsdl:input wsaw:Action="http://schemas.sitels.ru/SCA/ISca/DeleteWhiteListTd" message="tns:ISca_DeleteWhiteListTd_InputMessage" />
+      <wsdl:output wsaw:Action="http://schemas.sitels.ru/SCA/ISca/DeleteWhiteListTdResponse" message="tns:ISca_DeleteWhiteListTd_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetGprsStartData">
+      <wsdl:input wsaw:Action="http://schemas.sitels.ru/SCA/ISca/GetGprsStartData" message="tns:ISca_GetGprsStartData_InputMessage" />
+      <wsdl:output wsaw:Action="http://schemas.sitels.ru/SCA/ISca/GetGprsStartDataResponse" message="tns:ISca_GetGprsStartData_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetBlackListTd">
+      <wsdl:input wsaw:Action="http://schemas.sitels.ru/SCA/ISca/GetBlackListTd" message="tns:ISca_GetBlackListTd_InputMessage" />
+      <wsdl:output wsaw:Action="http://schemas.sitels.ru/SCA/ISca/GetBlackListTdResponse" message="tns:ISca_GetBlackListTd_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetCmrRecalcFactors">
+      <wsdl:input wsaw:Action="http://schemas.sitels.ru/SCA/ISca/GetCmrRecalcFactors" message="tns:ISca_GetCmrRecalcFactors_InputMessage" />
+      <wsdl:output wsaw:Action="http://schemas.sitels.ru/SCA/ISca/GetCmrRecalcFactorsResponse" message="tns:ISca_GetCmrRecalcFactors_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetNotifDeliveryRules">
+      <wsdl:input wsaw:Action="http://schemas.sitels.ru/SCA/ISca/GetNotifDeliveryRules" message="tns:ISca_GetNotifDeliveryRules_InputMessage" />
+      <wsdl:output wsaw:Action="http://schemas.sitels.ru/SCA/ISca/GetNotifDeliveryRulesResponse" message="tns:ISca_GetNotifDeliveryRules_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetNotifRulePatterns">
+      <wsdl:input wsaw:Action="http://schemas.sitels.ru/SCA/ISca/GetNotifRulePatterns" message="tns:ISca_GetNotifRulePatterns_InputMessage" />
+      <wsdl:output wsaw:Action="http://schemas.sitels.ru/SCA/ISca/GetNotifRulePatternsResponse" message="tns:ISca_GetNotifRulePatterns_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetNotifConfig">
+      <wsdl:input wsaw:Action="http://schemas.sitels.ru/SCA/ISca/GetNotifConfig" message="tns:ISca_GetNotifConfig_InputMessage" />
+      <wsdl:output wsaw:Action="http://schemas.sitels.ru/SCA/ISca/GetNotifConfigResponse" message="tns:ISca_GetNotifConfig_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="CreateServiceNumber">
+      <wsdl:input wsaw:Action="http://schemas.sitels.ru/SCA/ISca/CreateServiceNumber" message="tns:ISca_CreateServiceNumber_InputMessage" />
+      <wsdl:output wsaw:Action="http://schemas.sitels.ru/SCA/ISca/CreateServiceNumberResponse" message="tns:ISca_CreateServiceNumber_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdateServiceNumber">
+      <wsdl:input wsaw:Action="http://schemas.sitels.ru/SCA/ISca/UpdateServiceNumber" message="tns:ISca_UpdateServiceNumber_InputMessage" />
+      <wsdl:output wsaw:Action="http://schemas.sitels.ru/SCA/ISca/UpdateServiceNumberResponse" message="tns:ISca_UpdateServiceNumber_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="DeleteServiceNumber">
+      <wsdl:input wsaw:Action="http://schemas.sitels.ru/SCA/ISca/DeleteServiceNumber" message="tns:ISca_DeleteServiceNumber_InputMessage" />
+      <wsdl:output wsaw:Action="http://schemas.sitels.ru/SCA/ISca/DeleteServiceNumberResponse" message="tns:ISca_DeleteServiceNumber_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="CopyNotifTemplate">
+      <wsdl:input wsaw:Action="http://schemas.sitels.ru/SCA/ISca/CopyNotifTemplate" message="tns:ISca_CopyNotifTemplate_InputMessage" />
+      <wsdl:output wsaw:Action="http://schemas.sitels.ru/SCA/ISca/CopyNotifTemplateResponse" message="tns:ISca_CopyNotifTemplate_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetNotifParamOperators">
+      <wsdl:input wsaw:Action="http://schemas.sitels.ru/SCA/ISca/GetNotifParamOperators" message="tns:ISca_GetNotifParamOperators_InputMessage" />
+      <wsdl:output wsaw:Action="http://schemas.sitels.ru/SCA/ISca/GetNotifParamOperatorsResponse" message="tns:ISca_GetNotifParamOperators_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetNotifAnnouncements">
+      <wsdl:input wsaw:Action="http://schemas.sitels.ru/SCA/ISca/GetNotifAnnouncements" message="tns:ISca_GetNotifAnnouncements_InputMessage" />
+      <wsdl:output wsaw:Action="http://schemas.sitels.ru/SCA/ISca/GetNotifAnnouncementsResponse" message="tns:ISca_GetNotifAnnouncements_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetNotificationCauses">
+      <wsdl:input wsaw:Action="http://schemas.sitels.ru/SCA/ISca/GetNotificationCauses" message="tns:ISca_GetNotificationCauses_InputMessage" />
+      <wsdl:output wsaw:Action="http://schemas.sitels.ru/SCA/ISca/GetNotificationCausesResponse" message="tns:ISca_GetNotificationCauses_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="CreateNotificationCause">
+      <wsdl:input wsaw:Action="http://schemas.sitels.ru/SCA/ISca/CreateNotificationCause" message="tns:ISca_CreateNotificationCause_InputMessage" />
+      <wsdl:output wsaw:Action="http://schemas.sitels.ru/SCA/ISca/CreateNotificationCauseResponse" message="tns:ISca_CreateNotificationCause_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="DeleteNotificationCause">
+      <wsdl:input wsaw:Action="http://schemas.sitels.ru/SCA/ISca/DeleteNotificationCause" message="tns:ISca_DeleteNotificationCause_InputMessage" />
+      <wsdl:output wsaw:Action="http://schemas.sitels.ru/SCA/ISca/DeleteNotificationCauseResponse" message="tns:ISca_DeleteNotificationCause_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="CreateNotifMessagePattern">
+      <wsdl:input wsaw:Action="http://schemas.sitels.ru/SCA/ISca/CreateNotifMessagePattern" message="tns:ISca_CreateNotifMessagePattern_InputMessage" />
+      <wsdl:output wsaw:Action="http://schemas.sitels.ru/SCA/ISca/CreateNotifMessagePatternResponse" message="tns:ISca_CreateNotifMessagePattern_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdateNotifMessagePattern">
+      <wsdl:input wsaw:Action="http://schemas.sitels.ru/SCA/ISca/UpdateNotifMessagePattern" message="tns:ISca_UpdateNotifMessagePattern_InputMessage" />
+      <wsdl:output wsaw:Action="http://schemas.sitels.ru/SCA/ISca/UpdateNotifMessagePatternResponse" message="tns:ISca_UpdateNotifMessagePattern_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="DeleteNotifMessagePattern">
+      <wsdl:input wsaw:Action="http://schemas.sitels.ru/SCA/ISca/DeleteNotifMessagePattern" message="tns:ISca_DeleteNotifMessagePattern_InputMessage" />
+      <wsdl:output wsaw:Action="http://schemas.sitels.ru/SCA/ISca/DeleteNotifMessagePatternResponse" message="tns:ISca_DeleteNotifMessagePattern_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetNotifMessagePatterns">
+      <wsdl:input wsaw:Action="http://schemas.sitels.ru/SCA/ISca/GetNotifMessagePatterns" message="tns:ISca_GetNotifMessagePatterns_InputMessage" />
+      <wsdl:output wsaw:Action="http://schemas.sitels.ru/SCA/ISca/GetNotifMessagePatternsResponse" message="tns:ISca_GetNotifMessagePatterns_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="CreateFaCode">
+      <wsdl:input wsaw:Action="http://schemas.sitels.ru/SCA/ISca/CreateFaCode" message="tns:ISca_CreateFaCode_InputMessage" />
+      <wsdl:output wsaw:Action="http://schemas.sitels.ru/SCA/ISca/CreateFaCodeResponse" message="tns:ISca_CreateFaCode_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="DeleteFaCode">
+      <wsdl:input wsaw:Action="http://schemas.sitels.ru/SCA/ISca/DeleteFaCode" message="tns:ISca_DeleteFaCode_InputMessage" />
+      <wsdl:output wsaw:Action="http://schemas.sitels.ru/SCA/ISca/DeleteFaCodeResponse" message="tns:ISca_DeleteFaCode_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetNotifRdCounterCodesForTP">
+      <wsdl:input wsaw:Action="http://schemas.sitels.ru/SCA/ISca/GetNotifRdCounterCodesForTP" message="tns:ISca_GetNotifRdCounterCodesForTP_InputMessage" />
+      <wsdl:output wsaw:Action="http://schemas.sitels.ru/SCA/ISca/GetNotifRdCounterCodesForTPResponse" message="tns:ISca_GetNotifRdCounterCodesForTP_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="RefreshUserThresholdsData">
+      <wsdl:input wsaw:Action="http://schemas.sitels.ru/SCA/ISca/RefreshUserThresholdsData" message="tns:ISca_RefreshUserThresholdsData_InputMessage" />
+      <wsdl:output wsaw:Action="http://schemas.sitels.ru/SCA/ISca/RefreshUserThresholdsDataResponse" message="tns:ISca_RefreshUserThresholdsData_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdateGprsStartData">
+      <wsdl:input wsaw:Action="http://schemas.sitels.ru/SCA/ISca/UpdateGprsStartData" message="tns:ISca_UpdateGprsStartData_InputMessage" />
+      <wsdl:output wsaw:Action="http://schemas.sitels.ru/SCA/ISca/UpdateGprsStartDataResponse" message="tns:ISca_UpdateGprsStartData_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetNotifRdCounterThresholds">
+      <wsdl:input wsaw:Action="http://schemas.sitels.ru/SCA/ISca/GetNotifRdCounterThresholds" message="tns:ISca_GetNotifRdCounterThresholds_InputMessage" />
+      <wsdl:output wsaw:Action="http://schemas.sitels.ru/SCA/ISca/GetNotifRdCounterThresholdsResponse" message="tns:ISca_GetNotifRdCounterThresholds_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetNotifTurnOffRules">
+      <wsdl:input wsaw:Action="http://schemas.sitels.ru/SCA/ISca/GetNotifTurnOffRules" message="tns:ISca_GetNotifTurnOffRules_InputMessage" />
+      <wsdl:output wsaw:Action="http://schemas.sitels.ru/SCA/ISca/GetNotifTurnOffRulesResponse" message="tns:ISca_GetNotifTurnOffRules_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="CreateFATimeInterval">
+      <wsdl:input wsaw:Action="http://schemas.sitels.ru/SCA/ISca/CreateFATimeInterval" message="tns:ISca_CreateFATimeInterval_InputMessage" />
+      <wsdl:output wsaw:Action="http://schemas.sitels.ru/SCA/ISca/CreateFATimeIntervalResponse" message="tns:ISca_CreateFATimeInterval_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="DeleteFATimeInterval">
+      <wsdl:input wsaw:Action="http://schemas.sitels.ru/SCA/ISca/DeleteFATimeInterval" message="tns:ISca_DeleteFATimeInterval_InputMessage" />
+      <wsdl:output wsaw:Action="http://schemas.sitels.ru/SCA/ISca/DeleteFATimeIntervalResponse" message="tns:ISca_DeleteFATimeInterval_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetNotifRuleConditions">
+      <wsdl:input wsaw:Action="http://schemas.sitels.ru/SCA/ISca/GetNotifRuleConditions" message="tns:ISca_GetNotifRuleConditions_InputMessage" />
+      <wsdl:output wsaw:Action="http://schemas.sitels.ru/SCA/ISca/GetNotifRuleConditionsResponse" message="tns:ISca_GetNotifRuleConditions_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="CreateNotifRuleConditions">
+      <wsdl:input wsaw:Action="http://schemas.sitels.ru/SCA/ISca/CreateNotifRuleConditions" message="tns:ISca_CreateNotifRuleConditions_InputMessage" />
+      <wsdl:output wsaw:Action="http://schemas.sitels.ru/SCA/ISca/CreateNotifRuleConditionsResponse" message="tns:ISca_CreateNotifRuleConditions_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="SyncBalanceTemplate">
+      <wsdl:input wsaw:Action="http://schemas.sitels.ru/SCA/ISca/SyncBalanceTemplate" message="tns:ISca_SyncBalanceTemplate_InputMessage" />
+      <wsdl:output wsaw:Action="http://schemas.sitels.ru/SCA/ISca/SyncBalanceTemplateResponse" message="tns:ISca_SyncBalanceTemplate_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="DeleteReservation">
+      <wsdl:input wsaw:Action="http://schemas.sitels.ru/SCA/ISca/DeleteReservation" message="tns:ISca_DeleteReservation_InputMessage" />
+      <wsdl:output wsaw:Action="http://schemas.sitels.ru/SCA/ISca/DeleteReservationResponse" message="tns:ISca_DeleteReservation_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetBlackList">
+      <wsdl:input wsaw:Action="http://schemas.sitels.ru/SCA/ISca/GetBlackList" message="tns:ISca_GetBlackList_InputMessage" />
+      <wsdl:output wsaw:Action="http://schemas.sitels.ru/SCA/ISca/GetBlackListResponse" message="tns:ISca_GetBlackList_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="CreateActivityAction">
+      <wsdl:input wsaw:Action="http://schemas.sitels.ru/SCA/ISca/CreateActivityAction" message="tns:ISca_CreateActivityAction_InputMessage" />
+      <wsdl:output wsaw:Action="http://schemas.sitels.ru/SCA/ISca/CreateActivityActionResponse" message="tns:ISca_CreateActivityAction_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdateActivityAction">
+      <wsdl:input wsaw:Action="http://schemas.sitels.ru/SCA/ISca/UpdateActivityAction" message="tns:ISca_UpdateActivityAction_InputMessage" />
+      <wsdl:output wsaw:Action="http://schemas.sitels.ru/SCA/ISca/UpdateActivityActionResponse" message="tns:ISca_UpdateActivityAction_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="DeleteActivityAction">
+      <wsdl:input wsaw:Action="http://schemas.sitels.ru/SCA/ISca/DeleteActivityAction" message="tns:ISca_DeleteActivityAction_InputMessage" />
+      <wsdl:output wsaw:Action="http://schemas.sitels.ru/SCA/ISca/DeleteActivityActionResponse" message="tns:ISca_DeleteActivityAction_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="CreateNotification">
+      <wsdl:input wsaw:Action="http://schemas.sitels.ru/SCA/ISca/CreateNotification" message="tns:ISca_CreateNotification_InputMessage" />
+      <wsdl:output wsaw:Action="http://schemas.sitels.ru/SCA/ISca/CreateNotificationResponse" message="tns:ISca_CreateNotification_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdateNotification">
+      <wsdl:input wsaw:Action="http://schemas.sitels.ru/SCA/ISca/UpdateNotification" message="tns:ISca_UpdateNotification_InputMessage" />
+      <wsdl:output wsaw:Action="http://schemas.sitels.ru/SCA/ISca/UpdateNotificationResponse" message="tns:ISca_UpdateNotification_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="DeleteNotification">
+      <wsdl:input wsaw:Action="http://schemas.sitels.ru/SCA/ISca/DeleteNotification" message="tns:ISca_DeleteNotification_InputMessage" />
+      <wsdl:output wsaw:Action="http://schemas.sitels.ru/SCA/ISca/DeleteNotificationResponse" message="tns:ISca_DeleteNotification_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="CreateProvider">
+      <wsdl:input wsaw:Action="http://schemas.sitels.ru/SCA/ISca/CreateProvider" message="tns:ISca_CreateProvider_InputMessage" />
+      <wsdl:output wsaw:Action="http://schemas.sitels.ru/SCA/ISca/CreateProviderResponse" message="tns:ISca_CreateProvider_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdateProvider">
+      <wsdl:input wsaw:Action="http://schemas.sitels.ru/SCA/ISca/UpdateProvider" message="tns:ISca_UpdateProvider_InputMessage" />
+      <wsdl:output wsaw:Action="http://schemas.sitels.ru/SCA/ISca/UpdateProviderResponse" message="tns:ISca_UpdateProvider_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="DeleteProvider">
+      <wsdl:input wsaw:Action="http://schemas.sitels.ru/SCA/ISca/DeleteProvider" message="tns:ISca_DeleteProvider_InputMessage" />
+      <wsdl:output wsaw:Action="http://schemas.sitels.ru/SCA/ISca/DeleteProviderResponse" message="tns:ISca_DeleteProvider_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="CreateProviderGroup">
+      <wsdl:input wsaw:Action="http://schemas.sitels.ru/SCA/ISca/CreateProviderGroup" message="tns:ISca_CreateProviderGroup_InputMessage" />
+      <wsdl:output wsaw:Action="http://schemas.sitels.ru/SCA/ISca/CreateProviderGroupResponse" message="tns:ISca_CreateProviderGroup_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="DeleteProviderGroup">
+      <wsdl:input wsaw:Action="http://schemas.sitels.ru/SCA/ISca/DeleteProviderGroup" message="tns:ISca_DeleteProviderGroup_InputMessage" />
+      <wsdl:output wsaw:Action="http://schemas.sitels.ru/SCA/ISca/DeleteProviderGroupResponse" message="tns:ISca_DeleteProviderGroup_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="CreateBlackList">
+      <wsdl:input wsaw:Action="http://schemas.sitels.ru/SCA/ISca/CreateBlackList" message="tns:ISca_CreateBlackList_InputMessage" />
+      <wsdl:output wsaw:Action="http://schemas.sitels.ru/SCA/ISca/CreateBlackListResponse" message="tns:ISca_CreateBlackList_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="DeleteBlackList">
+      <wsdl:input wsaw:Action="http://schemas.sitels.ru/SCA/ISca/DeleteBlackList" message="tns:ISca_DeleteBlackList_InputMessage" />
+      <wsdl:output wsaw:Action="http://schemas.sitels.ru/SCA/ISca/DeleteBlackListResponse" message="tns:ISca_DeleteBlackList_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetPAs">
+      <wsdl:input wsaw:Action="http://schemas.sitels.ru/SCA/ISca/GetPAs" message="tns:ISca_GetPAs_InputMessage" />
+      <wsdl:output wsaw:Action="http://schemas.sitels.ru/SCA/ISca/GetPAsResponse" message="tns:ISca_GetPAs_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetTDs">
+      <wsdl:input wsaw:Action="http://schemas.sitels.ru/SCA/ISca/GetTDs" message="tns:ISca_GetTDs_InputMessage" />
+      <wsdl:output wsaw:Action="http://schemas.sitels.ru/SCA/ISca/GetTDsResponse" message="tns:ISca_GetTDs_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetCugs">
+      <wsdl:input wsaw:Action="http://schemas.sitels.ru/SCA/ISca/GetCugs" message="tns:ISca_GetCugs_InputMessage" />
+      <wsdl:output wsaw:Action="http://schemas.sitels.ru/SCA/ISca/GetCugsResponse" message="tns:ISca_GetCugs_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetFFNumbers">
+      <wsdl:input wsaw:Action="http://schemas.sitels.ru/SCA/ISca/GetFFNumbers" message="tns:ISca_GetFFNumbers_InputMessage" />
+      <wsdl:output wsaw:Action="http://schemas.sitels.ru/SCA/ISca/GetFFNumbersResponse" message="tns:ISca_GetFFNumbers_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetTariffPlans">
+      <wsdl:input wsaw:Action="http://schemas.sitels.ru/SCA/ISca/GetTariffPlans" message="tns:ISca_GetTariffPlans_InputMessage" />
+      <wsdl:output wsaw:Action="http://schemas.sitels.ru/SCA/ISca/GetTariffPlansResponse" message="tns:ISca_GetTariffPlans_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetServices">
+      <wsdl:input wsaw:Action="http://schemas.sitels.ru/SCA/ISca/GetServices" message="tns:ISca_GetServices_InputMessage" />
+      <wsdl:output wsaw:Action="http://schemas.sitels.ru/SCA/ISca/GetServicesResponse" message="tns:ISca_GetServices_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="CreateTD">
+      <wsdl:input wsaw:Action="http://schemas.sitels.ru/SCA/ISca/CreateTD" message="tns:ISca_CreateTD_InputMessage" />
+      <wsdl:output wsaw:Action="http://schemas.sitels.ru/SCA/ISca/CreateTDResponse" message="tns:ISca_CreateTD_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdateTD">
+      <wsdl:input wsaw:Action="http://schemas.sitels.ru/SCA/ISca/UpdateTD" message="tns:ISca_UpdateTD_InputMessage" />
+      <wsdl:output wsaw:Action="http://schemas.sitels.ru/SCA/ISca/UpdateTDResponse" message="tns:ISca_UpdateTD_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="DeleteTD">
+      <wsdl:input wsaw:Action="http://schemas.sitels.ru/SCA/ISca/DeleteTD" message="tns:ISca_DeleteTD_InputMessage" />
+      <wsdl:output wsaw:Action="http://schemas.sitels.ru/SCA/ISca/DeleteTDResponse" message="tns:ISca_DeleteTD_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="CreatePA">
+      <wsdl:input wsaw:Action="http://schemas.sitels.ru/SCA/ISca/CreatePA" message="tns:ISca_CreatePA_InputMessage" />
+      <wsdl:output wsaw:Action="http://schemas.sitels.ru/SCA/ISca/CreatePAResponse" message="tns:ISca_CreatePA_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdatePA">
+      <wsdl:input wsaw:Action="http://schemas.sitels.ru/SCA/ISca/UpdatePA" message="tns:ISca_UpdatePA_InputMessage" />
+      <wsdl:output wsaw:Action="http://schemas.sitels.ru/SCA/ISca/UpdatePAResponse" message="tns:ISca_UpdatePA_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="DeletePA">
+      <wsdl:input wsaw:Action="http://schemas.sitels.ru/SCA/ISca/DeletePA" message="tns:ISca_DeletePA_InputMessage" />
+      <wsdl:output wsaw:Action="http://schemas.sitels.ru/SCA/ISca/DeletePAResponse" message="tns:ISca_DeletePA_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="CreateCug">
+      <wsdl:input wsaw:Action="http://schemas.sitels.ru/SCA/ISca/CreateCug" message="tns:ISca_CreateCug_InputMessage" />
+      <wsdl:output wsaw:Action="http://schemas.sitels.ru/SCA/ISca/CreateCugResponse" message="tns:ISca_CreateCug_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdateCug">
+      <wsdl:input wsaw:Action="http://schemas.sitels.ru/SCA/ISca/UpdateCug" message="tns:ISca_UpdateCug_InputMessage" />
+      <wsdl:output wsaw:Action="http://schemas.sitels.ru/SCA/ISca/UpdateCugResponse" message="tns:ISca_UpdateCug_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="DeleteCug">
+      <wsdl:input wsaw:Action="http://schemas.sitels.ru/SCA/ISca/DeleteCug" message="tns:ISca_DeleteCug_InputMessage" />
+      <wsdl:output wsaw:Action="http://schemas.sitels.ru/SCA/ISca/DeleteCugResponse" message="tns:ISca_DeleteCug_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="CreateFFNumber">
+      <wsdl:input wsaw:Action="http://schemas.sitels.ru/SCA/ISca/CreateFFNumber" message="tns:ISca_CreateFFNumber_InputMessage" />
+      <wsdl:output wsaw:Action="http://schemas.sitels.ru/SCA/ISca/CreateFFNumberResponse" message="tns:ISca_CreateFFNumber_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdateFFNumber">
+      <wsdl:input wsaw:Action="http://schemas.sitels.ru/SCA/ISca/UpdateFFNumber" message="tns:ISca_UpdateFFNumber_InputMessage" />
+      <wsdl:output wsaw:Action="http://schemas.sitels.ru/SCA/ISca/UpdateFFNumberResponse" message="tns:ISca_UpdateFFNumber_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="DeleteFFNumber">
+      <wsdl:input wsaw:Action="http://schemas.sitels.ru/SCA/ISca/DeleteFFNumber" message="tns:ISca_DeleteFFNumber_InputMessage" />
+      <wsdl:output wsaw:Action="http://schemas.sitels.ru/SCA/ISca/DeleteFFNumberResponse" message="tns:ISca_DeleteFFNumber_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="CreateTariffPlan">
+      <wsdl:input wsaw:Action="http://schemas.sitels.ru/SCA/ISca/CreateTariffPlan" message="tns:ISca_CreateTariffPlan_InputMessage" />
+      <wsdl:output wsaw:Action="http://schemas.sitels.ru/SCA/ISca/CreateTariffPlanResponse" message="tns:ISca_CreateTariffPlan_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdateTariffPlan">
+      <wsdl:input wsaw:Action="http://schemas.sitels.ru/SCA/ISca/UpdateTariffPlan" message="tns:ISca_UpdateTariffPlan_InputMessage" />
+      <wsdl:output wsaw:Action="http://schemas.sitels.ru/SCA/ISca/UpdateTariffPlanResponse" message="tns:ISca_UpdateTariffPlan_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="DeleteTariffPlan">
+      <wsdl:input wsaw:Action="http://schemas.sitels.ru/SCA/ISca/DeleteTariffPlan" message="tns:ISca_DeleteTariffPlan_InputMessage" />
+      <wsdl:output wsaw:Action="http://schemas.sitels.ru/SCA/ISca/DeleteTariffPlanResponse" message="tns:ISca_DeleteTariffPlan_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="CreateService">
+      <wsdl:input wsaw:Action="http://schemas.sitels.ru/SCA/ISca/CreateService" message="tns:ISca_CreateService_InputMessage" />
+      <wsdl:output wsaw:Action="http://schemas.sitels.ru/SCA/ISca/CreateServiceResponse" message="tns:ISca_CreateService_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdateService">
+      <wsdl:input wsaw:Action="http://schemas.sitels.ru/SCA/ISca/UpdateService" message="tns:ISca_UpdateService_InputMessage" />
+      <wsdl:output wsaw:Action="http://schemas.sitels.ru/SCA/ISca/UpdateServiceResponse" message="tns:ISca_UpdateService_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="DeleteService">
+      <wsdl:input wsaw:Action="http://schemas.sitels.ru/SCA/ISca/DeleteService" message="tns:ISca_DeleteService_InputMessage" />
+      <wsdl:output wsaw:Action="http://schemas.sitels.ru/SCA/ISca/DeleteServiceResponse" message="tns:ISca_DeleteService_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="CreateBalance">
+      <wsdl:input wsaw:Action="http://schemas.sitels.ru/SCA/ISca/CreateBalance" message="tns:ISca_CreateBalance_InputMessage" />
+      <wsdl:output wsaw:Action="http://schemas.sitels.ru/SCA/ISca/CreateBalanceResponse" message="tns:ISca_CreateBalance_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="DeleteBalance">
+      <wsdl:input wsaw:Action="http://schemas.sitels.ru/SCA/ISca/DeleteBalance" message="tns:ISca_DeleteBalance_InputMessage" />
+      <wsdl:output wsaw:Action="http://schemas.sitels.ru/SCA/ISca/DeleteBalanceResponse" message="tns:ISca_DeleteBalance_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdateBalance">
+      <wsdl:input wsaw:Action="http://schemas.sitels.ru/SCA/ISca/UpdateBalance" message="tns:ISca_UpdateBalance_InputMessage" />
+      <wsdl:output wsaw:Action="http://schemas.sitels.ru/SCA/ISca/UpdateBalanceResponse" message="tns:ISca_UpdateBalance_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetBalancesAndReservations">
+      <wsdl:input wsaw:Action="http://schemas.sitels.ru/SCA/ISca/GetBalancesAndReservations" message="tns:ISca_GetBalancesAndReservations_InputMessage" />
+      <wsdl:output wsaw:Action="http://schemas.sitels.ru/SCA/ISca/GetBalancesAndReservationsResponse" message="tns:ISca_GetBalancesAndReservations_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetCcReservations">
+      <wsdl:input wsaw:Action="http://schemas.sitels.ru/SCA/ISca/GetCcReservations" message="tns:ISca_GetCcReservations_InputMessage" />
+      <wsdl:output wsaw:Action="http://schemas.sitels.ru/SCA/ISca/GetCcReservationsResponse" message="tns:ISca_GetCcReservations_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetTimeShift">
+      <wsdl:input wsaw:Action="http://schemas.sitels.ru/SCA/ISca/GetTimeShift" message="tns:ISca_GetTimeShift_InputMessage" />
+      <wsdl:output wsaw:Action="http://schemas.sitels.ru/SCA/ISca/GetTimeShiftResponse" message="tns:ISca_GetTimeShift_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="CreateTdsCugs">
+      <wsdl:input wsaw:Action="http://schemas.sitels.ru/SCA/ISca/CreateTdsCugs" message="tns:ISca_CreateTdsCugs_InputMessage" />
+      <wsdl:output wsaw:Action="http://schemas.sitels.ru/SCA/ISca/CreateTdsCugsResponse" message="tns:ISca_CreateTdsCugs_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdateTdsCugs">
+      <wsdl:input wsaw:Action="http://schemas.sitels.ru/SCA/ISca/UpdateTdsCugs" message="tns:ISca_UpdateTdsCugs_InputMessage" />
+      <wsdl:output wsaw:Action="http://schemas.sitels.ru/SCA/ISca/UpdateTdsCugsResponse" message="tns:ISca_UpdateTdsCugs_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="DeleteTdsCugs">
+      <wsdl:input wsaw:Action="http://schemas.sitels.ru/SCA/ISca/DeleteTdsCugs" message="tns:ISca_DeleteTdsCugs_InputMessage" />
+      <wsdl:output wsaw:Action="http://schemas.sitels.ru/SCA/ISca/DeleteTdsCugsResponse" message="tns:ISca_DeleteTdsCugs_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetTdsCugs">
+      <wsdl:input wsaw:Action="http://schemas.sitels.ru/SCA/ISca/GetTdsCugs" message="tns:ISca_GetTdsCugs_InputMessage" />
+      <wsdl:output wsaw:Action="http://schemas.sitels.ru/SCA/ISca/GetTdsCugsResponse" message="tns:ISca_GetTdsCugs_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetLanguages">
+      <wsdl:input wsaw:Action="http://schemas.sitels.ru/SCA/ISca/GetLanguages" message="tns:ISca_GetLanguages_InputMessage" />
+      <wsdl:output wsaw:Action="http://schemas.sitels.ru/SCA/ISca/GetLanguagesResponse" message="tns:ISca_GetLanguages_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetPAAdminBlocks">
+      <wsdl:input wsaw:Action="http://schemas.sitels.ru/SCA/ISca/GetPAAdminBlocks" message="tns:ISca_GetPAAdminBlocks_InputMessage" />
+      <wsdl:output wsaw:Action="http://schemas.sitels.ru/SCA/ISca/GetPAAdminBlocksResponse" message="tns:ISca_GetPAAdminBlocks_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetDiaSySession">
+      <wsdl:input wsaw:Action="http://schemas.sitels.ru/SCA/ISca/GetDiaSySession" message="tns:ISca_GetDiaSySession_InputMessage" />
+      <wsdl:output wsaw:Action="http://schemas.sitels.ru/SCA/ISca/GetDiaSySessionResponse" message="tns:ISca_GetDiaSySession_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="RevalidateDiaSySession">
+      <wsdl:input wsaw:Action="http://schemas.sitels.ru/SCA/ISca/RevalidateDiaSySession" message="tns:ISca_RevalidateDiaSySession_InputMessage" />
+      <wsdl:output wsaw:Action="http://schemas.sitels.ru/SCA/ISca/RevalidateDiaSySessionResponse" message="tns:ISca_RevalidateDiaSySession_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ShutdownDiaSySession">
+      <wsdl:input wsaw:Action="http://schemas.sitels.ru/SCA/ISca/ShutdownDiaSySession" message="tns:ISca_ShutdownDiaSySession_InputMessage" />
+      <wsdl:output wsaw:Action="http://schemas.sitels.ru/SCA/ISca/ShutdownDiaSySessionResponse" message="tns:ISca_ShutdownDiaSySession_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetProviders">
+      <wsdl:input wsaw:Action="http://schemas.sitels.ru/SCA/ISca/GetProviders" message="tns:ISca_GetProviders_InputMessage" />
+      <wsdl:output wsaw:Action="http://schemas.sitels.ru/SCA/ISca/GetProvidersResponse" message="tns:ISca_GetProviders_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetProviderGroups">
+      <wsdl:input wsaw:Action="http://schemas.sitels.ru/SCA/ISca/GetProviderGroups" message="tns:ISca_GetProviderGroups_InputMessage" />
+      <wsdl:output wsaw:Action="http://schemas.sitels.ru/SCA/ISca/GetProviderGroupsResponse" message="tns:ISca_GetProviderGroups_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetWhiteList">
+      <wsdl:input wsaw:Action="http://schemas.sitels.ru/SCA/ISca/GetWhiteList" message="tns:ISca_GetWhiteList_InputMessage" />
+      <wsdl:output wsaw:Action="http://schemas.sitels.ru/SCA/ISca/GetWhiteListResponse" message="tns:ISca_GetWhiteList_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="CreateWhiteList">
+      <wsdl:input wsaw:Action="http://schemas.sitels.ru/SCA/ISca/CreateWhiteList" message="tns:ISca_CreateWhiteList_InputMessage" />
+      <wsdl:output wsaw:Action="http://schemas.sitels.ru/SCA/ISca/CreateWhiteListResponse" message="tns:ISca_CreateWhiteList_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="DeleteWhiteList">
+      <wsdl:input wsaw:Action="http://schemas.sitels.ru/SCA/ISca/DeleteWhiteList" message="tns:ISca_DeleteWhiteList_InputMessage" />
+      <wsdl:output wsaw:Action="http://schemas.sitels.ru/SCA/ISca/DeleteWhiteListResponse" message="tns:ISca_DeleteWhiteList_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetPAWithBalanceAndTDs">
+      <wsdl:input wsaw:Action="http://schemas.sitels.ru/SCA/ISca/GetPAWithBalanceAndTDs" message="tns:ISca_GetPAWithBalanceAndTDs_InputMessage" />
+      <wsdl:output wsaw:Action="http://schemas.sitels.ru/SCA/ISca/GetPAWithBalanceAndTDsResponse" message="tns:ISca_GetPAWithBalanceAndTDs_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetShortNumbers">
+      <wsdl:input wsaw:Action="http://schemas.sitels.ru/SCA/ISca/GetShortNumbers" message="tns:ISca_GetShortNumbers_InputMessage" />
+      <wsdl:output wsaw:Action="http://schemas.sitels.ru/SCA/ISca/GetShortNumbersResponse" message="tns:ISca_GetShortNumbers_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="CreateShortNumber">
+      <wsdl:input wsaw:Action="http://schemas.sitels.ru/SCA/ISca/CreateShortNumber" message="tns:ISca_CreateShortNumber_InputMessage" />
+      <wsdl:output wsaw:Action="http://schemas.sitels.ru/SCA/ISca/CreateShortNumberResponse" message="tns:ISca_CreateShortNumber_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdateShortNumber">
+      <wsdl:input wsaw:Action="http://schemas.sitels.ru/SCA/ISca/UpdateShortNumber" message="tns:ISca_UpdateShortNumber_InputMessage" />
+      <wsdl:output wsaw:Action="http://schemas.sitels.ru/SCA/ISca/UpdateShortNumberResponse" message="tns:ISca_UpdateShortNumber_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="DeleteShortNumber">
+      <wsdl:input wsaw:Action="http://schemas.sitels.ru/SCA/ISca/DeleteShortNumber" message="tns:ISca_DeleteShortNumber_InputMessage" />
+      <wsdl:output wsaw:Action="http://schemas.sitels.ru/SCA/ISca/DeleteShortNumberResponse" message="tns:ISca_DeleteShortNumber_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetServiceNumbers">
+      <wsdl:input wsaw:Action="http://schemas.sitels.ru/SCA/ISca/GetServiceNumbers" message="tns:ISca_GetServiceNumbers_InputMessage" />
+      <wsdl:output wsaw:Action="http://schemas.sitels.ru/SCA/ISca/GetServiceNumbersResponse" message="tns:ISca_GetServiceNumbers_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="CreateTdService">
+      <wsdl:input wsaw:Action="http://schemas.sitels.ru/SCA/ISca/CreateTdService" message="tns:ISca_CreateTdService_InputMessage" />
+      <wsdl:output wsaw:Action="http://schemas.sitels.ru/SCA/ISca/CreateTdServiceResponse" message="tns:ISca_CreateTdService_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="DeleteTdService">
+      <wsdl:input wsaw:Action="http://schemas.sitels.ru/SCA/ISca/DeleteTdService" message="tns:ISca_DeleteTdService_InputMessage" />
+      <wsdl:output wsaw:Action="http://schemas.sitels.ru/SCA/ISca/DeleteTdServiceResponse" message="tns:ISca_DeleteTdService_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetRdTariffPlans">
+      <wsdl:input wsaw:Action="http://schemas.sitels.ru/SCA/ISca/GetRdTariffPlans" message="tns:ISca_GetRdTariffPlans_InputMessage" />
+      <wsdl:output wsaw:Action="http://schemas.sitels.ru/SCA/ISca/GetRdTariffPlansResponse" message="tns:ISca_GetRdTariffPlans_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetBalanceTemplates">
+      <wsdl:input wsaw:Action="http://schemas.sitels.ru/SCA/ISca/GetBalanceTemplates" message="tns:ISca_GetBalanceTemplates_InputMessage" />
+      <wsdl:output wsaw:Action="http://schemas.sitels.ru/SCA/ISca/GetBalanceTemplatesResponse" message="tns:ISca_GetBalanceTemplates_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetBalanceTemplatesList">
+      <wsdl:input wsaw:Action="http://schemas.sitels.ru/SCA/ISca/GetBalanceTemplatesList" message="tns:ISca_GetBalanceTemplatesList_InputMessage" />
+      <wsdl:output wsaw:Action="http://schemas.sitels.ru/SCA/ISca/GetBalanceTemplatesListResponse" message="tns:ISca_GetBalanceTemplatesList_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetPAAttributes">
+      <wsdl:input wsaw:Action="http://schemas.sitels.ru/SCA/ISca/GetPAAttributes" message="tns:ISca_GetPAAttributes_InputMessage" />
+      <wsdl:output wsaw:Action="http://schemas.sitels.ru/SCA/ISca/GetPAAttributesResponse" message="tns:ISca_GetPAAttributes_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="CreatePaService">
+      <wsdl:input wsaw:Action="http://schemas.sitels.ru/SCA/ISca/CreatePaService" message="tns:ISca_CreatePaService_InputMessage" />
+      <wsdl:output wsaw:Action="http://schemas.sitels.ru/SCA/ISca/CreatePaServiceResponse" message="tns:ISca_CreatePaService_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="DeletePaService">
+      <wsdl:input wsaw:Action="http://schemas.sitels.ru/SCA/ISca/DeletePaService" message="tns:ISca_DeletePaService_InputMessage" />
+      <wsdl:output wsaw:Action="http://schemas.sitels.ru/SCA/ISca/DeletePaServiceResponse" message="tns:ISca_DeletePaService_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetActivities">
+      <wsdl:input wsaw:Action="http://schemas.sitels.ru/SCA/ISca/GetActivities" message="tns:ISca_GetActivities_InputMessage" />
+      <wsdl:output wsaw:Action="http://schemas.sitels.ru/SCA/ISca/GetActivitiesResponse" message="tns:ISca_GetActivities_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="CreateActivity">
+      <wsdl:input wsaw:Action="http://schemas.sitels.ru/SCA/ISca/CreateActivity" message="tns:ISca_CreateActivity_InputMessage" />
+      <wsdl:output wsaw:Action="http://schemas.sitels.ru/SCA/ISca/CreateActivityResponse" message="tns:ISca_CreateActivity_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdateActivity">
+      <wsdl:input wsaw:Action="http://schemas.sitels.ru/SCA/ISca/UpdateActivity" message="tns:ISca_UpdateActivity_InputMessage" />
+      <wsdl:output wsaw:Action="http://schemas.sitels.ru/SCA/ISca/UpdateActivityResponse" message="tns:ISca_UpdateActivity_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="DeleteActivity">
+      <wsdl:input wsaw:Action="http://schemas.sitels.ru/SCA/ISca/DeleteActivity" message="tns:ISca_DeleteActivity_InputMessage" />
+      <wsdl:output wsaw:Action="http://schemas.sitels.ru/SCA/ISca/DeleteActivityResponse" message="tns:ISca_DeleteActivity_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetNotifMessages">
+      <wsdl:input wsaw:Action="http://schemas.sitels.ru/SCA/ISca/GetNotifMessages" message="tns:ISca_GetNotifMessages_InputMessage" />
+      <wsdl:output wsaw:Action="http://schemas.sitels.ru/SCA/ISca/GetNotifMessagesResponse" message="tns:ISca_GetNotifMessages_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetBsReservations">
+      <wsdl:input wsaw:Action="http://schemas.sitels.ru/SCA/ISca/GetBsReservations" message="tns:ISca_GetBsReservations_InputMessage" />
+      <wsdl:output wsaw:Action="http://schemas.sitels.ru/SCA/ISca/GetBsReservationsResponse" message="tns:ISca_GetBsReservations_OutputMessage" />
+    </wsdl:operation>
+  </wsdl:portType>
+</wsdl:definitions>

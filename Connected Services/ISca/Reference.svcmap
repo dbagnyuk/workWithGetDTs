@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="b2f9ecea-910e-4c37-932c-df56f8976f5f" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
+  <ClientOptions>
+    <GenerateAsynchronousMethods>false</GenerateAsynchronousMethods>
+    <GenerateTaskBasedAsynchronousMethod>true</GenerateTaskBasedAsynchronousMethod>
+    <EnableDataBinding>true</EnableDataBinding>
+    <ExcludedTypes />
+    <ImportXmlTypes>false</ImportXmlTypes>
+    <GenerateInternalTypes>false</GenerateInternalTypes>
+    <GenerateMessageContracts>false</GenerateMessageContracts>
+    <NamespaceMappings />
+    <CollectionMappings />
+    <GenerateSerializableTypes>true</GenerateSerializableTypes>
+    <Serializer>Auto</Serializer>
+    <UseSerializerForFaults>true</UseSerializerForFaults>
+    <ReferenceAllAssemblies>true</ReferenceAllAssemblies>
+    <ReferencedAssemblies />
+    <ReferencedDataContractTypes />
+    <ServiceContractMappings />
+  </ClientOptions>
+  <MetadataSources>
+    <MetadataSource Address="http://msk-dev-foris:8106/SCA" Protocol="http" SourceId="1" />
+  </MetadataSources>
+  <Metadata>
+    <MetadataFile FileName="SCA.xsd" MetadataType="Schema" ID="394e345f-147b-46ab-a188-f6ba50275ea9" SourceId="1" SourceUrl="http://msk-dev-foris:8106/SCA?xsd=xsd1" />
+    <MetadataFile FileName="SCA1.xsd" MetadataType="Schema" ID="0cbbcc3e-42c6-471f-9f09-2467443ba744" SourceId="1" SourceUrl="http://msk-dev-foris:8106/SCA?xsd=xsd2" />
+    <MetadataFile FileName="SCA2.xsd" MetadataType="Schema" ID="d87e85cd-f0fc-4cdc-86d6-0c0d752871fc" SourceId="1" SourceUrl="http://msk-dev-foris:8106/SCA?xsd=xsd3" />
+    <MetadataFile FileName="SCA.wsdl" MetadataType="Wsdl" ID="df25540d-12ed-4353-b040-2550576cacb2" SourceId="1" SourceUrl="http://msk-dev-foris:8106/SCA?wsdl=wsdl0" />
+    <MetadataFile FileName="Object.wsdl" MetadataType="Wsdl" ID="04b745f7-d863-4f9e-8a5f-6c48c4ad660e" SourceId="1" SourceUrl="http://msk-dev-foris:8106/SCA" />
+    <MetadataFile FileName="SCA3.xsd" MetadataType="Schema" ID="4cb36fe6-5316-4bb6-b829-3c6ed15c7c17" SourceId="1" SourceUrl="http://msk-dev-foris:8106/SCA?xsd=xsd4" />
+    <MetadataFile FileName="SCA4.xsd" MetadataType="Schema" ID="0a7772ea-f882-47d0-a7f1-c63440479e05" SourceId="1" SourceUrl="http://msk-dev-foris:8106/SCA?xsd=xsd5" />
+    <MetadataFile FileName="SCA5.xsd" MetadataType="Schema" ID="42dd3f9b-47dc-419f-be78-c83d7ffb214c" SourceId="1" SourceUrl="http://msk-dev-foris:8106/SCA?xsd=xsd6" />
+    <MetadataFile FileName="SCA6.xsd" MetadataType="Schema" ID="6a99f82b-e69f-4f79-9674-e59048bf5d0f" SourceId="1" SourceUrl="http://msk-dev-foris:8106/SCA?xsd=xsd7" />
+    <MetadataFile FileName="SCA7.xsd" MetadataType="Schema" ID="5168f6e1-ca17-475b-a750-4ad6caa5d533" SourceId="1" SourceUrl="http://msk-dev-foris:8106/SCA?xsd=xsd0" />
+  </Metadata>
+  <Extensions>
+    <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />
+    <ExtensionFile FileName="configuration.svcinfo" Name="configuration.svcinfo" />
+  </Extensions>
+</ReferenceGroup>

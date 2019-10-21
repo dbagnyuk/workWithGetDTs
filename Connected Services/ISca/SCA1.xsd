@@ -1,0 +1,1039 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://schemas.datacontract.org/2004/07/NVision.See.Package.Wcf.Sca" elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/NVision.See.Package.Wcf.Sca" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import schemaLocation="http://msk-dev-foris:8106/SCA?xsd=xsd3" namespace="http://schemas.datacontract.org/2004/07/NVision.See.Package.Sca" />
+  <xs:import schemaLocation="http://msk-dev-foris:8106/SCA?xsd=xsd5" namespace="http://schemas.microsoft.com/2003/10/Serialization/Arrays" />
+  <xs:import schemaLocation="http://msk-dev-foris:8106/SCA?xsd=xsd6" namespace="http://schemas.datacontract.org/2004/07/NVision.See.DataTypes.Service.Irf" />
+  <xs:import schemaLocation="http://msk-dev-foris:8106/SCA?xsd=xsd4" namespace="http://schemas.datacontract.org/2004/07/NVision.See.DataTypes.Parlay" />
+  <xs:import schemaLocation="http://msk-dev-foris:8106/SCA?xsd=xsd7" namespace="http://schemas.datacontract.org/2004/07/System" />
+  <xs:complexType name="NotifMessageInputData">
+    <xs:sequence>
+      <xs:element xmlns:q1="http://schemas.datacontract.org/2004/07/NVision.See.Package.Sca" minOccurs="0" name="Message" nillable="true" type="q1:TpMessage" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="NotifMessageInputData" nillable="true" type="tns:NotifMessageInputData" />
+  <xs:complexType name="CreateNotifMessageOutput">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="MsgId" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="ResultCode" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="CreateNotifMessageOutput" nillable="true" type="tns:CreateNotifMessageOutput" />
+  <xs:complexType name="NotifRulePatternInputData">
+    <xs:sequence>
+      <xs:element xmlns:q2="http://schemas.datacontract.org/2004/07/NVision.See.Package.Sca" minOccurs="0" name="RulePattern" nillable="true" type="q2:TpRulePattern" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="NotifRulePatternInputData" nillable="true" type="tns:NotifRulePatternInputData" />
+  <xs:complexType name="CreateNotifRulePatternOutput">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="PatternId" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="ResultCode" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="CreateNotifRulePatternOutput" nillable="true" type="tns:CreateNotifRulePatternOutput" />
+  <xs:complexType name="BlackListTDInputData">
+    <xs:sequence>
+      <xs:element xmlns:q3="http://schemas.datacontract.org/2004/07/NVision.See.Package.Sca" minOccurs="0" name="BlTdNumber" nillable="true" type="q3:TpListTdNumber" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="BlackListTDInputData" nillable="true" type="tns:BlackListTDInputData" />
+  <xs:complexType name="NotifDeliveryRuleInputData">
+    <xs:sequence>
+      <xs:element xmlns:q4="http://schemas.datacontract.org/2004/07/NVision.See.Package.Sca" minOccurs="0" name="DeliveryRule" nillable="true" type="q4:TpDeliveryRule" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="NotifDeliveryRuleInputData" nillable="true" type="tns:NotifDeliveryRuleInputData" />
+  <xs:complexType name="CreateNotifDeliveryRuleOutput">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="DeliveryRuleId" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="ResultCode" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="CreateNotifDeliveryRuleOutput" nillable="true" type="tns:CreateNotifDeliveryRuleOutput" />
+  <xs:complexType name="CreateNotifAnnouncementOutput">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="AnnouncementId" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="ResultCode" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="CreateNotifAnnouncementOutput" nillable="true" type="tns:CreateNotifAnnouncementOutput" />
+  <xs:complexType name="NotifTurnOffRuleInputData">
+    <xs:sequence>
+      <xs:element xmlns:q5="http://schemas.datacontract.org/2004/07/NVision.See.Package.Sca" minOccurs="0" name="TurnOffRule" nillable="true" type="q5:TpTurnOffRule" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="NotifTurnOffRuleInputData" nillable="true" type="tns:NotifTurnOffRuleInputData" />
+  <xs:complexType name="CreateNotifTurnOffRuleOutput">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="ResultCode" type="xs:int" />
+      <xs:element xmlns:q6="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="TruleConditionIds" nillable="true" type="q6:ArrayOfint" />
+      <xs:element minOccurs="0" name="TruleId" nillable="true" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="CreateNotifTurnOffRuleOutput" nillable="true" type="tns:CreateNotifTurnOffRuleOutput" />
+  <xs:complexType name="UpdateNotifTurnOffRuleOutput">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="ResultCode" type="xs:int" />
+      <xs:element xmlns:q7="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="TruleConditionIds" nillable="true" type="q7:ArrayOfint" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="UpdateNotifTurnOffRuleOutput" nillable="true" type="tns:UpdateNotifTurnOffRuleOutput" />
+  <xs:complexType name="RecalculateBalanceProfileInput">
+    <xs:sequence>
+      <xs:element xmlns:q8="http://schemas.datacontract.org/2004/07/NVision.See.Package.Sca" minOccurs="0" name="BalanceInstanceUpdate" nillable="true" type="q8:TpBalanceInstanceUpdate" />
+      <xs:element minOccurs="0" name="DateOfAction" nillable="true" type="xs:dateTime" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="RecalculateBalanceProfileInput" nillable="true" type="tns:RecalculateBalanceProfileInput" />
+  <xs:complexType name="RecalculateBalanceProfileOutput">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="ErrorCode" type="xs:int" />
+      <xs:element minOccurs="0" name="ErrorSource" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ResultCode" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="RecalculateBalanceProfileOutput" nillable="true" type="tns:RecalculateBalanceProfileOutput" />
+  <xs:complexType name="NotifRdCounterThresholdsInput">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="NotificationCauseId" type="xs:unsignedInt" />
+      <xs:element minOccurs="0" name="NotificationId" type="xs:int" />
+      <xs:element xmlns:q9="http://schemas.datacontract.org/2004/07/NVision.See.Package.Sca" minOccurs="0" name="RdCounterThresholds" nillable="true" type="q9:ArrayOfTpRdCounterThreshold" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="NotifRdCounterThresholdsInput" nillable="true" type="tns:NotifRdCounterThresholdsInput" />
+  <xs:complexType name="CreateServiceNumberParamsOutput">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="ResultCode" type="xs:int" />
+      <xs:element minOccurs="0" name="ServiceNumberParamId" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="CreateServiceNumberParamsOutput" nillable="true" type="tns:CreateServiceNumberParamsOutput" />
+  <xs:complexType name="GetServiceNumbersParamsOutput">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="ResultCode" type="xs:int" />
+      <xs:element xmlns:q10="http://schemas.datacontract.org/2004/07/NVision.See.Package.Sca" minOccurs="0" name="ServiceNumberParams" nillable="true" type="q10:ArrayOfTpServiceNumberParam" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="GetServiceNumbersParamsOutput" nillable="true" type="tns:GetServiceNumbersParamsOutput" />
+  <xs:complexType name="SyncBalanceTemplateDetailOutput">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="ErrorSource" nillable="true" type="xs:string" />
+      <xs:element xmlns:q11="http://schemas.datacontract.org/2004/07/NVision.See.DataTypes.Service.Irf" minOccurs="0" name="Info" nillable="true" type="q11:SyncBalanceTemplateInfo" />
+      <xs:element minOccurs="0" name="Success" type="xs:boolean" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="SyncBalanceTemplateDetailOutput" nillable="true" type="tns:SyncBalanceTemplateDetailOutput" />
+  <xs:complexType name="DeleteBsReservationsInput">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="PaNumber" nillable="true" type="xs:long" />
+      <xs:element xmlns:q12="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="ReservationIds" nillable="true" type="q12:ArrayOflong" />
+      <xs:element minOccurs="0" name="TdId" nillable="true" type="xs:long" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="DeleteBsReservationsInput" nillable="true" type="tns:DeleteBsReservationsInput" />
+  <xs:complexType name="GetFaCodesInput">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="TdId" type="xs:long" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="GetFaCodesInput" nillable="true" type="tns:GetFaCodesInput" />
+  <xs:complexType name="GetFaCodesOutput">
+    <xs:sequence>
+      <xs:element xmlns:q13="http://schemas.datacontract.org/2004/07/NVision.See.Package.Sca" minOccurs="0" name="FaCodes" nillable="true" type="q13:ArrayOfTpFaC" />
+      <xs:element minOccurs="0" name="ResultCode" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="GetFaCodesOutput" nillable="true" type="tns:GetFaCodesOutput" />
+  <xs:complexType name="GetNotificationsInput">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="ConditionType" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="GroupNum" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="IsTemplate" nillable="true" type="xs:unsignedByte" />
+      <xs:element minOccurs="0" name="Name" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="NotifTemplateId" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="NotificationCauseIdMax" nillable="true" type="xs:unsignedInt" />
+      <xs:element minOccurs="0" name="NotificationCauseIdMin" nillable="true" type="xs:unsignedInt" />
+      <xs:element minOccurs="0" name="NotificationIdMax" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="NotificationIdMin" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="NotificationType" nillable="true" type="xs:byte" />
+      <xs:element xmlns:q14="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="ParamOperatorIds" nillable="true" type="q14:ArrayOfint" />
+      <xs:element minOccurs="0" name="Phase" nillable="true" type="xs:byte" />
+      <xs:element xmlns:q15="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="Values" nillable="true" type="q15:ArrayOfstring" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="GetNotificationsInput" nillable="true" type="tns:GetNotificationsInput" />
+  <xs:complexType name="GetNotificationsOutput">
+    <xs:sequence>
+      <xs:element xmlns:q16="http://schemas.datacontract.org/2004/07/NVision.See.Package.Sca" minOccurs="0" name="Notifications" nillable="true" type="q16:ArrayOfTpNotification" />
+      <xs:element minOccurs="0" name="ResultCode" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="GetNotificationsOutput" nillable="true" type="tns:GetNotificationsOutput" />
+  <xs:complexType name="GetTDAttributesOutput">
+    <xs:sequence>
+      <xs:element xmlns:q17="http://schemas.datacontract.org/2004/07/NVision.See.Package.Sca" minOccurs="0" name="AdminBlocks" nillable="true" type="q17:ArrayOfTpAdminBlock" />
+      <xs:element xmlns:q18="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="CugIds" nillable="true" type="q18:ArrayOfstring" />
+      <xs:element minOccurs="0" name="ResultCode" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="GetTDAttributesOutput" nillable="true" type="tns:GetTDAttributesOutput" />
+  <xs:complexType name="GetActivityActionsInput">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="ActivityGroupId" nillable="true" type="xs:unsignedInt" />
+      <xs:element minOccurs="0" name="ActivityIdMax" nillable="true" type="xs:unsignedShort" />
+      <xs:element minOccurs="0" name="ActivityIdMin" nillable="true" type="xs:unsignedShort" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="GetActivityActionsInput" nillable="true" type="tns:GetActivityActionsInput" />
+  <xs:complexType name="GetActivityActionsOutput">
+    <xs:sequence>
+      <xs:element xmlns:q19="http://schemas.datacontract.org/2004/07/NVision.See.Package.Sca" minOccurs="0" name="ActivityActions" nillable="true" type="q19:ArrayOfTpActivityAction" />
+      <xs:element minOccurs="0" name="ResultCode" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="GetActivityActionsOutput" nillable="true" type="tns:GetActivityActionsOutput" />
+  <xs:complexType name="GetFATimeIntervalsOutput">
+    <xs:sequence>
+      <xs:element xmlns:q20="http://schemas.datacontract.org/2004/07/NVision.See.Package.Sca" minOccurs="0" name="FaTimeIntervals" nillable="true" type="q20:ArrayOfTpFaTI" />
+      <xs:element minOccurs="0" name="ResultCode" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="GetFATimeIntervalsOutput" nillable="true" type="tns:GetFATimeIntervalsOutput" />
+  <xs:complexType name="GetVlrsOutput">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="ResultCode" type="xs:int" />
+      <xs:element xmlns:q21="http://schemas.datacontract.org/2004/07/NVision.See.Package.Sca" minOccurs="0" name="Vlrs" nillable="true" type="q21:ArrayOfTpVlr" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="GetVlrsOutput" nillable="true" type="tns:GetVlrsOutput" />
+  <xs:complexType name="PrepareMessageInputData">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Msisdn" nillable="true" type="xs:string" />
+      <xs:element xmlns:q22="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="PositionedValues" nillable="true" type="q22:ArrayOfstring" />
+      <xs:element minOccurs="0" name="Text" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="PrepareMessageInputData" nillable="true" type="tns:PrepareMessageInputData" />
+  <xs:complexType name="PrepareMessageOutputData">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="ResultCode" type="xs:int" />
+      <xs:element minOccurs="0" name="Text" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="PrepareMessageOutputData" nillable="true" type="tns:PrepareMessageOutputData" />
+  <xs:complexType name="GetActivityGroupsInput">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="ActivityGroupIdMax" nillable="true" type="xs:unsignedInt" />
+      <xs:element minOccurs="0" name="ActivityGroupIdMin" nillable="true" type="xs:unsignedInt" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="GetActivityGroupsInput" nillable="true" type="tns:GetActivityGroupsInput" />
+  <xs:complexType name="GetActivityGroupsOutput">
+    <xs:sequence>
+      <xs:element xmlns:q23="http://schemas.datacontract.org/2004/07/NVision.See.Package.Sca" minOccurs="0" name="ActivityGroups" nillable="true" type="q23:ArrayOfTpActivityGroup" />
+      <xs:element minOccurs="0" name="ResultCode" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="GetActivityGroupsOutput" nillable="true" type="tns:GetActivityGroupsOutput" />
+  <xs:complexType name="GetWhiteListTdInput">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="TdId" type="xs:long" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="GetWhiteListTdInput" nillable="true" type="tns:GetWhiteListTdInput" />
+  <xs:complexType name="GetWhiteListTdOutput">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="ResultCode" type="xs:int" />
+      <xs:element xmlns:q24="http://schemas.datacontract.org/2004/07/NVision.See.Package.Sca" minOccurs="0" name="WhiteListTdNumbers" nillable="true" type="q24:ArrayOfTpListTdNumber" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="GetWhiteListTdOutput" nillable="true" type="tns:GetWhiteListTdOutput" />
+  <xs:complexType name="GetGprsStartDataInput">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="ApnPattern" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Protocol" nillable="true" type="xs:unsignedByte" />
+      <xs:element minOccurs="0" name="RadioAccessTechnology" nillable="true" type="xs:unsignedByte" />
+      <xs:element minOccurs="0" name="RatingGroup" nillable="true" type="xs:unsignedInt" />
+      <xs:element minOccurs="0" name="ServiceId" nillable="true" type="xs:unsignedShort" />
+      <xs:element minOccurs="0" name="TariffPlanId" nillable="true" type="xs:unsignedInt" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="GetGprsStartDataInput" nillable="true" type="tns:GetGprsStartDataInput" />
+  <xs:complexType name="GetGprsStartDataOutput">
+    <xs:sequence>
+      <xs:element xmlns:q25="http://schemas.datacontract.org/2004/07/NVision.See.Package.Sca" minOccurs="0" name="GprsStartData" nillable="true" type="q25:ArrayOfTpGprsStartItem" />
+      <xs:element minOccurs="0" name="ResultCode" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="GetGprsStartDataOutput" nillable="true" type="tns:GetGprsStartDataOutput" />
+  <xs:complexType name="GetBlackListTdInput">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="TdId" type="xs:long" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="GetBlackListTdInput" nillable="true" type="tns:GetBlackListTdInput" />
+  <xs:complexType name="GetBlackListTdOutput">
+    <xs:sequence>
+      <xs:element xmlns:q26="http://schemas.datacontract.org/2004/07/NVision.See.Package.Sca" minOccurs="0" name="BlackListTdNumbers" nillable="true" type="q26:ArrayOfTpListTdNumber" />
+      <xs:element minOccurs="0" name="ResultCode" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="GetBlackListTdOutput" nillable="true" type="tns:GetBlackListTdOutput" />
+  <xs:complexType name="GetCrmRecalcFactorsInput">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="TdId" type="xs:long" />
+      <xs:element minOccurs="0" name="TemplateId" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="GetCrmRecalcFactorsInput" nillable="true" type="tns:GetCrmRecalcFactorsInput" />
+  <xs:complexType name="GetCrmRecalcFactorsOutput">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="ResultCode" type="xs:int" />
+      <xs:element xmlns:q27="http://schemas.datacontract.org/2004/07/NVision.See.Package.Sca" minOccurs="0" name="TpPeriodicalRecalculationFactor" nillable="true" type="q27:ArrayOfTpPeriodicalRecalculationFactor" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="GetCrmRecalcFactorsOutput" nillable="true" type="tns:GetCrmRecalcFactorsOutput" />
+  <xs:complexType name="GetNotifDeliveryRulesOutput">
+    <xs:sequence>
+      <xs:element xmlns:q28="http://schemas.datacontract.org/2004/07/NVision.See.Package.Sca" minOccurs="0" name="NotifDeliveryRules" nillable="true" type="q28:ArrayOfTpDeliveryRule" />
+      <xs:element minOccurs="0" name="ResultCode" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="GetNotifDeliveryRulesOutput" nillable="true" type="tns:GetNotifDeliveryRulesOutput" />
+  <xs:complexType name="GetNotifRulePatternInput">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="PatternId" nillable="true" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="GetNotifRulePatternInput" nillable="true" type="tns:GetNotifRulePatternInput" />
+  <xs:complexType name="GetNotifRulePatternOutput">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="ResultCode" type="xs:int" />
+      <xs:element xmlns:q29="http://schemas.datacontract.org/2004/07/NVision.See.Package.Sca" minOccurs="0" name="Rps" nillable="true" type="q29:ArrayOfTpRulePattern" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="GetNotifRulePatternOutput" nillable="true" type="tns:GetNotifRulePatternOutput" />
+  <xs:complexType name="GetNotifConfigOutput">
+    <xs:sequence>
+      <xs:element xmlns:q30="http://schemas.datacontract.org/2004/07/NVision.See.Package.Sca" minOccurs="0" name="ConfigParams" nillable="true" type="q30:ArrayOfTpConfigParam" />
+      <xs:element minOccurs="0" name="ResultCode" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="GetNotifConfigOutput" nillable="true" type="tns:GetNotifConfigOutput" />
+  <xs:complexType name="UpdateServiceNumberInput">
+    <xs:sequence>
+      <xs:element xmlns:q31="http://schemas.datacontract.org/2004/07/NVision.See.Package.Sca" minOccurs="0" name="Sn" nillable="true" type="q31:TpServiceNumber" />
+      <xs:element xmlns:q32="http://schemas.datacontract.org/2004/07/NVision.See.Package.Sca" minOccurs="0" name="SnNew" nillable="true" type="q32:TpServiceNumber" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="UpdateServiceNumberInput" nillable="true" type="tns:UpdateServiceNumberInput" />
+  <xs:complexType name="UpdateServiceNumberOutput">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="ResultCode" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="UpdateServiceNumberOutput" nillable="true" type="tns:UpdateServiceNumberOutput" />
+  <xs:complexType name="DeleteServiceNumberInput">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="ActivityId" type="xs:unsignedShort" />
+      <xs:element minOccurs="0" name="ServiceNumberFrom" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ServiceNumberTo" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="SrvGroupId" type="xs:unsignedInt" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="DeleteServiceNumberInput" nillable="true" type="tns:DeleteServiceNumberInput" />
+  <xs:complexType name="CopyNotifTemplateInput">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="CreateTemplate" type="xs:unsignedByte" />
+      <xs:element minOccurs="0" name="Name" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="NotificationId" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="CopyNotifTemplateInput" nillable="true" type="tns:CopyNotifTemplateInput" />
+  <xs:complexType name="CopyNotifTemplateOutput">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="NotifTemplateId" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="NotificationId" type="xs:int" />
+      <xs:element minOccurs="0" name="ResultCode" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="CopyNotifTemplateOutput" nillable="true" type="tns:CopyNotifTemplateOutput" />
+  <xs:complexType name="GetNotifParamOperatorsOutput">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="ResultCode" type="xs:int" />
+      <xs:element xmlns:q33="http://schemas.datacontract.org/2004/07/NVision.See.Package.Sca" minOccurs="0" name="TpParamOperators" nillable="true" type="q33:ArrayOfTpParamOperator" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="GetNotifParamOperatorsOutput" nillable="true" type="tns:GetNotifParamOperatorsOutput" />
+  <xs:complexType name="GetNotifAnnouncementsOutput">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="ResultCode" type="xs:int" />
+      <xs:element xmlns:q34="http://schemas.datacontract.org/2004/07/NVision.See.Package.Sca" minOccurs="0" name="TpAnnouncements" nillable="true" type="q34:ArrayOfTpAnnouncement" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="GetNotifAnnouncementsOutput" nillable="true" type="tns:GetNotifAnnouncementsOutput" />
+  <xs:complexType name="GetNotificationCausesOutput">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="ResultCode" type="xs:int" />
+      <xs:element xmlns:q35="http://schemas.datacontract.org/2004/07/NVision.See.Package.Sca" minOccurs="0" name="TpNotificationCauses" nillable="true" type="q35:ArrayOfTpNotificationCause" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="GetNotificationCausesOutput" nillable="true" type="tns:GetNotificationCausesOutput" />
+  <xs:complexType name="CreateNotificationCauseInput">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Description" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="NotificationCauseId" type="xs:unsignedInt" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="CreateNotificationCauseInput" nillable="true" type="tns:CreateNotificationCauseInput" />
+  <xs:complexType name="CreateNotifMessagePatternInput">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="EncodingType" nillable="true" type="xs:unsignedByte" />
+      <xs:element minOccurs="0" name="LangId" nillable="true" type="xs:unsignedByte" />
+      <xs:element minOccurs="0" name="MsgPatternId" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="Name" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Text" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="CreateNotifMessagePatternInput" nillable="true" type="tns:CreateNotifMessagePatternInput" />
+  <xs:complexType name="CreateNotifMessagePatternOutput">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="MsgPatternId" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="ResultCode" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="CreateNotifMessagePatternOutput" nillable="true" type="tns:CreateNotifMessagePatternOutput" />
+  <xs:complexType name="UpdateNotifMessagePatternInput">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="EncodingType" nillable="true" type="xs:unsignedByte" />
+      <xs:element minOccurs="0" name="LangId" nillable="true" type="xs:unsignedByte" />
+      <xs:element minOccurs="0" name="MsgPatternId" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="Name" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Text" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="UpdateNotifMessagePatternInput" nillable="true" type="tns:UpdateNotifMessagePatternInput" />
+  <xs:complexType name="DeleteNotifMessagePatternInput">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="EncodingType" nillable="true" type="xs:unsignedByte" />
+      <xs:element minOccurs="0" name="LangId" nillable="true" type="xs:unsignedByte" />
+      <xs:element minOccurs="0" name="MsgPatternId" nillable="true" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="DeleteNotifMessagePatternInput" nillable="true" type="tns:DeleteNotifMessagePatternInput" />
+  <xs:complexType name="DeleteNotifMessagePatternOutput">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="MsgId" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="NotificationId" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="ResultCode" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="DeleteNotifMessagePatternOutput" nillable="true" type="tns:DeleteNotifMessagePatternOutput" />
+  <xs:complexType name="GetNotifMessagePatternsInput">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="EncodingType" nillable="true" type="xs:unsignedByte" />
+      <xs:element minOccurs="0" name="LangId" nillable="true" type="xs:unsignedByte" />
+      <xs:element minOccurs="0" name="MsgPatternId" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="NamePattern" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="GetNotifMessagePatternsInput" nillable="true" type="tns:GetNotifMessagePatternsInput" />
+  <xs:complexType name="GetNotifMessagePatternsOutput">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="ResultCode" type="xs:int" />
+      <xs:element xmlns:q36="http://schemas.datacontract.org/2004/07/NVision.See.Package.Sca" minOccurs="0" name="TpMessagePatterns" nillable="true" type="q36:ArrayOfTpMessagePattern" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="GetNotifMessagePatternsOutput" nillable="true" type="tns:GetNotifMessagePatternsOutput" />
+  <xs:complexType name="CreateFaCodeInput">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="FaCode" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="TdId" type="xs:long" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="CreateFaCodeInput" nillable="true" type="tns:CreateFaCodeInput" />
+  <xs:complexType name="DeleteFaCodeInput">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="FaCode" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="TdId" type="xs:long" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="DeleteFaCodeInput" nillable="true" type="tns:DeleteFaCodeInput" />
+  <xs:complexType name="GetNotifRdCounterCodesForTPOutput">
+    <xs:sequence>
+      <xs:element xmlns:q37="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="CounterCodes" nillable="true" type="q37:ArrayOfstring" />
+      <xs:element minOccurs="0" name="ResultCode" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="GetNotifRdCounterCodesForTPOutput" nillable="true" type="tns:GetNotifRdCounterCodesForTPOutput" />
+  <xs:complexType name="UpdateGprsStartDataInput">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="GprsStartDataId" type="xs:int" />
+      <xs:element minOccurs="0" name="StatisticType" nillable="true" type="xs:unsignedByte" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="UpdateGprsStartDataInput" nillable="true" type="tns:UpdateGprsStartDataInput" />
+  <xs:complexType name="GetNotifRdCounterThresholdsInput">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="NotificationCauseId" type="xs:unsignedInt" />
+      <xs:element minOccurs="0" name="NotificationId" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="GetNotifRdCounterThresholdsInput" nillable="true" type="tns:GetNotifRdCounterThresholdsInput" />
+  <xs:complexType name="GetNotifRdCounterThresholdsOutput">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="ResultCode" type="xs:int" />
+      <xs:element xmlns:q38="http://schemas.datacontract.org/2004/07/NVision.See.Package.Sca" minOccurs="0" name="TpRdCounterThresholds" nillable="true" type="q38:ArrayOfTpRdCounterThreshold" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="GetNotifRdCounterThresholdsOutput" nillable="true" type="tns:GetNotifRdCounterThresholdsOutput" />
+  <xs:complexType name="GetNotifTurnOffRulesOutput">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="ResultCode" type="xs:int" />
+      <xs:element xmlns:q39="http://schemas.datacontract.org/2004/07/NVision.See.Package.Sca" minOccurs="0" name="TpTurnOffRules" nillable="true" type="q39:ArrayOfTpTurnOffRule" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="GetNotifTurnOffRulesOutput" nillable="true" type="tns:GetNotifTurnOffRulesOutput" />
+  <xs:complexType name="GetNotifRuleConditionsInput">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="NotificationId" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="GetNotifRuleConditionsInput" nillable="true" type="tns:GetNotifRuleConditionsInput" />
+  <xs:complexType name="GetNotifRuleConditionsOutput">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="ResultCode" type="xs:int" />
+      <xs:element xmlns:q40="http://schemas.datacontract.org/2004/07/NVision.See.Package.Sca" minOccurs="0" name="RuleConditions" nillable="true" type="q40:ArrayOfTpRuleCondition" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="GetNotifRuleConditionsOutput" nillable="true" type="tns:GetNotifRuleConditionsOutput" />
+  <xs:complexType name="CreateNotifRuleConditionsInput">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="NotificationId" type="xs:int" />
+      <xs:element xmlns:q41="http://schemas.datacontract.org/2004/07/NVision.See.Package.Sca" minOccurs="0" name="RuleConditions" nillable="true" type="q41:ArrayOfTpRuleCondition" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="CreateNotifRuleConditionsInput" nillable="true" type="tns:CreateNotifRuleConditionsInput" />
+  <xs:complexType name="CreateNotifRuleConditionsOutput">
+    <xs:sequence>
+      <xs:element xmlns:q42="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="ConditionIds" nillable="true" type="q42:ArrayOfint" />
+      <xs:element minOccurs="0" name="ResultCode" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="CreateNotifRuleConditionsOutput" nillable="true" type="tns:CreateNotifRuleConditionsOutput" />
+  <xs:complexType name="SyncBalanceTemplateOutput">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="JobId" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ResultCode" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="SyncBalanceTemplateOutput" nillable="true" type="tns:SyncBalanceTemplateOutput" />
+  <xs:complexType name="GetBlackListInput">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="BlNumberPattern" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="TariffPlanId" nillable="true" type="xs:unsignedInt" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="GetBlackListInput" nillable="true" type="tns:GetBlackListInput" />
+  <xs:complexType name="GetBlackListOutput">
+    <xs:sequence>
+      <xs:element xmlns:q43="http://schemas.datacontract.org/2004/07/NVision.See.Package.Sca" minOccurs="0" name="ListNumbers" nillable="true" type="q43:ArrayOfTpListNumber" />
+      <xs:element minOccurs="0" name="ResultCode" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="GetBlackListOutput" nillable="true" type="tns:GetBlackListOutput" />
+  <xs:complexType name="CreateActivityActionInput">
+    <xs:sequence>
+      <xs:element xmlns:q44="http://schemas.datacontract.org/2004/07/NVision.See.Package.Sca" minOccurs="0" name="ActivityAction" nillable="true" type="q44:TpActivityAction" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="CreateActivityActionInput" nillable="true" type="tns:CreateActivityActionInput" />
+  <xs:complexType name="UpdateActivityActionInput">
+    <xs:sequence>
+      <xs:element xmlns:q45="http://schemas.datacontract.org/2004/07/NVision.See.Package.Sca" minOccurs="0" name="ActivityAction" nillable="true" type="q45:TpActivityAction" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="UpdateActivityActionInput" nillable="true" type="tns:UpdateActivityActionInput" />
+  <xs:complexType name="DeleteActivityActionInput">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="ActivityGroupId" type="xs:unsignedInt" />
+      <xs:element minOccurs="0" name="ActivityId" type="xs:unsignedShort" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="DeleteActivityActionInput" nillable="true" type="tns:DeleteActivityActionInput" />
+  <xs:complexType name="CreateNotificationOutput">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="NotificationId" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="ResultCode" type="xs:int" />
+      <xs:element minOccurs="0" name="TemplateId" nillable="true" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="CreateNotificationOutput" nillable="true" type="tns:CreateNotificationOutput" />
+  <xs:complexType name="DeleteNotificationInput">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="NotificationCauseId" nillable="true" type="xs:unsignedInt" />
+      <xs:element minOccurs="0" name="NotificationId" nillable="true" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="DeleteNotificationInput" nillable="true" type="tns:DeleteNotificationInput" />
+  <xs:complexType name="BlackListInputData">
+    <xs:sequence>
+      <xs:element xmlns:q46="http://schemas.datacontract.org/2004/07/NVision.See.Package.Sca" minOccurs="0" name="No" nillable="true" type="q46:TpListNumber" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="BlackListInputData" nillable="true" type="tns:BlackListInputData" />
+  <xs:complexType name="GetPAsInput">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="AfterGracePeriod" nillable="true" type="xs:unsignedShort" />
+      <xs:element minOccurs="0" name="BillingGroupId" nillable="true" type="xs:unsignedInt" />
+      <xs:element xmlns:q47="http://schemas.datacontract.org/2004/07/NVision.See.DataTypes.Parlay" minOccurs="0" name="BlockedEndDateMax" nillable="true" type="q47:TpTimeDate" />
+      <xs:element xmlns:q48="http://schemas.datacontract.org/2004/07/NVision.See.DataTypes.Parlay" minOccurs="0" name="BlockedEndDateMin" nillable="true" type="q48:TpTimeDate" />
+      <xs:element minOccurs="0" name="CurrencyCode" nillable="true" type="xs:string" />
+      <xs:element xmlns:q49="http://schemas.datacontract.org/2004/07/NVision.See.DataTypes.Parlay" minOccurs="0" name="EndDateMax" nillable="true" type="q49:TpTimeDate" />
+      <xs:element xmlns:q50="http://schemas.datacontract.org/2004/07/NVision.See.DataTypes.Parlay" minOccurs="0" name="EndDateMin" nillable="true" type="q50:TpTimeDate" />
+      <xs:element xmlns:q51="http://schemas.datacontract.org/2004/07/NVision.See.DataTypes.Parlay" minOccurs="0" name="ExpirationDateMax" nillable="true" type="q51:TpTimeDate" />
+      <xs:element xmlns:q52="http://schemas.datacontract.org/2004/07/NVision.See.DataTypes.Parlay" minOccurs="0" name="ExpirationDateMin" nillable="true" type="q52:TpTimeDate" />
+      <xs:element minOccurs="0" name="FinancialBlock" nillable="true" type="xs:unsignedByte" />
+      <xs:element minOccurs="0" name="GracePeriod" nillable="true" type="xs:unsignedShort" />
+      <xs:element xmlns:q53="http://schemas.datacontract.org/2004/07/NVision.See.DataTypes.Parlay" minOccurs="0" name="LastActivityMax" nillable="true" type="q53:TpTimeDate" />
+      <xs:element xmlns:q54="http://schemas.datacontract.org/2004/07/NVision.See.DataTypes.Parlay" minOccurs="0" name="LastActivityMin" nillable="true" type="q54:TpTimeDate" />
+      <xs:element xmlns:q55="http://schemas.datacontract.org/2004/07/NVision.See.DataTypes.Parlay" minOccurs="0" name="LastModifiedMax" nillable="true" type="q55:TpTimeDate" />
+      <xs:element xmlns:q56="http://schemas.datacontract.org/2004/07/NVision.See.DataTypes.Parlay" minOccurs="0" name="LastModifiedMin" nillable="true" type="q56:TpTimeDate" />
+      <xs:element minOccurs="0" name="PALifetimeStatus" nillable="true" type="xs:unsignedByte" />
+      <xs:element minOccurs="0" name="PANumberMax" nillable="true" type="xs:long" />
+      <xs:element minOccurs="0" name="PANumberMin" nillable="true" type="xs:long" />
+      <xs:element xmlns:q57="http://schemas.datacontract.org/2004/07/System" minOccurs="0" name="PaNumberList" nillable="true" type="q57:ArrayOfNullableOflong" />
+      <xs:element minOccurs="0" name="ServiceProviderCode" nillable="true" type="xs:unsignedInt" />
+      <xs:element minOccurs="0" name="TaxGroupId" nillable="true" type="xs:unsignedInt" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="GetPAsInput" nillable="true" type="tns:GetPAsInput" />
+  <xs:complexType name="GetPAsOutput">
+    <xs:sequence>
+      <xs:element xmlns:q58="http://schemas.datacontract.org/2004/07/NVision.See.Package.Sca" minOccurs="0" name="PAs" nillable="true" type="q58:ArrayOfTpPa" />
+      <xs:element minOccurs="0" name="ResultCode" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="GetPAsOutput" nillable="true" type="tns:GetPAsOutput" />
+  <xs:complexType name="GetTDsInput">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="ImsiPattern" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="MsisdnPattern" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="PANumber" nillable="true" type="xs:long" />
+      <xs:element minOccurs="0" name="TDIdMax" nillable="true" type="xs:long" />
+      <xs:element minOccurs="0" name="TDIdMin" nillable="true" type="xs:long" />
+      <xs:element minOccurs="0" name="TDStatus" nillable="true" type="xs:unsignedByte" />
+      <xs:element minOccurs="0" name="TariffPlanId" nillable="true" type="xs:unsignedInt" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="GetTDsInput" nillable="true" type="tns:GetTDsInput" />
+  <xs:complexType name="GetTDsOutput">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="ResultCode" type="xs:int" />
+      <xs:element xmlns:q59="http://schemas.datacontract.org/2004/07/NVision.See.Package.Sca" minOccurs="0" name="TDs" nillable="true" type="q59:ArrayOfTpTd" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="GetTDsOutput" nillable="true" type="tns:GetTDsOutput" />
+  <xs:complexType name="GetCugsInput">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="AdminTdIdMax" nillable="true" type="xs:long" />
+      <xs:element minOccurs="0" name="AdminTdIdMin" nillable="true" type="xs:long" />
+      <xs:element minOccurs="0" name="CreationDateMax" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="CreationDateMin" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="CugIdPattern" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="CugTypePattern" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="GroupType" type="xs:byte" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="GetCugsInput" nillable="true" type="tns:GetCugsInput" />
+  <xs:complexType name="GetCugsOutput">
+    <xs:sequence>
+      <xs:element xmlns:q60="http://schemas.datacontract.org/2004/07/NVision.See.Package.Sca" minOccurs="0" name="Cugs" nillable="true" type="q60:ArrayOfTpCug" />
+      <xs:element minOccurs="0" name="ResultCode" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="GetCugsOutput" nillable="true" type="tns:GetCugsOutput" />
+  <xs:complexType name="GetFFNumbersInput">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="TdId" type="xs:long" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="GetFFNumbersInput" nillable="true" type="tns:GetFFNumbersInput" />
+  <xs:complexType name="GetFFNumbersOutput">
+    <xs:sequence>
+      <xs:element xmlns:q61="http://schemas.datacontract.org/2004/07/NVision.See.Package.Sca" minOccurs="0" name="FFs" nillable="true" type="q61:ArrayOfTpFf" />
+      <xs:element minOccurs="0" name="ResultCode" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="GetFFNumbersOutput" nillable="true" type="tns:GetFFNumbersOutput" />
+  <xs:complexType name="GetTariffPlansInput">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="ProviderId" nillable="true" type="xs:unsignedInt" />
+      <xs:element minOccurs="0" name="TariffPlanIdMax" nillable="true" type="xs:unsignedInt" />
+      <xs:element minOccurs="0" name="TariffPlanIdMin" nillable="true" type="xs:unsignedInt" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="GetTariffPlansInput" nillable="true" type="tns:GetTariffPlansInput" />
+  <xs:complexType name="GetTariffPlansOutput">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="ResultCode" type="xs:int" />
+      <xs:element xmlns:q62="http://schemas.datacontract.org/2004/07/NVision.See.Package.Sca" minOccurs="0" name="TariffPlans" nillable="true" type="q62:ArrayOfTpTariffPlan" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="GetTariffPlansOutput" nillable="true" type="tns:GetTariffPlansOutput" />
+  <xs:complexType name="GetServicesInput">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="InternalCodePattern" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="NamePattern" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ServiceCodePattern" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="GetServicesInput" nillable="true" type="tns:GetServicesInput" />
+  <xs:complexType name="GetServicesOutput">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="ResultCode" type="xs:int" />
+      <xs:element xmlns:q63="http://schemas.datacontract.org/2004/07/NVision.See.Package.Sca" minOccurs="0" name="Services" nillable="true" type="q63:ArrayOfTpService" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="GetServicesOutput" nillable="true" type="tns:GetServicesOutput" />
+  <xs:complexType name="CreatePaInputAdditional">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Operation" nillable="true" type="xs:unsignedByte" />
+      <xs:element xmlns:q64="http://schemas.datacontract.org/2004/07/NVision.See.Package.Sca" minOccurs="0" name="Pa" nillable="true" type="q64:TpPa" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="CreatePaInputAdditional" nillable="true" type="tns:CreatePaInputAdditional" />
+  <xs:complexType name="CreateBalanceOutput">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="BalanceInstanceId" nillable="true" type="xs:long" />
+      <xs:element minOccurs="0" name="ResultCode" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="CreateBalanceOutput" nillable="true" type="tns:CreateBalanceOutput" />
+  <xs:complexType name="DeleteBalanceInput">
+    <xs:sequence>
+      <xs:element xmlns:q65="http://schemas.datacontract.org/2004/07/NVision.See.Package.Sca" minOccurs="0" name="BalanceInstance" nillable="true" type="q65:TpBalanceInstance" />
+      <xs:element minOccurs="0" name="DateOfAction" nillable="true" type="xs:dateTime" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="DeleteBalanceInput" nillable="true" type="tns:DeleteBalanceInput" />
+  <xs:complexType name="UpdateBalanceInput">
+    <xs:sequence>
+      <xs:element xmlns:q66="http://schemas.datacontract.org/2004/07/NVision.See.Package.Sca" minOccurs="0" name="BalanceInstanceUpdate" nillable="true" type="q66:TpBalanceInstanceUpdate" />
+      <xs:element minOccurs="0" name="DateOfAction" nillable="true" type="xs:dateTime" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="UpdateBalanceInput" nillable="true" type="tns:UpdateBalanceInput" />
+  <xs:complexType name="UpdateBalanceOutput">
+    <xs:sequence>
+      <xs:element xmlns:q67="http://schemas.datacontract.org/2004/07/NVision.See.Package.Sca" minOccurs="0" name="BalanceInstance" nillable="true" type="q67:TpBalanceInstance" />
+      <xs:element minOccurs="0" name="ResultCode" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="UpdateBalanceOutput" nillable="true" type="tns:UpdateBalanceOutput" />
+  <xs:complexType name="GetBalancesAndReservationsInput">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="BalanceActivity" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="BalanceGroup" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="IPAddress" nillable="true" type="xs:unsignedInt" />
+      <xs:element minOccurs="0" name="Iccid" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Imsi" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Login" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Msisdn" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="PANumber" nillable="true" type="xs:long" />
+      <xs:element minOccurs="0" name="TDId" nillable="true" type="xs:long" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="GetBalancesAndReservationsInput" nillable="true" type="tns:GetBalancesAndReservationsInput" />
+  <xs:complexType name="GetBalancesAndReservationsOutput">
+    <xs:sequence>
+      <xs:element xmlns:q68="http://schemas.datacontract.org/2004/07/NVision.See.Package.Sca" minOccurs="0" name="BalanceInstances" nillable="true" type="q68:ArrayOfTpBalanceInstance" />
+      <xs:element minOccurs="0" name="ResultCode" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="GetBalancesAndReservationsOutput" nillable="true" type="tns:GetBalancesAndReservationsOutput" />
+  <xs:complexType name="GetCcReservationsInput">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Operation" nillable="true" type="xs:unsignedByte" />
+      <xs:element minOccurs="0" name="PANumber" nillable="true" type="xs:long" />
+      <xs:element minOccurs="0" name="TDId" nillable="true" type="xs:long" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="GetCcReservationsInput" nillable="true" type="tns:GetCcReservationsInput" />
+  <xs:complexType name="GetCcReservationsOutput">
+    <xs:sequence>
+      <xs:element xmlns:q69="http://schemas.datacontract.org/2004/07/NVision.See.Package.Sca" minOccurs="0" name="Reservations" nillable="true" type="q69:ArrayOfTpReservation" />
+      <xs:element minOccurs="0" name="ResultCode" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="GetCcReservationsOutput" nillable="true" type="tns:GetCcReservationsOutput" />
+  <xs:complexType name="GetTimeShiftInput">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="SdpImsi" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="GetTimeShiftInput" nillable="true" type="tns:GetTimeShiftInput" />
+  <xs:complexType name="GetTimeShiftOutput">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="ResultCode" type="xs:int" />
+      <xs:element minOccurs="0" name="TimeShift" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="GetTimeShiftOutput" nillable="true" type="tns:GetTimeShiftOutput" />
+  <xs:complexType name="GetTdsCugsInput">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="AttrType" nillable="true" type="xs:byte" />
+      <xs:element minOccurs="0" name="CugId" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="MsisdnPattern" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="GetTdsCugsInput" nillable="true" type="tns:GetTdsCugsInput" />
+  <xs:complexType name="GetTdsCugsOutput">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="ResultCode" type="xs:int" />
+      <xs:element xmlns:q70="http://schemas.datacontract.org/2004/07/NVision.See.Package.Sca" minOccurs="0" name="TdCugs" nillable="true" type="q70:ArrayOfTpTdCug" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="GetTdsCugsOutput" nillable="true" type="tns:GetTdsCugsOutput" />
+  <xs:complexType name="GetLanguagesOutput">
+    <xs:sequence>
+      <xs:element xmlns:q71="http://schemas.datacontract.org/2004/07/NVision.See.Package.Sca" minOccurs="0" name="CbmdbLanguages" nillable="true" type="q71:ArrayOfTpLanguages" />
+      <xs:element xmlns:q72="http://schemas.datacontract.org/2004/07/NVision.See.Package.Sca" minOccurs="0" name="NotifLanguages" nillable="true" type="q72:ArrayOfTpLanguages" />
+      <xs:element minOccurs="0" name="ResultCode" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="GetLanguagesOutput" nillable="true" type="tns:GetLanguagesOutput" />
+  <xs:complexType name="GetPaAdminBlocksInput">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="PaNumber" type="xs:long" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="GetPaAdminBlocksInput" nillable="true" type="tns:GetPaAdminBlocksInput" />
+  <xs:complexType name="GetPaAdminBlocksOutput">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="ResultCode" type="xs:int" />
+      <xs:element xmlns:q73="http://schemas.datacontract.org/2004/07/NVision.See.Package.Sca" minOccurs="0" name="TpBalanceChange" nillable="true" type="q73:ArrayOfTpBalanceChange" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="GetPaAdminBlocksOutput" nillable="true" type="tns:GetPaAdminBlocksOutput" />
+  <xs:complexType name="GetDiaSySessionInput">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Msisdn" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="GetDiaSySessionInput" nillable="true" type="tns:GetDiaSySessionInput" />
+  <xs:complexType name="GetDiaSySessionOutput">
+    <xs:sequence>
+      <xs:element xmlns:q74="http://schemas.datacontract.org/2004/07/NVision.See.Package.Sca" minOccurs="0" name="DiaSySession" nillable="true" type="q74:TpDiaSySession" />
+      <xs:element minOccurs="0" name="ResultCode" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="GetDiaSySessionOutput" nillable="true" type="tns:GetDiaSySessionOutput" />
+  <xs:complexType name="DiaSySessionInput">
+    <xs:sequence>
+      <xs:element xmlns:q75="http://schemas.datacontract.org/2004/07/NVision.See.Package.Sca" minOccurs="0" name="DiaSySession" nillable="true" type="q75:TpDiaSySession" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="DiaSySessionInput" nillable="true" type="tns:DiaSySessionInput" />
+  <xs:complexType name="GetProvidersOutput">
+    <xs:sequence>
+      <xs:element xmlns:q76="http://schemas.datacontract.org/2004/07/NVision.See.Package.Sca" minOccurs="0" name="Providers" nillable="true" type="q76:ArrayOfTpProvider" />
+      <xs:element minOccurs="0" name="ResultCode" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="GetProvidersOutput" nillable="true" type="tns:GetProvidersOutput" />
+  <xs:complexType name="GetProviderGroupsOutput">
+    <xs:sequence>
+      <xs:element xmlns:q77="http://schemas.datacontract.org/2004/07/NVision.See.Package.Sca" minOccurs="0" name="ProviderGroups" nillable="true" type="q77:ArrayOfTpProviderGroup" />
+      <xs:element minOccurs="0" name="ResultCode" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="GetProviderGroupsOutput" nillable="true" type="tns:GetProviderGroupsOutput" />
+  <xs:complexType name="GetWhiteListInput">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="BlNumberPattern" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="TariffPlanId" nillable="true" type="xs:unsignedInt" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="GetWhiteListInput" nillable="true" type="tns:GetWhiteListInput" />
+  <xs:complexType name="GetWhiteListOutput">
+    <xs:sequence>
+      <xs:element xmlns:q78="http://schemas.datacontract.org/2004/07/NVision.See.Package.Sca" minOccurs="0" name="ListOfNumber" nillable="true" type="q78:ArrayOfTpListNumber" />
+      <xs:element minOccurs="0" name="ResultCode" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="GetWhiteListOutput" nillable="true" type="tns:GetWhiteListOutput" />
+  <xs:complexType name="GetPAWithBalanceAndTDsOutput">
+    <xs:sequence>
+      <xs:element xmlns:q79="http://schemas.datacontract.org/2004/07/NVision.See.Package.Sca" minOccurs="0" name="BalanceInstance" nillable="true" type="q79:TpBalanceInstance" />
+      <xs:element xmlns:q80="http://schemas.datacontract.org/2004/07/NVision.See.Package.Sca" minOccurs="0" name="PA" nillable="true" type="q80:TpPa" />
+      <xs:element minOccurs="0" name="ResultCode" type="xs:int" />
+      <xs:element xmlns:q81="http://schemas.datacontract.org/2004/07/NVision.See.Package.Sca" minOccurs="0" name="TpTDWithBalances" nillable="true" type="q81:ArrayOfTpTDWithBalances" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="GetPAWithBalanceAndTDsOutput" nillable="true" type="tns:GetPAWithBalanceAndTDsOutput" />
+  <xs:complexType name="GetShortNumbersInput">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="ProviderId" type="xs:unsignedInt" />
+      <xs:element minOccurs="0" name="ShortNumberPattern" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="GetShortNumbersInput" nillable="true" type="tns:GetShortNumbersInput" />
+  <xs:complexType name="GetShortNumbersOutput">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="ResultCode" type="xs:int" />
+      <xs:element xmlns:q82="http://schemas.datacontract.org/2004/07/NVision.See.Package.Sca" minOccurs="0" name="ShortNumbers" nillable="true" type="q82:ArrayOfTpShortNumber" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="GetShortNumbersOutput" nillable="true" type="tns:GetShortNumbersOutput" />
+  <xs:complexType name="DeleteShortNumberInput">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="ProviderId" type="xs:unsignedInt" />
+      <xs:element minOccurs="0" name="ShortNumber" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="DeleteShortNumberInput" nillable="true" type="tns:DeleteShortNumberInput" />
+  <xs:complexType name="GetServiceNumbersInput">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="ActivityId" nillable="true" type="xs:unsignedShort" />
+      <xs:element minOccurs="0" name="ServiceNumberPattern" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="SrvGroupId" nillable="true" type="xs:unsignedInt" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="GetServiceNumbersInput" nillable="true" type="tns:GetServiceNumbersInput" />
+  <xs:complexType name="GetServiceNumbersOutput">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="ResultCode" type="xs:int" />
+      <xs:element xmlns:q83="http://schemas.datacontract.org/2004/07/NVision.See.Package.Sca" minOccurs="0" name="ServiceNumbers" nillable="true" type="q83:ArrayOfTpServiceNumber" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="GetServiceNumbersOutput" nillable="true" type="tns:GetServiceNumbersOutput" />
+  <xs:complexType name="CreateTdServiceInput">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Service" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="TdId" nillable="true" type="xs:long" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="CreateTdServiceInput" nillable="true" type="tns:CreateTdServiceInput" />
+  <xs:complexType name="CreateTdServiceOutput">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="ResultCode" type="xs:int" />
+      <xs:element minOccurs="0" name="Services" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="CreateTdServiceOutput" nillable="true" type="tns:CreateTdServiceOutput" />
+  <xs:complexType name="DeleteTdServiceInput">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Service" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="TdId" nillable="true" type="xs:long" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="DeleteTdServiceInput" nillable="true" type="tns:DeleteTdServiceInput" />
+  <xs:complexType name="DeleteTdServiceOutput">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="ResultCode" type="xs:int" />
+      <xs:element minOccurs="0" name="Services" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="DeleteTdServiceOutput" nillable="true" type="tns:DeleteTdServiceOutput" />
+  <xs:complexType name="GetRdTariffPlansOutput">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="ResultCode" type="xs:int" />
+      <xs:element xmlns:q84="http://schemas.datacontract.org/2004/07/NVision.See.Package.Sca" minOccurs="0" name="TariffPlans" nillable="true" type="q84:ArrayOfTpTariffPlan" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="GetRdTariffPlansOutput" nillable="true" type="tns:GetRdTariffPlansOutput" />
+  <xs:complexType name="GetBalanceTemplatesOutput">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="ResultCode" type="xs:int" />
+      <xs:element xmlns:q85="http://schemas.datacontract.org/2004/07/NVision.See.Package.Sca" minOccurs="0" name="Templates" nillable="true" type="q85:ArrayOfTpBalanceTemplate" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="GetBalanceTemplatesOutput" nillable="true" type="tns:GetBalanceTemplatesOutput" />
+  <xs:complexType name="GetBalanceTemplatesListOutput">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="ResultCode" type="xs:int" />
+      <xs:element xmlns:q86="http://schemas.datacontract.org/2004/07/NVision.See.Package.Sca" minOccurs="0" name="TpTmpBaseInfo" nillable="true" type="q86:ArrayOfTpTemplateBaseInfo" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="GetBalanceTemplatesListOutput" nillable="true" type="tns:GetBalanceTemplatesListOutput" />
+  <xs:complexType name="GetPAAttributesOutput">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="ResultCode" type="xs:int" />
+      <xs:element xmlns:q87="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="TdIds" nillable="true" type="q87:ArrayOfunsignedLong" />
+      <xs:element xmlns:q88="http://schemas.datacontract.org/2004/07/NVision.See.Package.Sca" minOccurs="0" name="TpAdminBlocks" nillable="true" type="q88:ArrayOfTpAdminBlock" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="GetPAAttributesOutput" nillable="true" type="tns:GetPAAttributesOutput" />
+  <xs:complexType name="CreatePaServiceInput">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="PaNumber" type="xs:long" />
+      <xs:element minOccurs="0" name="Service" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="CreatePaServiceInput" nillable="true" type="tns:CreatePaServiceInput" />
+  <xs:complexType name="CreatePaServiceOutput">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="ResultCode" type="xs:int" />
+      <xs:element minOccurs="0" name="Services" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="CreatePaServiceOutput" nillable="true" type="tns:CreatePaServiceOutput" />
+  <xs:complexType name="DeletePaServiceInput">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="PaNumber" type="xs:long" />
+      <xs:element minOccurs="0" name="Service" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="DeletePaServiceInput" nillable="true" type="tns:DeletePaServiceInput" />
+  <xs:complexType name="DeletePaServiceOutput">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="ResultCode" type="xs:int" />
+      <xs:element minOccurs="0" name="Services" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="DeletePaServiceOutput" nillable="true" type="tns:DeletePaServiceOutput" />
+  <xs:complexType name="GetActivitiesInput">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="ActivityIdMax" nillable="true" type="xs:unsignedShort" />
+      <xs:element minOccurs="0" name="ActivityIdMin" nillable="true" type="xs:unsignedShort" />
+      <xs:element minOccurs="0" name="DescriptionPattern" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="GetActivitiesInput" nillable="true" type="tns:GetActivitiesInput" />
+  <xs:complexType name="GetActivitiesOutput">
+    <xs:sequence>
+      <xs:element xmlns:q89="http://schemas.datacontract.org/2004/07/NVision.See.Package.Sca" minOccurs="0" name="Activities" nillable="true" type="q89:ArrayOfTpActivity" />
+      <xs:element minOccurs="0" name="ResultCode" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="GetActivitiesOutput" nillable="true" type="tns:GetActivitiesOutput" />
+  <xs:complexType name="GetNotifMessagesInput">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="NotificationId" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="GetNotifMessagesInput" nillable="true" type="tns:GetNotifMessagesInput" />
+  <xs:complexType name="GetNotifMessagesOutput">
+    <xs:sequence>
+      <xs:element xmlns:q90="http://schemas.datacontract.org/2004/07/NVision.See.Package.Sca" minOccurs="0" name="Messages" nillable="true" type="q90:ArrayOfTpMessage" />
+      <xs:element minOccurs="0" name="ResultCode" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="GetNotifMessagesOutput" nillable="true" type="tns:GetNotifMessagesOutput" />
+  <xs:complexType name="GetBsReservationsInput">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="BalanceInstanceId" type="xs:long" />
+      <xs:element minOccurs="0" name="PaNumber" nillable="true" type="xs:long" />
+      <xs:element minOccurs="0" name="TdId" nillable="true" type="xs:long" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="GetBsReservationsInput" nillable="true" type="tns:GetBsReservationsInput" />
+  <xs:complexType name="GetBsReservationsOutput">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="ResultCode" type="xs:int" />
+      <xs:element xmlns:q91="http://schemas.datacontract.org/2004/07/NVision.See.Package.Sca" minOccurs="0" name="TpBsReservation" nillable="true" type="q91:ArrayOfTpBsReservation" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="GetBsReservationsOutput" nillable="true" type="tns:GetBsReservationsOutput" />
+</xs:schema>

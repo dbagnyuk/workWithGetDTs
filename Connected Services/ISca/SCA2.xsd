@@ -1,0 +1,1293 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://schemas.datacontract.org/2004/07/NVision.See.Package.Sca" elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/NVision.See.Package.Sca" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import schemaLocation="http://msk-dev-foris:8106/SCA?xsd=xsd4" namespace="http://schemas.datacontract.org/2004/07/NVision.See.DataTypes.Parlay" />
+  <xs:import schemaLocation="http://msk-dev-foris:8106/SCA?xsd=xsd5" namespace="http://schemas.microsoft.com/2003/10/Serialization/Arrays" />
+  <xs:import schemaLocation="http://msk-dev-foris:8106/SCA?xsd=xsd1" namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
+  <xs:complexType name="TpMessage">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="EncodingType" nillable="true" type="xs:unsignedByte" />
+      <xs:element minOccurs="0" name="LangId" nillable="true" type="xs:unsignedByte" />
+      <xs:element minOccurs="0" name="MsgId" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="NotificationId" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="Text" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="TpMessage" nillable="true" type="tns:TpMessage" />
+  <xs:complexType name="TpRulePattern">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Description" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="PatternConditions" nillable="true" type="tns:ArrayOfTpPatternCondition" />
+      <xs:element minOccurs="0" name="PatternId" nillable="true" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="TpRulePattern" nillable="true" type="tns:TpRulePattern" />
+  <xs:complexType name="ArrayOfTpPatternCondition">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="TpPatternCondition" nillable="true" type="tns:TpPatternCondition" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfTpPatternCondition" nillable="true" type="tns:ArrayOfTpPatternCondition" />
+  <xs:complexType name="TpPatternCondition">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="CondValues" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ParamOperatorId" nillable="true" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="TpPatternCondition" nillable="true" type="tns:TpPatternCondition" />
+  <xs:complexType name="TpListTdNumber">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="ActivityGroupId" nillable="true" type="xs:unsignedInt" />
+      <xs:element minOccurs="0" name="ListNumber" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="TDId" type="xs:long" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="TpListTdNumber" nillable="true" type="tns:TpListTdNumber" />
+  <xs:complexType name="TpDeliveryRule">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="DeliveryRuleId" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="DowMask" nillable="true" type="xs:unsignedByte" />
+      <xs:element xmlns:q1="http://schemas.datacontract.org/2004/07/NVision.See.DataTypes.Parlay" minOccurs="0" name="EndDate" nillable="true" type="q1:TpTimeDate" />
+      <xs:element xmlns:q2="http://schemas.datacontract.org/2004/07/NVision.See.DataTypes.Parlay" minOccurs="0" name="EndDayTime" nillable="true" type="q2:TpTimeDate" />
+      <xs:element minOccurs="0" name="NotificationId" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="NotificationType" nillable="true" type="xs:byte" />
+      <xs:element xmlns:q3="http://schemas.datacontract.org/2004/07/NVision.See.DataTypes.Parlay" minOccurs="0" name="StartDate" nillable="true" type="q3:TpTimeDate" />
+      <xs:element xmlns:q4="http://schemas.datacontract.org/2004/07/NVision.See.DataTypes.Parlay" minOccurs="0" name="StartDayTime" nillable="true" type="q4:TpTimeDate" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="TpDeliveryRule" nillable="true" type="tns:TpDeliveryRule" />
+  <xs:complexType name="TpAnnouncement">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="AnnounceType" nillable="true" type="xs:unsignedByte" />
+      <xs:element minOccurs="0" name="AnnouncementId" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="ExtId" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="IvrNumber" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="LangId" nillable="true" type="xs:unsignedByte" />
+      <xs:element minOccurs="0" name="NotificationId" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="Text" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="TpAnnouncement" nillable="true" type="tns:TpAnnouncement" />
+  <xs:complexType name="TpTurnOffRule">
+    <xs:sequence>
+      <xs:element xmlns:q5="http://schemas.datacontract.org/2004/07/NVision.See.DataTypes.Parlay" minOccurs="0" name="EndDate" nillable="true" type="q5:TpTimeDate" />
+      <xs:element minOccurs="0" name="Name" nillable="true" type="xs:string" />
+      <xs:element xmlns:q6="http://schemas.datacontract.org/2004/07/NVision.See.DataTypes.Parlay" minOccurs="0" name="StartDate" nillable="true" type="q6:TpTimeDate" />
+      <xs:element minOccurs="0" name="TruleId" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="TurnOffConds" nillable="true" type="tns:ArrayOfTpTurnOffCond" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="TpTurnOffRule" nillable="true" type="tns:TpTurnOffRule" />
+  <xs:complexType name="ArrayOfTpTurnOffCond">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="TpTurnOffCond" nillable="true" type="tns:TpTurnOffCond" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfTpTurnOffCond" nillable="true" type="tns:ArrayOfTpTurnOffCond" />
+  <xs:complexType name="TpTurnOffCond">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="CondValues" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ParamOperatorId" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="TruleCondId" nillable="true" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="TpTurnOffCond" nillable="true" type="tns:TpTurnOffCond" />
+  <xs:complexType name="TpConfigParam">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Description" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ParamName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ParamValue" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="TpConfigParam" nillable="true" type="tns:TpConfigParam" />
+  <xs:complexType name="TpBalanceInstanceUpdate">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="ActionRules" nillable="true" type="tns:ArrayOfTpActionRule" />
+      <xs:element minOccurs="0" name="ActivationDate" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="AdditionalAttributes" nillable="true" type="tns:TpAdditionalAttributes" />
+      <xs:element minOccurs="0" name="BalanceInstanceId" nillable="true" type="xs:long" />
+      <xs:element minOccurs="0" name="BalanceInstanceVersion" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="BalanceUpdateData" nillable="true" type="tns:TpBalanceUpdateData" />
+      <xs:element minOccurs="0" name="BalanceUpdateFlags" nillable="true" type="xs:unsignedByte" />
+      <xs:element minOccurs="0" name="BalanceValue" nillable="true" type="xs:decimal" />
+      <xs:element minOccurs="0" name="DateTo" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="DeactivationDate" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="ExtAttributes" nillable="true" type="tns:ArrayOfTpExtAttribute" />
+      <xs:element minOccurs="0" name="ProfileId" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="RecalculationFactors" nillable="true" type="tns:TpBalanceInstanceRecalculationFactors" />
+      <xs:element minOccurs="0" name="RecalculationPeriod" nillable="true" type="tns:TpRecalculationPeriod" />
+      <xs:element minOccurs="0" name="SetFlags" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="Status" nillable="true" type="xs:unsignedByte" />
+      <xs:element minOccurs="0" name="TemplateThresholdCode" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="TimeShift" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="UpdateType" nillable="true" type="xs:byte" />
+      <xs:element minOccurs="0" name="Value" nillable="true" type="xs:decimal" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="TpBalanceInstanceUpdate" nillable="true" type="tns:TpBalanceInstanceUpdate" />
+  <xs:complexType name="ArrayOfTpActionRule">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="TpActionRule" nillable="true" type="tns:TpActionRule" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfTpActionRule" nillable="true" type="tns:ArrayOfTpActionRule" />
+  <xs:complexType name="TpActionRule">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="ActionInfos" nillable="true" type="tns:ArrayOfTpActionInfo" />
+      <xs:element minOccurs="0" name="ActivationCode" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Conditions" nillable="true" type="tns:TpCondition" />
+      <xs:element xmlns:q7="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="OccurTypes" nillable="true" type="q7:ArrayOfbyte" />
+      <xs:element xmlns:q8="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="OperationKeys" nillable="true" type="q8:ArrayOfstring" />
+      <xs:element minOccurs="0" name="RuleCode" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="TpActionRule" nillable="true" type="tns:TpActionRule" />
+  <xs:complexType name="ArrayOfTpActionInfo">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="TpActionInfo" nillable="true" type="tns:TpActionInfo" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfTpActionInfo" nillable="true" type="tns:ArrayOfTpActionInfo" />
+  <xs:complexType name="TpActionInfo">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="ActionPriority" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="BalanceActionType" type="xs:byte" />
+      <xs:element minOccurs="0" name="Context" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="NotificationActionType" nillable="true" type="xs:byte" />
+      <xs:element minOccurs="0" name="NotificationCode" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Rate" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="SignType" nillable="true" type="xs:byte" />
+      <xs:element minOccurs="0" name="TargetBalanceId" nillable="true" type="xs:long" />
+      <xs:element minOccurs="0" name="TariffType" nillable="true" type="xs:byte" />
+      <xs:element minOccurs="0" name="Value" nillable="true" type="xs:double" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="TpActionInfo" nillable="true" type="tns:TpActionInfo" />
+  <xs:complexType name="TpCondition">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="AttributeCondition" nillable="true" type="tns:TpAttributeCondition" />
+      <xs:element minOccurs="0" name="ConditionType" type="xs:byte" />
+      <xs:element minOccurs="0" name="CustomCondition" nillable="true" type="tns:TpCustomCondition" />
+      <xs:element minOccurs="0" name="DateCondition" nillable="true" type="tns:TpDateThreshold" />
+      <xs:element minOccurs="0" name="EventCondition" nillable="true" type="tns:TpLifeCycleCondition" />
+      <xs:element minOccurs="0" name="LeftCondition" nillable="true" type="tns:TpCondition" />
+      <xs:element minOccurs="0" name="Operation" nillable="true" type="xs:unsignedByte" />
+      <xs:element minOccurs="0" name="RightCondition" nillable="true" type="tns:TpCondition" />
+      <xs:element minOccurs="0" name="ValueCondition" nillable="true" type="tns:TpValueThreshold" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="TpCondition" nillable="true" type="tns:TpCondition" />
+  <xs:complexType name="TpAttributeCondition">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="AttrType" type="xs:byte" />
+      <xs:element minOccurs="0" name="ProfileId" nillable="true" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="TpAttributeCondition" nillable="true" type="tns:TpAttributeCondition" />
+  <xs:complexType name="TpCustomCondition">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="AttrName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="AttrValue" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="TpCustomCondition" nillable="true" type="tns:TpCustomCondition" />
+  <xs:complexType name="TpDateThreshold">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="AbsoluteDate" nillable="true" type="tns:TpAbsoluteDate" />
+      <xs:element minOccurs="0" name="CompareType" type="tns:TpThresholdCompareType" />
+      <xs:element minOccurs="0" name="CrossDirection" type="tns:TpThresholdCrossDirection" />
+      <xs:element minOccurs="0" name="CustomDateThreshold" nillable="true" type="tns:TpCustomDateThreshold" />
+      <xs:element minOccurs="0" name="DateThresholdType" type="xs:byte" />
+      <xs:element minOccurs="0" name="Delta" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="MaxAbsoluteDate" nillable="true" type="tns:TpAbsoluteDate" />
+      <xs:element minOccurs="0" name="MinAbsoluteDate" nillable="true" type="tns:TpAbsoluteDate" />
+      <xs:element minOccurs="0" name="Threshold" nillable="true" type="tns:TpThreshold" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="TpDateThreshold" nillable="true" type="tns:TpDateThreshold" />
+  <xs:complexType name="TpAbsoluteDate">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="DateTime" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="RoundDateType" type="xs:byte" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="TpAbsoluteDate" nillable="true" type="tns:TpAbsoluteDate" />
+  <xs:simpleType name="TpThresholdCompareType">
+    <xs:annotation>
+      <xs:appinfo>
+        <ActualType Name="byte" Namespace="http://www.w3.org/2001/XMLSchema" xmlns="http://schemas.microsoft.com/2003/10/Serialization/" />
+      </xs:appinfo>
+    </xs:annotation>
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="Unknown">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">-1</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="Equal">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">0</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="Cross">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">1</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="Above">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">2</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="Below">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">3</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="AboveEqual">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">4</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="BelowEqual">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">5</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="CrossedOrEqual">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">6</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="NotCrossed">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">7</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="NotCrossedOrEqual">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">8</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="Always">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">9</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="Multiplicity">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">10</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="TpThresholdCompareType" nillable="true" type="tns:TpThresholdCompareType" />
+  <xs:simpleType name="TpThresholdCrossDirection">
+    <xs:annotation>
+      <xs:appinfo>
+        <ActualType Name="byte" Namespace="http://www.w3.org/2001/XMLSchema" xmlns="http://schemas.microsoft.com/2003/10/Serialization/" />
+      </xs:appinfo>
+    </xs:annotation>
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="Unknown">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">-1</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="Up">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">0</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="Down">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">1</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="Both">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">2</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="TpThresholdCrossDirection" nillable="true" type="tns:TpThresholdCrossDirection" />
+  <xs:complexType name="TpCustomDateThreshold">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="CustomDateType" type="xs:byte" />
+      <xs:element xmlns:q9="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="Days" nillable="true" type="q9:ArrayOfbyte" />
+      <xs:element minOccurs="0" name="Times" nillable="true" type="tns:ArrayOfTpAbsoluteDate" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="TpCustomDateThreshold" nillable="true" type="tns:TpCustomDateThreshold" />
+  <xs:complexType name="ArrayOfTpAbsoluteDate">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="TpAbsoluteDate" nillable="true" type="tns:TpAbsoluteDate" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfTpAbsoluteDate" nillable="true" type="tns:ArrayOfTpAbsoluteDate" />
+  <xs:complexType name="TpThreshold">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="ActivationCode" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Code" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="TpThreshold" nillable="true" type="tns:TpThreshold" />
+  <xs:complexType name="TpLifeCycleCondition">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="DateCondition" nillable="true" type="tns:TpDateThreshold" />
+      <xs:element minOccurs="0" name="LifeCycleEventType" type="xs:byte" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="TpLifeCycleCondition" nillable="true" type="tns:TpLifeCycleCondition" />
+  <xs:complexType name="TpValueThreshold">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="BalanceValueInstance" nillable="true" type="xs:unsignedByte" />
+      <xs:element minOccurs="0" name="MaxValue" nillable="true" type="xs:double" />
+      <xs:element minOccurs="0" name="MinValue" nillable="true" type="xs:double" />
+      <xs:element minOccurs="0" name="TargetBalanceId" nillable="true" type="xs:long" />
+      <xs:element minOccurs="0" name="Threshold" nillable="true" type="tns:TpThreshold" />
+      <xs:element minOccurs="0" name="ThresholdCompareType" type="tns:TpThresholdCompareType" />
+      <xs:element minOccurs="0" name="ThresholdCrossDir" type="tns:TpThresholdCrossDirection" />
+      <xs:element minOccurs="0" name="Value" nillable="true" type="xs:double" />
+      <xs:element minOccurs="0" name="ValueThresholdType" type="xs:byte" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="TpValueThreshold" nillable="true" type="tns:TpValueThreshold" />
+  <xs:complexType name="TpAdditionalAttributes">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="IsDonor" type="xs:unsignedByte" />
+      <xs:element minOccurs="0" name="PaNumber" nillable="true" type="xs:long" />
+      <xs:element minOccurs="0" name="TdId" nillable="true" type="xs:long" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="TpAdditionalAttributes" nillable="true" type="tns:TpAdditionalAttributes" />
+  <xs:complexType name="TpBalanceUpdateData">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Context" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="DateFrom" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="DateTo" nillable="true" type="xs:dateTime" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="TpBalanceUpdateData" nillable="true" type="tns:TpBalanceUpdateData" />
+  <xs:complexType name="ArrayOfTpExtAttribute">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="TpExtAttribute" nillable="true" type="tns:TpExtAttribute" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfTpExtAttribute" nillable="true" type="tns:ArrayOfTpExtAttribute" />
+  <xs:complexType name="TpExtAttribute">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="ExtAttrId" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ExtAttrValue" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="TpExtAttribute" nillable="true" type="tns:TpExtAttribute" />
+  <xs:complexType name="TpBalanceInstanceRecalculationFactors">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="OnetimeFactors" nillable="true" type="tns:ArrayOfTpOnetimeRecalculationFactor" />
+      <xs:element minOccurs="0" name="PeriodicalFactors" nillable="true" type="tns:ArrayOfTpPeriodicalRecalculationFactor" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="TpBalanceInstanceRecalculationFactors" nillable="true" type="tns:TpBalanceInstanceRecalculationFactors" />
+  <xs:complexType name="ArrayOfTpOnetimeRecalculationFactor">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="TpOnetimeRecalculationFactor" nillable="true" type="tns:TpOnetimeRecalculationFactor" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfTpOnetimeRecalculationFactor" nillable="true" type="tns:ArrayOfTpOnetimeRecalculationFactor" />
+  <xs:complexType name="TpOnetimeRecalculationFactor">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Amount" type="xs:double" />
+      <xs:element minOccurs="0" name="ExtType" type="xs:byte" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="TpOnetimeRecalculationFactor" nillable="true" type="tns:TpOnetimeRecalculationFactor" />
+  <xs:complexType name="ArrayOfTpPeriodicalRecalculationFactor">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="TpPeriodicalRecalculationFactor" nillable="true" type="tns:TpPeriodicalRecalculationFactor" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfTpPeriodicalRecalculationFactor" nillable="true" type="tns:ArrayOfTpPeriodicalRecalculationFactor" />
+  <xs:complexType name="TpPeriodicalRecalculationFactor">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="CmRatio" nillable="true" type="xs:double" />
+      <xs:element minOccurs="0" name="ExpDate" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="ExtCode" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="TpPeriodicalRecalculationFactor" nillable="true" type="tns:TpPeriodicalRecalculationFactor" />
+  <xs:complexType name="TpRecalculationPeriod">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="DayOfPeriods" nillable="true" type="tns:ArrayOfTpDayOfPeriod" />
+      <xs:element minOccurs="0" name="PeriodInitialValue" nillable="true" type="xs:decimal" />
+      <xs:element minOccurs="0" name="RecalculationPeriodType" type="xs:byte" />
+      <xs:element minOccurs="0" name="RegularPeriod" nillable="true" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="TpRecalculationPeriod" nillable="true" type="tns:TpRecalculationPeriod" />
+  <xs:complexType name="ArrayOfTpDayOfPeriod">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="TpDayOfPeriod" nillable="true" type="tns:TpDayOfPeriod" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfTpDayOfPeriod" nillable="true" type="tns:ArrayOfTpDayOfPeriod" />
+  <xs:complexType name="TpDayOfPeriod">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="DayInPeriod" type="xs:unsignedByte" />
+      <xs:element minOccurs="0" name="MonthInPeriod" nillable="true" type="xs:unsignedByte" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="TpDayOfPeriod" nillable="true" type="tns:TpDayOfPeriod" />
+  <xs:complexType name="ArrayOfTpRdCounterThreshold">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="TpRdCounterThreshold" nillable="true" type="tns:TpRdCounterThreshold" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfTpRdCounterThreshold" nillable="true" type="tns:ArrayOfTpRdCounterThreshold" />
+  <xs:complexType name="TpRdCounterThreshold">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="CounterThresholdCode" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="CounterThresholdId" type="xs:int" />
+      <xs:element minOccurs="0" name="ExtCode" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Name" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="RdThresholdDirection" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="RdThresholdValueType" type="xs:int" />
+      <xs:element minOccurs="0" name="TariffPlandId" nillable="true" type="xs:unsignedInt" />
+      <xs:element minOccurs="0" name="Value" type="xs:double" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="TpRdCounterThreshold" nillable="true" type="tns:TpRdCounterThreshold" />
+  <xs:complexType name="TpServiceNumberParam">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="ActivityId" nillable="true" type="xs:unsignedShort" />
+      <xs:element minOccurs="0" name="ForwardNumber" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Msisdn" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="RoamingType" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="ServiceNumberParamId" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="ServiceProviderCode" nillable="true" type="xs:unsignedInt" />
+      <xs:element minOccurs="0" name="SnActionRules" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="SrvGroupId" nillable="true" type="xs:unsignedInt" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="TpServiceNumberParam" nillable="true" type="tns:TpServiceNumberParam" />
+  <xs:complexType name="ArrayOfTpServiceNumberParam">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="TpServiceNumberParam" nillable="true" type="tns:TpServiceNumberParam" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfTpServiceNumberParam" nillable="true" type="tns:ArrayOfTpServiceNumberParam" />
+  <xs:complexType name="ArrayOfTpFaC">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="TpFaC" nillable="true" type="tns:TpFaC" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfTpFaC" nillable="true" type="tns:ArrayOfTpFaC" />
+  <xs:complexType name="TpFaC">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="FaCode" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="TdId" type="xs:long" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="TpFaC" nillable="true" type="tns:TpFaC" />
+  <xs:complexType name="ArrayOfTpNotification">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="TpNotification" nillable="true" type="tns:TpNotification" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfTpNotification" nillable="true" type="tns:ArrayOfTpNotification" />
+  <xs:complexType name="TpNotification">
+    <xs:sequence>
+      <xs:element xmlns:q10="http://schemas.datacontract.org/2004/07/NVision.See.DataTypes.Parlay" minOccurs="0" name="EndDate" nillable="true" type="q10:TpTimeDate" />
+      <xs:element minOccurs="0" name="GlobalPriority" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="GroupNum" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="GroupPriority" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="Name" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="NotifTemplateId" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="NotificationCauseId" nillable="true" type="xs:unsignedInt" />
+      <xs:element minOccurs="0" name="NotificationId" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="NotificationType" nillable="true" type="xs:byte" />
+      <xs:element minOccurs="0" name="Phase" nillable="true" type="xs:byte" />
+      <xs:element xmlns:q11="http://schemas.datacontract.org/2004/07/NVision.See.DataTypes.Parlay" minOccurs="0" name="StartDate" nillable="true" type="q11:TpTimeDate" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="TpNotification" nillable="true" type="tns:TpNotification" />
+  <xs:complexType name="ArrayOfTpAdminBlock">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="TpAdminBlock" nillable="true" type="tns:TpAdminBlock" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfTpAdminBlock" nillable="true" type="tns:ArrayOfTpAdminBlock" />
+  <xs:complexType name="TpAdminBlock">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="BlockType" type="xs:unsignedByte" />
+      <xs:element xmlns:q12="http://schemas.datacontract.org/2004/07/NVision.See.DataTypes.Parlay" minOccurs="0" name="EndDate" nillable="true" type="q12:TpTimeDate" />
+      <xs:element xmlns:q13="http://schemas.datacontract.org/2004/07/NVision.See.DataTypes.Parlay" minOccurs="0" name="StartDate" nillable="true" type="q13:TpTimeDate" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="TpAdminBlock" nillable="true" type="tns:TpAdminBlock" />
+  <xs:complexType name="ArrayOfTpActivityAction">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="TpActivityAction" nillable="true" type="tns:TpActivityAction" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfTpActivityAction" nillable="true" type="tns:ArrayOfTpActivityAction" />
+  <xs:complexType name="TpActivityAction">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="ActivityGroupId" type="xs:unsignedInt" />
+      <xs:element minOccurs="0" name="ActivityId" type="xs:unsignedShort" />
+      <xs:element minOccurs="0" name="AllowBFE" nillable="true" type="xs:unsignedByte" />
+      <xs:element minOccurs="0" name="AllowedProtocols" nillable="true" type="xs:unsignedInt" />
+      <xs:element minOccurs="0" name="Notes" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="RegisterFE" nillable="true" type="xs:unsignedByte" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="TpActivityAction" nillable="true" type="tns:TpActivityAction" />
+  <xs:complexType name="ArrayOfTpFaTI">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="TpFaTI" nillable="true" type="tns:TpFaTI" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfTpFaTI" nillable="true" type="tns:ArrayOfTpFaTI" />
+  <xs:complexType name="TpFaTI">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="FaTimeInterval" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="TdId" type="xs:long" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="TpFaTI" nillable="true" type="tns:TpFaTI" />
+  <xs:complexType name="ArrayOfTpVlr">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="TpVlr" nillable="true" type="tns:TpVlr" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfTpVlr" nillable="true" type="tns:ArrayOfTpVlr" />
+  <xs:complexType name="TpVlr">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="ActivityGroupId" nillable="true" type="xs:unsignedInt" />
+      <xs:element minOccurs="0" name="VlrNum" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="TpVlr" nillable="true" type="tns:TpVlr" />
+  <xs:complexType name="ArrayOfTpActivityGroup">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="TpActivityGroup" nillable="true" type="tns:TpActivityGroup" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfTpActivityGroup" nillable="true" type="tns:ArrayOfTpActivityGroup" />
+  <xs:complexType name="TpActivityGroup">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="ActivityGroupId" type="xs:unsignedInt" />
+      <xs:element minOccurs="0" name="NfeNotify" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="TpActivityGroup" nillable="true" type="tns:TpActivityGroup" />
+  <xs:complexType name="ArrayOfTpListTdNumber">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="TpListTdNumber" nillable="true" type="tns:TpListTdNumber" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfTpListTdNumber" nillable="true" type="tns:ArrayOfTpListTdNumber" />
+  <xs:complexType name="ArrayOfTpGprsStartItem">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="TpGprsStartItem" nillable="true" type="tns:TpGprsStartItem" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfTpGprsStartItem" nillable="true" type="tns:ArrayOfTpGprsStartItem" />
+  <xs:complexType name="TpGprsStartItem">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="AcType" nillable="true" type="xs:unsignedByte" />
+      <xs:element minOccurs="0" name="Apn" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="GprsStartDataId" type="xs:int" />
+      <xs:element minOccurs="0" name="MinDownloadValue" nillable="true" type="xs:unsignedInt" />
+      <xs:element minOccurs="0" name="MinDuration" nillable="true" type="xs:unsignedInt" />
+      <xs:element minOccurs="0" name="MinSpecificUnitsValue" nillable="true" type="xs:unsignedInt" />
+      <xs:element minOccurs="0" name="MinUploadValue" nillable="true" type="xs:unsignedInt" />
+      <xs:element minOccurs="0" name="Options" nillable="true" type="xs:unsignedByte" />
+      <xs:element minOccurs="0" name="Protocol" nillable="true" type="xs:unsignedByte" />
+      <xs:element minOccurs="0" name="QuotaConsumptionTime" nillable="true" type="xs:unsignedShort" />
+      <xs:element minOccurs="0" name="QuotaHoldingTime" nillable="true" type="xs:unsignedShort" />
+      <xs:element minOccurs="0" name="RadioAccessTechnology" nillable="true" type="xs:unsignedByte" />
+      <xs:element minOccurs="0" name="RatingGroup" nillable="true" type="xs:unsignedInt" />
+      <xs:element minOccurs="0" name="RoamingType" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="ServiceId" nillable="true" type="xs:unsignedShort" />
+      <xs:element minOccurs="0" name="StatisticType" nillable="true" type="xs:unsignedByte" />
+      <xs:element minOccurs="0" name="TariffPlanId" nillable="true" type="xs:unsignedInt" />
+      <xs:element minOccurs="0" name="TimeQuotaThreshold" nillable="true" type="xs:unsignedShort" />
+      <xs:element minOccurs="0" name="Triggers" nillable="true" type="xs:base64Binary" />
+      <xs:element minOccurs="0" name="UnitQuotaThreshold" nillable="true" type="xs:unsignedShort" />
+      <xs:element minOccurs="0" name="VolumeQuotaThreshold" nillable="true" type="xs:unsignedShort" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="TpGprsStartItem" nillable="true" type="tns:TpGprsStartItem" />
+  <xs:complexType name="ArrayOfTpDeliveryRule">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="TpDeliveryRule" nillable="true" type="tns:TpDeliveryRule" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfTpDeliveryRule" nillable="true" type="tns:ArrayOfTpDeliveryRule" />
+  <xs:complexType name="ArrayOfTpRulePattern">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="TpRulePattern" nillable="true" type="tns:TpRulePattern" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfTpRulePattern" nillable="true" type="tns:ArrayOfTpRulePattern" />
+  <xs:complexType name="ArrayOfTpConfigParam">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="TpConfigParam" nillable="true" type="tns:TpConfigParam" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfTpConfigParam" nillable="true" type="tns:ArrayOfTpConfigParam" />
+  <xs:complexType name="TpServiceNumber">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="ActivityId" nillable="true" type="xs:unsignedShort" />
+      <xs:element minOccurs="0" name="AdmStatuses" nillable="true" type="xs:unsignedInt" />
+      <xs:element minOccurs="0" name="CustStatuses" nillable="true" type="xs:unsignedInt" />
+      <xs:element minOccurs="0" name="RatingGroup" nillable="true" type="xs:unsignedInt" />
+      <xs:element minOccurs="0" name="RoamingType" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="ServiceNumberFrom" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ServiceNumberParamId" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="ServiceNumberTo" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="SrvGroupId" nillable="true" type="xs:unsignedInt" />
+      <xs:element minOccurs="0" name="VoiceAnnouncement" nillable="true" type="xs:byte" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="TpServiceNumber" nillable="true" type="tns:TpServiceNumber" />
+  <xs:complexType name="ArrayOfTpParamOperator">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="TpParamOperator" nillable="true" type="tns:TpParamOperator" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfTpParamOperator" nillable="true" type="tns:ArrayOfTpParamOperator" />
+  <xs:complexType name="TpParamOperator">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="ConditionValueTypeId" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="OperatorId" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="ParamId" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="ParamOperatorId" nillable="true" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="TpParamOperator" nillable="true" type="tns:TpParamOperator" />
+  <xs:complexType name="ArrayOfTpAnnouncement">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="TpAnnouncement" nillable="true" type="tns:TpAnnouncement" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfTpAnnouncement" nillable="true" type="tns:ArrayOfTpAnnouncement" />
+  <xs:complexType name="ArrayOfTpNotificationCause">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="TpNotificationCause" nillable="true" type="tns:TpNotificationCause" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfTpNotificationCause" nillable="true" type="tns:ArrayOfTpNotificationCause" />
+  <xs:complexType name="TpNotificationCause">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Description" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="NotificationCauseId" nillable="true" type="xs:unsignedInt" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="TpNotificationCause" nillable="true" type="tns:TpNotificationCause" />
+  <xs:complexType name="ArrayOfTpMessagePattern">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="TpMessagePattern" nillable="true" type="tns:TpMessagePattern" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfTpMessagePattern" nillable="true" type="tns:ArrayOfTpMessagePattern" />
+  <xs:complexType name="TpMessagePattern">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="EncodingType" nillable="true" type="xs:unsignedByte" />
+      <xs:element minOccurs="0" name="LangId" nillable="true" type="xs:unsignedByte" />
+      <xs:element minOccurs="0" name="MsgPatternId" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="Name" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Text" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="TpMessagePattern" nillable="true" type="tns:TpMessagePattern" />
+  <xs:complexType name="ArrayOfTpTurnOffRule">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="TpTurnOffRule" nillable="true" type="tns:TpTurnOffRule" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfTpTurnOffRule" nillable="true" type="tns:ArrayOfTpTurnOffRule" />
+  <xs:complexType name="ArrayOfTpRuleCondition">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="TpRuleCondition" nillable="true" type="tns:TpRuleCondition" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfTpRuleCondition" nillable="true" type="tns:ArrayOfTpRuleCondition" />
+  <xs:complexType name="TpRuleCondition">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="CondValues" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ParamOperatorId" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="Weight" nillable="true" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="TpRuleCondition" nillable="true" type="tns:TpRuleCondition" />
+  <xs:complexType name="ArrayOfTpListNumber">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="TpListNumber" nillable="true" type="tns:TpListNumber" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfTpListNumber" nillable="true" type="tns:ArrayOfTpListNumber" />
+  <xs:complexType name="TpListNumber">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="ActivityGroupId" nillable="true" type="xs:unsignedInt" />
+      <xs:element minOccurs="0" name="ListNumber" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="TariffPlanId" type="xs:unsignedInt" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="TpListNumber" nillable="true" type="tns:TpListNumber" />
+  <xs:complexType name="TpProvider">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="ActivityGroupId" nillable="true" type="xs:unsignedInt" />
+      <xs:element minOccurs="0" name="BmServiceId" nillable="true" type="xs:unsignedShort" />
+      <xs:element minOccurs="0" name="BmSubVersion" nillable="true" type="xs:byte" />
+      <xs:element minOccurs="0" name="InactivityBalanceLimit" nillable="true" type="xs:double" />
+      <xs:element minOccurs="0" name="Name" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ProviderCode" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ProviderId" type="xs:unsignedInt" />
+      <xs:element minOccurs="0" name="SrvGroupId" nillable="true" type="xs:unsignedInt" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="TpProvider" nillable="true" type="tns:TpProvider" />
+  <xs:complexType name="TpProviderGroup">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="ProviderGroup" nillable="true" type="xs:unsignedInt" />
+      <xs:element minOccurs="0" name="ProviderId" type="xs:unsignedInt" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="TpProviderGroup" nillable="true" type="tns:TpProviderGroup" />
+  <xs:complexType name="ArrayOfTpPa">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="TpPa" nillable="true" type="tns:TpPa" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfTpPa" nillable="true" type="tns:ArrayOfTpPa" />
+  <xs:complexType name="TpPa">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="AdminBlock" nillable="true" type="xs:unsignedShort" />
+      <xs:element xmlns:q14="http://schemas.datacontract.org/2004/07/NVision.See.DataTypes.Parlay" minOccurs="0" name="AdminBlockedDate" nillable="true" type="q14:TpTimeDate" />
+      <xs:element minOccurs="0" name="AfterGracePeriod" nillable="true" type="xs:unsignedShort" />
+      <xs:element minOccurs="0" name="BillingGroupId" nillable="true" type="xs:unsignedInt" />
+      <xs:element xmlns:q15="http://schemas.datacontract.org/2004/07/NVision.See.DataTypes.Parlay" minOccurs="0" name="BlockedEndDate" nillable="true" type="q15:TpTimeDate" />
+      <xs:element minOccurs="0" name="CalculationMethodId" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="ContractNumber" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="CurrencyCode" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="CustomerTypeId" nillable="true" type="xs:unsignedInt" />
+      <xs:element xmlns:q16="http://schemas.datacontract.org/2004/07/NVision.See.DataTypes.Parlay" minOccurs="0" name="EndDate" nillable="true" type="q16:TpTimeDate" />
+      <xs:element xmlns:q17="http://schemas.datacontract.org/2004/07/NVision.See.DataTypes.Parlay" minOccurs="0" name="ExpirationDate" nillable="true" type="q17:TpTimeDate" />
+      <xs:element minOccurs="0" name="ExpirationDateMonitor" nillable="true" type="xs:unsignedByte" />
+      <xs:element minOccurs="0" name="FinancialBlock" nillable="true" type="xs:unsignedByte" />
+      <xs:element minOccurs="0" name="GracePeriod" nillable="true" type="xs:unsignedShort" />
+      <xs:element minOccurs="0" name="IsGraceStartsOnBlock" nillable="true" type="xs:unsignedByte" />
+      <xs:element xmlns:q18="http://schemas.datacontract.org/2004/07/NVision.See.DataTypes.Parlay" minOccurs="0" name="LastActivity" nillable="true" type="q18:TpTimeDate" />
+      <xs:element xmlns:q19="http://schemas.datacontract.org/2004/07/NVision.See.DataTypes.Parlay" minOccurs="0" name="LastModified" nillable="true" type="q19:TpTimeDate" />
+      <xs:element xmlns:q20="http://schemas.datacontract.org/2004/07/NVision.See.DataTypes.Parlay" minOccurs="0" name="PaFinancialBlockChangeDate" nillable="true" type="q20:TpTimeDate" />
+      <xs:element minOccurs="0" name="PaLifetimeStatus" nillable="true" type="xs:unsignedByte" />
+      <xs:element xmlns:q21="http://schemas.datacontract.org/2004/07/NVision.See.DataTypes.Parlay" minOccurs="0" name="PaLifetimeStatusChangeDate" nillable="true" type="q21:TpTimeDate" />
+      <xs:element minOccurs="0" name="PaNumber" type="xs:long" />
+      <xs:element minOccurs="0" name="PspDayOfMonth" nillable="true" type="xs:byte" />
+      <xs:element minOccurs="0" name="RecentRecordNumber" nillable="true" type="xs:unsignedInt" />
+      <xs:element minOccurs="0" name="RowBcId" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ServiceProviderCode" nillable="true" type="xs:unsignedInt" />
+      <xs:element minOccurs="0" name="Services" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="TaxGroupId" nillable="true" type="xs:unsignedInt" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="TpPa" nillable="true" type="tns:TpPa" />
+  <xs:complexType name="ArrayOfTpTd">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="TpTd" nillable="true" type="tns:TpTd" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfTpTd" nillable="true" type="tns:ArrayOfTpTd" />
+  <xs:complexType name="TpTd">
+    <xs:sequence>
+      <xs:element xmlns:q22="http://schemas.datacontract.org/2004/07/NVision.See.DataTypes.Parlay" minOccurs="0" name="ActiveStartDate" nillable="true" type="q22:TpTimeDate" />
+      <xs:element minOccurs="0" name="AdminBlock" nillable="true" type="xs:unsignedShort" />
+      <xs:element xmlns:q23="http://schemas.datacontract.org/2004/07/NVision.See.DataTypes.Parlay" minOccurs="0" name="AdminBlockedDate" nillable="true" type="q23:TpTimeDate" />
+      <xs:element minOccurs="0" name="BmServiceId" nillable="true" type="xs:unsignedShort" />
+      <xs:element minOccurs="0" name="BmSubVersion" nillable="true" type="xs:byte" />
+      <xs:element xmlns:q24="http://schemas.datacontract.org/2004/07/NVision.See.DataTypes.Parlay" minOccurs="0" name="ChangeDate" nillable="true" type="q24:TpTimeDate" />
+      <xs:element minOccurs="0" name="EncodingTypes" nillable="true" type="xs:unsignedByte" />
+      <xs:element xmlns:q25="http://schemas.datacontract.org/2004/07/NVision.See.DataTypes.Parlay" minOccurs="0" name="EndDate" nillable="true" type="q25:TpTimeDate" />
+      <xs:element xmlns:q26="http://schemas.datacontract.org/2004/07/NVision.See.DataTypes.Parlay" minOccurs="0" name="FirstTdEventMaxDate" nillable="true" type="q26:TpTimeDate" />
+      <xs:element minOccurs="0" name="InactivityPeriod" nillable="true" type="xs:unsignedShort" />
+      <xs:element minOccurs="0" name="IntLogicServiceField" nillable="true" type="xs:unsignedInt" />
+      <xs:element minOccurs="0" name="Lang" nillable="true" type="xs:unsignedByte" />
+      <xs:element xmlns:q27="http://schemas.datacontract.org/2004/07/NVision.See.DataTypes.Parlay" minOccurs="0" name="LastActivity" nillable="true" type="q27:TpTimeDate" />
+      <xs:element minOccurs="0" name="LastLocnum" nillable="true" type="xs:string" />
+      <xs:element xmlns:q28="http://schemas.datacontract.org/2004/07/NVision.See.DataTypes.Parlay" minOccurs="0" name="LastServiceActivation" nillable="true" type="q28:TpTimeDate" />
+      <xs:element minOccurs="0" name="NotificAction" nillable="true" type="xs:unsignedByte" />
+      <xs:element minOccurs="0" name="NotificMsisdn" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="PaNumber" nillable="true" type="xs:long" />
+      <xs:element minOccurs="0" name="Password" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="SdpImsi" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="SdpMsisdn" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Services" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="SmsUssdLang" nillable="true" type="xs:unsignedByte" />
+      <xs:element minOccurs="0" name="TariffPlanId" nillable="true" type="xs:unsignedInt" />
+      <xs:element xmlns:q29="http://schemas.datacontract.org/2004/07/NVision.See.DataTypes.Parlay" minOccurs="0" name="TariffPlanUsageStart" nillable="true" type="q29:TpTimeDate" />
+      <xs:element minOccurs="0" name="TdClassId" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="TdId" type="xs:long" />
+      <xs:element minOccurs="0" name="TdOptions" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="TdStatus" nillable="true" type="xs:unsignedByte" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="TpTd" nillable="true" type="tns:TpTd" />
+  <xs:complexType name="ArrayOfTpCug">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="TpCug" nillable="true" type="tns:TpCug" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfTpCug" nillable="true" type="tns:ArrayOfTpCug" />
+  <xs:complexType name="TpCug">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="AdminTdId" nillable="true" type="xs:long" />
+      <xs:element minOccurs="0" name="AttrType" type="xs:byte" />
+      <xs:element xmlns:q30="http://schemas.datacontract.org/2004/07/NVision.See.DataTypes.Parlay" minOccurs="0" name="CreationDate" nillable="true" type="q30:TpTimeDate" />
+      <xs:element minOccurs="0" name="CugId" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="CugType" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="DonorMsisdn" nillable="true" type="xs:string" />
+      <xs:element xmlns:q31="http://schemas.datacontract.org/2004/07/NVision.See.DataTypes.Parlay" minOccurs="0" name="LastDonorChange" nillable="true" type="q31:TpTimeDate" />
+      <xs:element minOccurs="0" name="OldDonorMsisdn" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Password" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Priority" nillable="true" type="xs:unsignedByte" />
+      <xs:element minOccurs="0" name="ShareLimits" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="TpCug" nillable="true" type="tns:TpCug" />
+  <xs:complexType name="ArrayOfTpFf">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="TpFf" nillable="true" type="tns:TpFf" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfTpFf" nillable="true" type="tns:ArrayOfTpFf" />
+  <xs:complexType name="TpFf">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="FFDestination" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="FFDisable" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="FFExtService" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="FFNumber" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="FFPosition" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="TDId" type="xs:long" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="TpFf" nillable="true" type="tns:TpFf" />
+  <xs:complexType name="ArrayOfTpTariffPlan">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="TpTariffPlan" nillable="true" type="tns:TpTariffPlan" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfTpTariffPlan" nillable="true" type="tns:ArrayOfTpTariffPlan" />
+  <xs:complexType name="TpTariffPlan">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="ActivityGroupId" nillable="true" type="xs:unsignedInt" />
+      <xs:element minOccurs="0" name="BmServiceId" nillable="true" type="xs:unsignedShort" />
+      <xs:element minOccurs="0" name="Description" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Name" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="PartialBlockExpirePeriod" nillable="true" type="xs:unsignedInt" />
+      <xs:element minOccurs="0" name="ProviderId" nillable="true" type="xs:unsignedInt" />
+      <xs:element minOccurs="0" name="SrvGroupId" nillable="true" type="xs:unsignedInt" />
+      <xs:element minOccurs="0" name="TariffPlanId" type="xs:unsignedInt" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="TpTariffPlan" nillable="true" type="tns:TpTariffPlan" />
+  <xs:complexType name="ArrayOfTpService">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="TpService" nillable="true" type="tns:TpService" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfTpService" nillable="true" type="tns:ArrayOfTpService" />
+  <xs:complexType name="TpService">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="ApplicationClassification" nillable="true" type="xs:unsignedByte" />
+      <xs:element minOccurs="0" name="Description" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="IntServLogFieldPosition" nillable="true" type="xs:unsignedInt" />
+      <xs:element minOccurs="0" name="InternalCode" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Name" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ServiceCode" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ServiceLastActivity" nillable="true" type="xs:unsignedByte" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="TpService" nillable="true" type="tns:TpService" />
+  <xs:complexType name="TpBalanceInstance">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="ActivationDate" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="AdditionalAttributes" nillable="true" type="tns:TpAdditionalAttributes" />
+      <xs:element minOccurs="0" name="BalanceInstanceId" nillable="true" type="xs:long" />
+      <xs:element minOccurs="0" name="BalanceInstanceVersion" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="BalanceNumber" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="BalanceTemplateRecalculationFactors" nillable="true" type="tns:ArrayOfTpBalanceTemplateRecalculationFactor" />
+      <xs:element minOccurs="0" name="BalanceValues" nillable="true" type="tns:ArrayOfTpBalanceAbsoluteValue" />
+      <xs:element minOccurs="0" name="DeactivationDate" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="ExpiredPayments" nillable="true" type="tns:ArrayOfTpBalanceAbsoluteValue" />
+      <xs:element minOccurs="0" name="ExtAttributes" nillable="true" type="tns:ArrayOfTpExtAttribute" />
+      <xs:element minOccurs="0" name="FactorMask" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="InitialValue" nillable="true" type="xs:double" />
+      <xs:element minOccurs="0" name="InstanceActionRules" nillable="true" type="tns:ArrayOfTpActionRule" />
+      <xs:element minOccurs="0" name="LastValueUpdateDate" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="OtherProfileInfos" nillable="true" type="tns:ArrayOfTpInstanceProfileInfo" />
+      <xs:element minOccurs="0" name="OwnerId" nillable="true" type="xs:int" />
+      <xs:element xmlns:q32="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="ParentReservationIds" nillable="true" type="q32:ArrayOflong" />
+      <xs:element minOccurs="0" name="ProfileId" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="PromisedPayments" nillable="true" type="tns:ArrayOfTpBalanceAbsoluteValue" />
+      <xs:element minOccurs="0" name="RecalculationFactors" nillable="true" type="tns:TpBalanceInstanceRecalculationFactors" />
+      <xs:element minOccurs="0" name="RecalculationPeriod" nillable="true" type="tns:TpRecalculationPeriod" />
+      <xs:element minOccurs="0" name="Status" nillable="true" type="xs:unsignedByte" />
+      <xs:element minOccurs="0" name="TemplateActionRules" nillable="true" type="tns:ArrayOfTpActionRule" />
+      <xs:element minOccurs="0" name="TemplateThresholdCode" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="TimeShift" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="TotalReservationValue" nillable="true" type="xs:double" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="TpBalanceInstance" nillable="true" type="tns:TpBalanceInstance" />
+  <xs:complexType name="ArrayOfTpBalanceTemplateRecalculationFactor">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="TpBalanceTemplateRecalculationFactor" nillable="true" type="tns:TpBalanceTemplateRecalculationFactor" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfTpBalanceTemplateRecalculationFactor" nillable="true" type="tns:ArrayOfTpBalanceTemplateRecalculationFactor" />
+  <xs:complexType name="TpBalanceTemplateRecalculationFactor">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="ExtCode" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="RecalculationFactorType" type="xs:byte" />
+      <xs:element minOccurs="0" name="Value" nillable="true" type="xs:double" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="TpBalanceTemplateRecalculationFactor" nillable="true" type="tns:TpBalanceTemplateRecalculationFactor" />
+  <xs:complexType name="ArrayOfTpBalanceAbsoluteValue">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="TpBalanceAbsoluteValue" nillable="true" type="tns:TpBalanceAbsoluteValue" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfTpBalanceAbsoluteValue" nillable="true" type="tns:ArrayOfTpBalanceAbsoluteValue" />
+  <xs:complexType name="TpBalanceAbsoluteValue">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="BalanceValue" type="xs:decimal" />
+      <xs:element minOccurs="0" name="DateFrom" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="DateTo" nillable="true" type="xs:dateTime" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="TpBalanceAbsoluteValue" nillable="true" type="tns:TpBalanceAbsoluteValue" />
+  <xs:complexType name="ArrayOfTpInstanceProfileInfo">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="TpInstanceProfileInfo" nillable="true" type="tns:TpInstanceProfileInfo" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfTpInstanceProfileInfo" nillable="true" type="tns:ArrayOfTpInstanceProfileInfo" />
+  <xs:complexType name="TpInstanceProfileInfo">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="ActivationDate" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="DeactivationDate" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="ProfileId" type="xs:int" />
+      <xs:element minOccurs="0" name="TemplateRecalculationPeriod" nillable="true" type="tns:TpRecalculationPeriodInfo" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="TpInstanceProfileInfo" nillable="true" type="tns:TpInstanceProfileInfo" />
+  <xs:complexType name="TpRecalculationPeriodInfo">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="RecalcPeriod" nillable="true" type="tns:TpRecalculationPeriod" />
+      <xs:element minOccurs="0" name="RecalcType" type="xs:byte" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="TpRecalculationPeriodInfo" nillable="true" type="tns:TpRecalculationPeriodInfo" />
+  <xs:complexType name="ArrayOfTpBalanceInstance">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="TpBalanceInstance" nillable="true" type="tns:TpBalanceInstance" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfTpBalanceInstance" nillable="true" type="tns:ArrayOfTpBalanceInstance" />
+  <xs:complexType name="ArrayOfTpReservation">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="TpReservation" nillable="true" type="tns:TpReservation" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfTpReservation" nillable="true" type="tns:ArrayOfTpReservation" />
+  <xs:complexType name="TpReservation">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="BalanceInstanceId" type="xs:long" />
+      <xs:element minOccurs="0" name="BalanceReservations" nillable="true" type="tns:ArrayOfTpBalanceReservation" />
+      <xs:element minOccurs="0" name="TotalReservationValue" type="xs:double" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="TpReservation" nillable="true" type="tns:TpReservation" />
+  <xs:complexType name="ArrayOfTpBalanceReservation">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="TpBalanceReservation" nillable="true" type="tns:TpBalanceReservation" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfTpBalanceReservation" nillable="true" type="tns:ArrayOfTpBalanceReservation" />
+  <xs:complexType name="TpBalanceReservation">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="AdditionalAttributes" nillable="true" type="tns:TpAdditionalAttributes" />
+      <xs:element minOccurs="0" name="ReservationEndDate" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="ReservationStartDate" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="ReservedValue" type="xs:double" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="TpBalanceReservation" nillable="true" type="tns:TpBalanceReservation" />
+  <xs:complexType name="TpTdCug">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="AttrType" type="xs:byte" />
+      <xs:element minOccurs="0" name="CugId" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Msisdn" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ServiceCode" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="TpTdCug" nillable="true" type="tns:TpTdCug" />
+  <xs:complexType name="ArrayOfTpTdCug">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="TpTdCug" nillable="true" type="tns:TpTdCug" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfTpTdCug" nillable="true" type="tns:ArrayOfTpTdCug" />
+  <xs:complexType name="ArrayOfTpLanguages">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="TpLanguages" nillable="true" type="tns:TpLanguages" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfTpLanguages" nillable="true" type="tns:ArrayOfTpLanguages" />
+  <xs:complexType name="TpLanguages">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="LangId" type="xs:unsignedByte" />
+      <xs:element minOccurs="0" name="LangName" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="TpLanguages" nillable="true" type="tns:TpLanguages" />
+  <xs:complexType name="ArrayOfTpBalanceChange">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="TpBalanceChange" nillable="true" type="tns:TpBalanceChange" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfTpBalanceChange" nillable="true" type="tns:ArrayOfTpBalanceChange" />
+  <xs:complexType name="TpBalanceChange">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Amount" nillable="true" type="xs:double" />
+      <xs:element minOccurs="0" name="CallDirection" nillable="true" type="xs:unsignedByte" />
+      <xs:element xmlns:q33="http://schemas.datacontract.org/2004/07/NVision.See.DataTypes.Parlay" minOccurs="0" name="Date" nillable="true" type="q33:TpTimeDate" />
+      <xs:element minOccurs="0" name="DestinationId" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="TrafficType" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="TpBalanceChange" nillable="true" type="tns:TpBalanceChange" />
+  <xs:complexType name="TpDiaSySession">
+    <xs:sequence>
+      <xs:element xmlns:q34="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="BalanceIds" nillable="true" type="q34:ArrayOflong" />
+      <xs:element minOccurs="0" name="Msisdn" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="PaNumber" nillable="true" type="xs:long" />
+      <xs:element minOccurs="0" name="ProvSegmentId" nillable="true" type="xs:unsignedInt" />
+      <xs:element minOccurs="0" name="ProvSessionId" nillable="true" type="xs:unsignedLong" />
+      <xs:element minOccurs="0" name="TdId" nillable="true" type="xs:long" />
+      <xs:element minOccurs="0" name="TraceId" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ValidityPeriod" nillable="true" type="xs:unsignedInt" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="TpDiaSySession" nillable="true" type="tns:TpDiaSySession" />
+  <xs:complexType name="ArrayOfTpProvider">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="TpProvider" nillable="true" type="tns:TpProvider" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfTpProvider" nillable="true" type="tns:ArrayOfTpProvider" />
+  <xs:complexType name="ArrayOfTpProviderGroup">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="TpProviderGroup" nillable="true" type="tns:TpProviderGroup" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfTpProviderGroup" nillable="true" type="tns:ArrayOfTpProviderGroup" />
+  <xs:complexType name="ArrayOfTpTDWithBalances">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="TpTDWithBalances" nillable="true" type="tns:TpTDWithBalances" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfTpTDWithBalances" nillable="true" type="tns:ArrayOfTpTDWithBalances" />
+  <xs:complexType name="TpTDWithBalances">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="BalanceInstances" nillable="true" type="tns:ArrayOfTpBalanceInstance" />
+      <xs:element minOccurs="0" name="Td" nillable="true" type="tns:TpTd" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="TpTDWithBalances" nillable="true" type="tns:TpTDWithBalances" />
+  <xs:complexType name="ArrayOfTpShortNumber">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="TpShortNumber" nillable="true" type="tns:TpShortNumber" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfTpShortNumber" nillable="true" type="tns:ArrayOfTpShortNumber" />
+  <xs:complexType name="TpShortNumber">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="ProviderId" type="xs:unsignedInt" />
+      <xs:element minOccurs="0" name="RealNum" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ShortNum" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="TpShortNumber" nillable="true" type="tns:TpShortNumber" />
+  <xs:complexType name="ArrayOfTpServiceNumber">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="TpServiceNumber" nillable="true" type="tns:TpServiceNumber" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfTpServiceNumber" nillable="true" type="tns:ArrayOfTpServiceNumber" />
+  <xs:complexType name="ArrayOfTpBalanceTemplate">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="TpBalanceTemplate" nillable="true" type="tns:TpBalanceTemplate" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfTpBalanceTemplate" nillable="true" type="tns:ArrayOfTpBalanceTemplate" />
+  <xs:complexType name="TpBalanceTemplate">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="ActionRules" nillable="true" type="tns:ArrayOfTpActionRule" />
+      <xs:element minOccurs="0" name="AlternativeProfileInfos" nillable="true" type="tns:ArrayOfTpTemplateProfileInfo" />
+      <xs:element minOccurs="0" name="BalanceTemplateRecalculationFactors" nillable="true" type="tns:ArrayOfTpBalanceTemplateRecalculationFactor" />
+      <xs:element minOccurs="0" name="BalanceValueScale" type="xs:unsignedByte" />
+      <xs:element minOccurs="0" name="BaseInitialValue" type="xs:long" />
+      <xs:element minOccurs="0" name="DeactivationInfos" nillable="true" type="tns:ArrayOfTpDeactivationInfo" />
+      <xs:element minOccurs="0" name="ExtCode" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ExtName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="MetricUnitCode" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="MoveLimitRatio" nillable="true" type="xs:double" />
+      <xs:element minOccurs="0" name="MoveRatio" type="xs:double" />
+      <xs:element minOccurs="0" name="TemplateExtType" type="xs:int" />
+      <xs:element minOccurs="0" name="TemplateId" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="TemplateRecalculationPeriod" nillable="true" type="tns:TpRecalculationPeriodInfo" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="TpBalanceTemplate" nillable="true" type="tns:TpBalanceTemplate" />
+  <xs:complexType name="ArrayOfTpTemplateProfileInfo">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="TpTemplateProfileInfo" nillable="true" type="tns:TpTemplateProfileInfo" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfTpTemplateProfileInfo" nillable="true" type="tns:ArrayOfTpTemplateProfileInfo" />
+  <xs:complexType name="TpTemplateProfileInfo">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="BalanceTemplateRecalculationFactor" nillable="true" type="tns:ArrayOfTpBalanceTemplateRecalculationFactor" />
+      <xs:element minOccurs="0" name="BaseInitialValue" nillable="true" type="xs:long" />
+      <xs:element minOccurs="0" name="DeactivationInfos" nillable="true" type="tns:ArrayOfTpDeactivationInfo" />
+      <xs:element minOccurs="0" name="MoveLimitRatio" nillable="true" type="xs:double" />
+      <xs:element minOccurs="0" name="MoveRatio" nillable="true" type="xs:double" />
+      <xs:element minOccurs="0" name="ProfileId" type="xs:int" />
+      <xs:element minOccurs="0" name="TemplateRecalculationPeriod" nillable="true" type="tns:TpRecalculationPeriodInfo" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="TpTemplateProfileInfo" nillable="true" type="tns:TpTemplateProfileInfo" />
+  <xs:complexType name="ArrayOfTpDeactivationInfo">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="TpDeactivationInfo" nillable="true" type="tns:TpDeactivationInfo" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfTpDeactivationInfo" nillable="true" type="tns:ArrayOfTpDeactivationInfo" />
+  <xs:complexType name="TpDeactivationInfo">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="ActivationCode" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="DeactivationDate" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="DeactivationPeriod" nillable="true" type="tns:TpDeactivationPeriod" />
+      <xs:element minOccurs="0" name="DeactivationType" type="xs:byte" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="TpDeactivationInfo" nillable="true" type="tns:TpDeactivationInfo" />
+  <xs:complexType name="TpDeactivationPeriod">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="DeactivationPeriodPeriod" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="DeactivationPeriodType" type="xs:byte" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="TpDeactivationPeriod" nillable="true" type="tns:TpDeactivationPeriod" />
+  <xs:complexType name="ArrayOfTpTemplateBaseInfo">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="TpTemplateBaseInfo" nillable="true" type="tns:TpTemplateBaseInfo" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfTpTemplateBaseInfo" nillable="true" type="tns:ArrayOfTpTemplateBaseInfo" />
+  <xs:complexType name="TpTemplateBaseInfo">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="ExtCode" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="TemplateId" nillable="true" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="TpTemplateBaseInfo" nillable="true" type="tns:TpTemplateBaseInfo" />
+  <xs:complexType name="ArrayOfTpActivity">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="TpActivity" nillable="true" type="tns:TpActivity" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfTpActivity" nillable="true" type="tns:ArrayOfTpActivity" />
+  <xs:complexType name="TpActivity">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="ActivityId" type="xs:unsignedShort" />
+      <xs:element minOccurs="0" name="ChargingEventTimeFormat" nillable="true" type="xs:long" />
+      <xs:element minOccurs="0" name="Description" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ProcessingType" nillable="true" type="xs:byte" />
+      <xs:element minOccurs="0" name="RecalculateCountersTimeFormat" nillable="true" type="xs:long" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="TpActivity" nillable="true" type="tns:TpActivity" />
+  <xs:complexType name="ArrayOfTpMessage">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="TpMessage" nillable="true" type="tns:TpMessage" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfTpMessage" nillable="true" type="tns:ArrayOfTpMessage" />
+  <xs:complexType name="ArrayOfTpBsReservation">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="TpBsReservation" nillable="true" type="tns:TpBsReservation" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfTpBsReservation" nillable="true" type="tns:ArrayOfTpBsReservation" />
+  <xs:complexType name="TpBsReservation">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="BsBalanceReservations" nillable="true" type="tns:ArrayOfTpBsBalanceReservation" />
+      <xs:element minOccurs="0" name="ParentReservationId" type="xs:long" />
+      <xs:element minOccurs="0" name="ReservationEndDate" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="ReservationStartDate" nillable="true" type="xs:dateTime" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="TpBsReservation" nillable="true" type="tns:TpBsReservation" />
+  <xs:complexType name="ArrayOfTpBsBalanceReservation">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="TpBsBalanceReservation" nillable="true" type="tns:TpBsBalanceReservation" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfTpBsBalanceReservation" nillable="true" type="tns:ArrayOfTpBsBalanceReservation" />
+  <xs:complexType name="TpBsBalanceReservation">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="BalanceInstanceId" type="xs:long" />
+      <xs:element minOccurs="0" name="CommitedReservedValue" nillable="true" type="xs:double" />
+      <xs:element minOccurs="0" name="InitialValue" nillable="true" type="xs:double" />
+      <xs:element minOccurs="0" name="ReservedValue" type="xs:double" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="TpBsBalanceReservation" nillable="true" type="tns:TpBsBalanceReservation" />
+</xs:schema>

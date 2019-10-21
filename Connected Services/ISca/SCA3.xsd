@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://schemas.datacontract.org/2004/07/NVision.See.DataTypes.Parlay" elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/NVision.See.DataTypes.Parlay" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:complexType name="TpTimeDate">
+    <xs:sequence>
+      <xs:element name="TimeZoneShiftCdr" nillable="true" type="xs:int" />
+      <xs:element name="TimeZoneShiftSubsOcs" type="xs:int" />
+      <xs:element minOccurs="0" name="Type" type="tns:TpTimeDateType" />
+      <xs:element name="UtcTimeZoneShift" type="xs:int" />
+      <xs:element minOccurs="0" name="Value" type="xs:dateTime" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="TpTimeDate" nillable="true" type="tns:TpTimeDate" />
+  <xs:simpleType name="TpTimeDateType">
+    <xs:annotation>
+      <xs:appinfo>
+        <ActualType Name="unsignedByte" Namespace="http://www.w3.org/2001/XMLSchema" xmlns="http://schemas.microsoft.com/2003/10/Serialization/" />
+      </xs:appinfo>
+    </xs:annotation>
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="Local" />
+      <xs:enumeration value="Utc" />
+      <xs:enumeration value="WithDifference" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="TpTimeDateType" nillable="true" type="tns:TpTimeDateType" />
+</xs:schema>
