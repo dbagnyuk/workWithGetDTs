@@ -21,20 +21,13 @@ namespace workWithGetDTs
             List<long> tdcWithLookedSrv = new List<long>();
 
             ScaClient scaClient = new ScaClient("ConfigurationService_ISca", new EndpointAddress("http://msk-dev-foris:8106/SCA"));
-
             var scaOutput = scaClient.GetTDs(new GetTDsInput() { PANumber = inputPA });
 
             Console.WriteLine($"TDIds with services for PA {inputPA}:\n");
             foreach (var tdcs in scaOutput.TDs)
             {
-                Console.Write("\n\n-----------\n\n");
-
                 long tdid = tdcs.TdId;
                 Console.WriteLine(tdid);
-                string srvs = tdcs.Services;
-                Console.WriteLine(srvs);
-
-                Console.Write("\n\n-----------\n\n");
 
                 string [] srvRow = tdcs.Services.Split('|');
                 foreach(var service in srvRow)
@@ -72,18 +65,33 @@ namespace workWithGetDTs
                     }
                     if (srv == lookedSrv && dateFrom <= DateTime.Now && dateTo >= DateTime.Now)
                         tdcWithLookedSrv.Add(tdid);
-
-                    Console.Write("\t" + srv + ", ");
-                    Console.Write(dateFrom + ", ");
-                    Console.Write(dateTo + ", ");
+                    if (srv == lookedSrv)
+                    {
+                        Console.ForegroundColor = ConsoleColor.Blue;
+                        Console.Write("\t" + srv + ", ".PadRight(12 - srv.Length), Console.ForegroundColor);
+                        Console.ResetColor();
+                    }
+                    else
+                        Console.Write("\t" + srv + ", ".PadRight(12 - srv.Length));
+                    Console.Write(dateFrom + ", ".PadRight(3));
+                    Console.Write(dateTo + ", ".PadRight(3));
                     if (dateFrom <= DateTime.Now && dateTo >= DateTime.Now)
-                        Console.WriteLine("Valid");
-                    else Console.WriteLine("NoValid");
+                    {
+                        Console.ForegroundColor = ConsoleColor.Green;
+                        Console.WriteLine("Valid".PadRight(3), Console.ForegroundColor);
+                    }
+                    else
+                    {
+                        Console.ForegroundColor = ConsoleColor.Red;
+                        Console.WriteLine("NoValid".PadRight(3), Console.ForegroundColor);
+                    }
+                    Console.ResetColor();
                 }
             }
-            Console.WriteLine($"\n\nThe TDs who have the valid service {lookedSrv}:");
+            Console.WriteLine($"\n\nThe TDs which have the valid service {lookedSrv}:");
             tdcWithLookedSrv.ForEach(i => Console.Write("{0}\n", i));
 
+            Console.Write("\nPress Enter for exit...");
             Console.Read();
         }
     }
